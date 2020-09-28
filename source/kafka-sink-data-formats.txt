@@ -246,6 +246,26 @@ The following is an example AVRO schema with nested fields:
      ]
    }
 
+Dot Notation for Nested Fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the above schema example, the ``address`` field is a document with two
+sub-fields, ``city`` and ``country``. It's also possible to specify those
+fields with dot notation:
+
+.. code-block:: json
+
+   {
+     "name": "address.city",
+     "type": "string"
+   },
+   { 
+     "name": "address.country",
+     "type": string"
+   }
+
+Dot notation allows you to specify nested fields without using separate
+lines for the top-level document and its sub-documents.
 
 .. _avro-logical-types-example:
 
