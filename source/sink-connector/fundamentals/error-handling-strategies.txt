@@ -119,14 +119,11 @@ errant message, use the following option:
    .. code-block:: properties
 
       errors.tolerance=all
-      mongo.errors.tolerance=none
+      errors.tolerance=none
       errors.deadletterqueue.topic.name=<name of topic to use as dead letter queue>
 
    We will fix this special case soon. To track the status of this issue, 
    see :issue:`this JIRA ticket <KAFKA-223>`.
-
-   For more information on the ``mongo.errors.tolerance`` option, see our
-   section on :ref:`connector level options <kakfa-sink-connector-level>`.
 
 For more information, see Confluent's guide on 
 `Dead Letter Queues <https://docs.confluent.io/cloud/current/connectors/dead-letter-queue.html#dead-letter-queue>`__.
@@ -170,31 +167,3 @@ topic and offset, use the following option:
 For more information, see Confluent's guide on 
 `logging with Kafka Connect <https://docs.confluent.io/platform/current/connect/logging.html>`__.
 
-.. _kakfa-sink-connector-level:
-
-Connector Level Options
------------------------
-
-The {+mkc+} provides options that allow you to configure error
-handling at the connector level. The options are as follows:
-
-.. list-table::
-   :header-rows: 1
-   :widths: 50 50
-
-   * - Kafka Connect Option
-     - {+mkc+} Option
-
-   * - ``errors.tolerance`` 
-     - ``mongo.errors.tolerance``
-
-   * - ``errors.log.enable``
-     - ``mongo.errors.log.enable``
-
-You want to use these options if you want your connector to respond differently
-to errors related to MongoDB than to errors related to the {+kc+} framework. 
-
-For more information, see the following resources:  
-
-- :ref:`<sink-configuration-error-handling>`
-- :issue:`New Names for Error Tolerance Options JIRA Ticket <KAFKA-215>`
