@@ -59,7 +59,6 @@ The {+mkc+} provides CDC handlers for the following CDC event producers:
 
 - MongoDB
 - `Debezium <https://debezium.io/>`__
-- `Qlik Replicate <https://www.qlik.com/us/products/qlik-replicate>`__
 
 Click the following tabs to learn how to configure
 CDC handlers for the preceding event producers:
@@ -75,11 +74,6 @@ CDC handlers for the preceding event producers:
       :tabid: Debezium
 
       .. include:: /includes/fundamentals/cdc/debezium.rst
-
-   .. tab::
-      :tabid: Qlik Replicate
-
-      .. include:: /includes/fundamentals/cdc/qlik.rst
 
 .. _cdc-create-your-own:
 
