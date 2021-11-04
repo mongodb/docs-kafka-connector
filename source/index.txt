@@ -13,9 +13,7 @@ MongoDB Kafka Connector
    :maxdepth: 1
 
    What's New </whats-new>
-   Quick Start </quick-start>
    Introduction </introduction>
-   Tutorials </tutorials>
    Sink Connector </sink-connector>
    Source Connector </source-connector>
    Security and Authentication </security-and-authentication>
@@ -37,9 +35,7 @@ examples to help you complete your implementation in the following
 sections:
 
 - :doc:`What's New </whats-new>`
-- :doc:`Quick Start </quick-start>`
 - :doc:`Introduction </introduction>`
-- :doc:`Tutorials </tutorials>`
 - :doc:`Sink Connector </sink-connector>`
 - :doc:`Source Connector </source-connector>`
 - :doc:`Security and Authentication </security-and-authentication>`

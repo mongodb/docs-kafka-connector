@@ -36,9 +36,6 @@ CDC events corresponding to changes in the datastores.
    change streams, see
    :doc:`the {+mkc+} guide on Change Streams </source-connector/fundamentals/change-streams>`.
 
-If you would like to view a tutorial demonstrating how to replicate data, see the 
-:doc:`Replicate Data With a Change Data Capture Handler tutorial </tutorials/replicate-with-cdc>`.
-
 Specify a CDC Handler
 ---------------------
 
