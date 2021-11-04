@@ -13,8 +13,8 @@ MongoDB Namespace Mapping Configuration Properties
 Overview
 --------
 
-Use the following configuration settings to specify which MongoDB database
-and collection that your sink connector writes data to. 
+Use the following configuration settings to specify to which MongoDB database
+and collection your sink connector writes data. 
 
 .. include:: /includes/sink-config-link.rst
 
