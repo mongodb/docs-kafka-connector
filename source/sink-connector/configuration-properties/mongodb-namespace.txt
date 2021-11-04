@@ -14,8 +14,7 @@ Overview
 --------
 
 Use the following configuration settings to specify which MongoDB database
-and collection that your sink connector writes data to. You can use the
-default ``DefaultNamespaceMapper`` or specify a custom class.
+and collection that your sink connector writes data to. 
 
 .. include:: /includes/sink-config-link.rst
 
@@ -28,23 +27,6 @@ Settings
 
    * - Name
      - Description
-
-   * - | **namespace.mapper**
-     - | **Type:** string
-       |
-       | **Description:**
-       | The fully-qualified class name of the class that specifies which
-         database or collection in which to sink the data. The default
-         ``DefaultNamespaceMapper`` uses values specified in the
-         ``database`` and ``collection`` properties.
-
-       | **Default**:
-
-       .. code-block:: none
-
-          com.mongodb.kafka.connect.sink.namespace.mapping.DefaultNamespaceMapper
-
-       | **Accepted Values**: A fully qualified Java class name of a class that implements the ``NamespaceMapper`` interface.
 
    * - **database**
      - | *Required*
