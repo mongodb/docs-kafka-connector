@@ -22,3 +22,6 @@ raw: kafka-connector/ -> ${base}/current/
 [*-v1.5]: kafka-connector/${version}/tutorials/migrate-time-series/ -> ${base}/${version}/
 [*-v1.5]: kafka-connector/${version}/sink-connector/configuration-properties/time-series/ -> ${base}/${version}/
 
+[*-v1.3]: kafka-connector/${version}/quick-start/ -> ${base}/${version}/
+[*-v1.3]: kafka-connector/${version}/tutorials/replicate-with-cdc/ -> ${base}/${version}/
+[*-v1.3]: kafka-connector/${version}/tutorials/migrate-time-series/ -> ${base}/${version}/

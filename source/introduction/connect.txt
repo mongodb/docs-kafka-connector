@@ -58,7 +58,7 @@ to interact with MongoDB.
 .. important:: Driver Version
 
    Version {+connector_version+} of the {+mkc+} uses version
-   {+connector_driver_version+} of the MongoDB Java driver.
+   3.11 or 3.12 of the MongoDB Java driver.
 
 To learn what connection URI options are available in the {+mkc+}, see
 `the MongoDB Java driver Connection guide <{+connector_driver_url_base+}fundamentals/connection/#connection-options>`__.
