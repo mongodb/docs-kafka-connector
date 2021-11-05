@@ -63,8 +63,8 @@ settings for a topic named ``topicA``:
    topic.override.topicA.collection=collectionA
    topic.override.topicA.max.batch.size=100
    topic.override.topicA.document.id.strategy=com.mongodb.kafka.connect.sink.processor.id.strategy.UuidStrategy
-   topic.override.topicA.post.processor.chain=com.mongodb.kafka.connect.sink.processor.DocumentIdAdder,com.mongodb.kafka.connect.sink.processor.BlockListValueProjector
-   topic.override.topicA.value.projection.type=BlockList
+   topic.override.topicA.post.processor.chain=com.mongodb.kafka.connect.sink.processor.DocumentIdAdder,com.mongodb.kafka.connect.sink.processor.BlackListValueProjector
+   topic.override.topicA.value.projection.type=blacklist
    topic.override.topicA.value.projection.list=k2,k4
 
 After applying these configuration settings, the sink connector performs
@@ -75,8 +75,8 @@ the following for data consumed from ``topicA``:
 - Generate a UUID value for each new document and write it to the ``_id``
   field.
 - Omit fields ``k2`` and ``k4`` from the value projection using the
-  ``BlockList`` projection type.
+  ``blacklist`` projection type.
 
 
-For an example of how to configure the Block List Projector, see the
-:ref:`Post Processors <sink-blocklist-projector-example>` guide.
+For an example of how to configure the Black List Projector, see the
+:ref:`Post Processors <sink-blacklist-projector-example>` guide.

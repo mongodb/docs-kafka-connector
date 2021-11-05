@@ -70,11 +70,11 @@ first position of the chain if you do not otherwise include it.
 
 The following example setting specifies that the connector should run the
 ``KafkaMetaAdder`` post processor first and then the
-``AllowListValueProjector`` post processor on the output.
+``WhiteListValueProjector`` post processor on the output.
 
 .. code-block:: properties
 
-   post.processor.chain=com.mongodb.kafka.connect.sink.processor.KafkaMetaAdder,com.mongodb.kafka.connect.sink.processor.AllowListValueProjector
+   post.processor.chain=com.mongodb.kafka.connect.sink.processor.KafkaMetaAdder,com.mongodb.kafka.connect.sink.processor.WhiteListValueProjector
 
 .. _sink-post-processors-prebuilt-list:
 
@@ -105,49 +105,49 @@ MongoDB Kafka Sink Connector.
          :ref:`Configure the Document Id Adder Post Processor <sink-post-processors-document-id-adder>`
          section.
 
-   * - | **BlockListKeyProjector**
+   * - | **BlackListKeyProjector**
      - | **Full Path:**
 
        .. code-block:: none
 
-          com.mongodb.kafka.connect.sink.processor.BlockListKeyProjector
+          com.mongodb.kafka.connect.sink.processor.BlackListKeyProjector
 
        | Removes matching key fields from the sink record.
        | For more information on configuration, see the
-         :ref:`Allow List and Block List Examples <sink-allowlist-blocklist-examples>`.
+         :ref:`White List and Black List Examples <sink-whitelist-blacklist-examples>`.
 
-   * - | **BlockListValueProjector**
+   * - | **BlackListValueProjector**
      - | **Full Path:**
 
        .. code-block:: none
 
-          com.mongodb.kafka.connect.sink.processor.BlockListValueProjector
+          com.mongodb.kafka.connect.sink.processor.BlackListValueProjector
 
        | Removes matching value fields from the sink record.
        | For more information on configuration, see the
-         :ref:`Allow List and Block List Examples <sink-allowlist-blocklist-examples>`.
+         :ref:`White List and Black List Examples <sink-whitelist-blacklist-examples>`.
 
-   * - | **AllowListKeyProjector**
+   * - | **WhiteListKeyProjector**
      - | **Full Path:**
 
        .. code-block:: none
 
-          com.mongodb.kafka.connect.sink.processor.AllowListKeyProjector
+          com.mongodb.kafka.connect.sink.processor.WhiteListKeyProjector
 
        | Includes only matching key fields from the sink record.
        | For more information on configuration, see the
-         :ref:`Allow List and Block List Examples <sink-allowlist-blocklist-examples>`.
+         :ref:`White List and Black List Examples <sink-whitelist-blacklist-examples>`.
 
-   * - | **AllowListValueProjector**
+   * - | **WhiteListValueProjector**
      - | **Full Path:**
 
        .. code-block:: none
 
-          com.mongodb.kafka.connect.sink.processor.AllowListValueProjector``
+          com.mongodb.kafka.connect.sink.processor.WhiteListValueProjector``
 
        | Includes only matching value fields from the sink record.
        | For more information on configuration, see the
-         :ref:`Allow List and Block List Examples <sink-allowlist-blocklist-examples>`.
+         :ref:`White List and Black List Examples <sink-whitelist-blacklist-examples>`.
 
    * - | **KafkaMetaAdder**
      - | **Full Path:**
@@ -270,7 +270,7 @@ configure the ``DocumentIdAdder`` post processor:
 
           com.mongodb.kafka.connect.sink.processor.id.strategy.PartialKeyStrategy
 
-       | Uses a block list or allow list projection of the sink document key
+       | Uses a black list or white list projection of the sink document key
          structure.
        | Defaults to a blank document if no key exists.
 
@@ -281,31 +281,9 @@ configure the ``DocumentIdAdder`` post processor:
 
           com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy
 
-       | Uses a block list or allow list projection of the sink document
+       | Uses a black list or white list projection of the sink document
          value structure.
        | Defaults to a blank document if no value exists.
-
-   * - | **UuidProvidedInKeyStrategy**
-     - | **Full Path:**
-
-       .. code-block:: none
-
-          com.mongodb.kafka.connect.sink.processor.id.strategy.UuidInKeyStrategy
-
-       | Converts the ``_id`` key field to a UUID. The value must be either a
-         string or binary type and must conform to the
-         `UUID format <https://en.wikipedia.org/wiki/Universally_unique_identifier#Format>`__.
-
-   * - | **UuidProvidedInValueStrategy**
-     - | **Full Path:**
-
-       .. code-block:: none
-
-          com.mongodb.kafka.connect.sink.processor.id.strategy.UuidInValueStrategy
-
-       | Converts the ``_id`` value field to a UUID. The value must be either a
-         string or binary type and must conform to the
-         `UUID format <https://en.wikipedia.org/wiki/Universally_unique_identifier#Format>`__.
 
    * - | **UuidStrategy**
      - | **Full Path:**
@@ -354,22 +332,22 @@ Post Processor Examples
 This section shows examples of configuration and sample output of the
 following types of post processors:
 
-- :ref:`Allow List and Block List <sink-allowlist-blocklist-examples>`
+- :ref:`White List and Black List <sink-whitelist-blacklist-examples>`
 - :ref:`Projection Wildcard Pattern Matching <sink-projection-wildcard-examples>`
 - :ref:`Field Renaming <sink-field-renamer-examples>`
 
-.. _sink-allowlist-blocklist-examples:
+.. _sink-whitelist-blacklist-examples:
 
-Allow List and Block List Examples
+White List and Black List Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **allow list** and **block list** projector post processors determine which
+The **white list** and **black list** projector post processors determine which
 fields to include and exclude from the output.
 
-When you use the **allow list** projector, the post processor only outputs data
+When you use the **white list** projector, the post processor only outputs data
 from the fields that you specify.
 
-When you use the **block list** projector, the post process only omits data
+When you use the **black list** projector, the post process only omits data
 from the fields that you specify.
 
 .. note::
@@ -385,7 +363,7 @@ sink document.
 See the following sections for example projector configurations and
 output.
 
-Allow List Projector Example
+White List Projector Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Suppose your Kafka record value documents resembled the following user
@@ -407,14 +385,14 @@ profile data:
      ]
    }
 
-You can configure the ``AllowList`` value projector to store select data
+You can configure the ``WhiteList`` value projector to store select data
 such as the "name", "address.city", and "hobbies" fields from your value
 documents using the following settings:
 
 .. code-block:: properties
 
-   post.processor.chain=com.mongodb.kafka.connect.sink.processor.AllowListValueProjector
-   value.projection.type=AllowList
+   post.processor.chain=com.mongodb.kafka.connect.sink.processor.WhiteListValueProjector
+   value.projection.type=whitelist
    value.projection.list=name,address.city,hobbies
 
 After the post processor applies the projection, it outputs the following
@@ -434,9 +412,9 @@ record:
      ]
    }
 
-.. _sink-blocklist-projector-example:
+.. _sink-blacklist-projector-example:
 
-Block List Projector Example
+Black List Projector Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Suppose your Kafka record key documents resembled the following user
@@ -458,14 +436,14 @@ identification data:
      }
    }
 
-You can configure the ``BlockList`` key projector to omit the "authToken"
+You can configure the ``BlackList`` key projector to omit the "authToken"
 and "registration.source" fields before storing the data with the
 following settings:
 
 .. code-block:: properties
 
-   post.processor.chain=com.mongodb.kafka.connect.sink.processor.BlockListKeyProjector
-   key.projection.type=BlockList
+   post.processor.chain=com.mongodb.kafka.connect.sink.processor.BlackListKeyProjector
+   key.projection.type=BlackList
    key.projection.list=authToken,registration.source
 
 After the post processor applies the projection, it outputs the following
@@ -502,7 +480,7 @@ match wildcard patterns to match field names.
    * - ``**``
      - Matches any characters in the current level and all nested levels.
 
-For the allow list and block list wildcard pattern matching examples in
+For the white list and black list wildcard pattern matching examples in
 this section, refer to the following value document that contains weather
 measurements:
 
@@ -537,7 +515,7 @@ measurements:
      }
    }
 
-Allow List Wildcard Examples
+White List Wildcard Examples
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can use the ``*`` wildcard to match multiple field names. The following
@@ -549,11 +527,11 @@ example configuration matches the following fields:
 
 .. code-block:: properties
 
-   post.processor.chain=com.mongodb.kafka.connect.sink.processor.AllowListValueProjector
-   value.projection.type=AllowList
+   post.processor.chain=com.mongodb.kafka.connect.sink.processor.WhiteListValueProjector
+   value.projection.type=whitelist
    value.projection.list=city,wind_speed*.average
 
-After the post processor applies the allow list projection, it outputs the
+After the post processor applies the white list projection, it outputs the
 following record:
 
 .. code-block:: json
@@ -576,8 +554,8 @@ named "low".
 
 .. code-block:: properties
 
-   post.processor.chain=com.mongodb.kafka.connect.sink.processor.AllowListValueProjector
-   value.projection.type=AllowList
+   post.processor.chain=com.mongodb.kafka.connect.sink.processor.WhiteListValueProjector
+   value.projection.type=whitelist
    value.projection.list=**.low
 
 The post processor that applies the projection outputs the following record:
@@ -600,16 +578,16 @@ The post processor that applies the projection outputs the following record:
      }
    }
 
-Block List Wildcard Example
+Black List Wildcard Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can use the wildcard patterns to match fields at a specific document
-level as shown in the following block list configuration example:
+level as shown in the following black list configuration example:
 
 .. code-block:: properties
 
-   post.processor.chain=com.mongodb.kafka.connect.sink.processor.BlockListValueProjector
-   value.projection.type=BlockList
+   post.processor.chain=com.mongodb.kafka.connect.sink.processor.BlackListValueProjector
+   value.projection.type=BlackList
    value.projection.list=*.*.temperature
 
 .. code-block:: json

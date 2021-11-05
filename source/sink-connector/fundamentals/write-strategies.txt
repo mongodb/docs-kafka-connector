@@ -58,10 +58,8 @@ Specify a Business Key
 ~~~~~~~~~~~~~~~~~~~~~~
 
 A business key is a value composed of one or more fields in your sink record that identifies
-it as unique. The following write model strategies require a business key:
-
-- ``ReplaceOneBusinessKeyStrategy``
-- ``UpdateOneBusinessKeyTimestampStrategy``
+it as unique. The ``ReplaceOneBusinessKeyStrategy`` write model strategy
+requires a business key.
 
 Your sink connector uses the ``_id`` field of your sink record to retrieve
 your business key. To specify a business key, you must set the ``_id`` field of
@@ -73,7 +71,7 @@ You can set the ``_id`` field in your sink record like this:
 
    document.id.strategy=com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy
    document.id.strategy.partial.value.projection.list=<comma separate list of fields>
-   document.id.strategy.partial.value.projection.type=AllowList
+   document.id.strategy.partial.value.projection.type=whitelist
 
 .. important:: Unique Index
    
@@ -195,7 +193,7 @@ with the following configuration:
 
    document.id.strategy=com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy
    document.id.strategy.partial.value.projection.list=color,taste
-   document.id.strategy.partial.value.projection.type=AllowList
+   document.id.strategy.partial.value.projection.type=whitelist
    writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy
 
 Assume your sink connector receives the preceding sample message. After your
@@ -246,7 +244,7 @@ Your custom write model strategy is a Java class that implements the
 ``WriteModelStrategy`` interface and overrides the ``createWriteModel()`` method.
 
 To learn more, see the
-:github:`source code for the WriteModelStrategy interface <mongodb/mongo-kafka/tree/r1.2.0/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/WriteModelStrategy.java>`.
+:github:`source code for the WriteModelStrategy interface <mongodb/mongo-kafka/tree/r1.1.0/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/WriteModelStrategy.java>`.
 
 Sample Write Model Strategy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

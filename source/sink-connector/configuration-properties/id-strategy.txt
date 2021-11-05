@@ -42,29 +42,6 @@ Settings
 
        | **Accepted Values**: An empty string or a fully qualified Java class name
 
-   * - | **document.id.strategy.overwrite.existing**
-     - | **Type:** boolean
-       |
-       | **Description:**
-       | Whether the connector should overwrite existing values in the ``_id``
-         field when it applies the strategy defined by the
-         ``document.id.strategy`` property.
-       |
-       | **Default**: ``false``
-       | **Accepted Values**: ``true`` or ``false``
-
-   * - | **document.id.strategy.uuid.format**
-     - | **Type:** string
-       |
-       | **Description:**
-       | Whether the connector should output the UUID in the ``_id`` field
-         in string format or in
-         `BsonBinary <https://mongodb.github.io/mongo-java-driver/3.11/javadoc/org/bson/BsonBinary.html>`__
-         format.
-       |
-       | **Default**: ``string``
-       | **Accepted Values**: ``string`` or ``binary``
-
    * - | **delete.on.null.values**
      - | **Type:** boolean
        |

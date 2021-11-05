@@ -12,61 +12,8 @@ What's New
 
 Learn what's new by version:
 
-* :ref:`Version 1.2 <kafka-connector-whats-new-1.2>`
 * :ref:`Version 1.1 <kafka-connector-whats-new-1.1>`
 * :ref:`Version 1.0 <kafka-connector-whats-new-1.0>`
-
-.. _kafka-connector-whats-new-1.2:
-
-What's New in 1.2
------------------
-
-Sink Connector
-~~~~~~~~~~~~~~
-
-.. important::
-
-   We deprecated the following post processors:
-
-   - ``BlacklistKeyProjector``
-   - ``BlacklistValueProjector``
-   - ``WhitelistKeyProjector``
-   - ``WhitelistValueProjector``
-
-   If you are using one of these post processors, use the respective one
-   instead for future compatibility:
-
-   - ``BlockListKeyProjector``
-   - ``BlockListValueProjector``,
-   - ``AllowListKeyProjector``
-   - ``AllowListValueProjector``
-
-- Added configurations for the following properties:
-
-  - ``document.id.strategy.overwrite.existing``
-  - ``UuidStrategy`` output types
-  - ``document.id.strategy.partial.value.projection.type``
-  - ``document.id.strategy.partial.value.projection.list``
-  - ``document.id.strategy.partial.key.projection.type``
-  - ``document.id.strategy.partial.key.projection.list``
-  - ``UuidProvidedInKeyStrategy``
-  - ``UuidProvidedInValueStrategy``
-
-- Added the ``UpdateOneBusinessKeyTimestampStrategy`` post processor
-- Added built-in support for parallelism and scalable data copying by
-  assigning topic partitions to tasks
-
-Source Connector
-~~~~~~~~~~~~~~~~
-
-- Improved the error messaging for missing resume tokens
-
-Bug Fixes
-~~~~~~~~~
-
-- Removed failures with the ``MongoCopyDataManager`` when the source database
-  does not exist
-- Fixed the copying the existing resumability error in the Source Connector
 
 .. _kafka-connector-whats-new-1.1:
 
