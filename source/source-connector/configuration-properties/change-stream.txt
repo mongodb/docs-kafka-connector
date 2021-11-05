@@ -45,7 +45,6 @@ Settings
        .. tip:: Additional Examples
 
           - :ref:`<source-usage-example-custom-pipeline>`
-          - :ref:`<source-usage-example-multiple-sources>`
 
        | **Default**: ``[]``
        | **Accepted Values**: Valid aggregation pipeline stage

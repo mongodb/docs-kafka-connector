@@ -14,7 +14,7 @@ Overview
 --------
 
 Use the following configuration settings to specify to which MongoDB database
-and collection your sink connector writes data. 
+and collection your sink connector writes data.
 
 .. include:: /includes/sink-config-link.rst
 

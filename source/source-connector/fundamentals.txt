@@ -9,10 +9,8 @@ Fundamentals
    :maxdepth: 1
 
    Change Streams </source-connector/fundamentals/change-streams>
-   Apply Schemas </source-connector/fundamentals/specify-schema>
 
 Read the following sections to learn how {+source-connector+} features work and
 how to configure them:
 
 - :doc:`Receive Real-time Updates on Data Changes in MongoDB </source-connector/fundamentals/change-streams>`
-- :doc:`Apply Schemas to Documents </source-connector/fundamentals/specify-schema>`

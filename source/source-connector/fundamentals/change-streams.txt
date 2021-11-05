@@ -70,7 +70,6 @@ To view examples that use an aggregation pipeline to modify a change stream,
 see the following pages:
 
 - :ref:`<source-usage-example-custom-pipeline>` Usage Example
-- :ref:`<source-usage-example-copy-existing-data>` Usage Example
 
 .. _source-connector-fundamentals-change-event:
 
