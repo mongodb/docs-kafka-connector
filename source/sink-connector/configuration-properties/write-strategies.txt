@@ -97,12 +97,3 @@ Strategies
 
        | To see an example showing how to use this strategy, see our :ref:`guide on write model strategies <kafka-sink-write-model-time-example>`.
 
-   * - | **UpdateOneBusinessKeyTimestampStrategy**
-       | 
-     - | **Description:**
-       | Add ``_insertedTS`` (inserted timestamp) and ``_modifiedTS`` (modified timestamp) fields into documents that match a business key.
-       | Apply the following configuration to your sink connector to specify this setting: 
-       
-       .. code-block:: properties
-           
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneBusinessKeyTimestampStrategy

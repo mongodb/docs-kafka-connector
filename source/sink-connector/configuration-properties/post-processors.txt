@@ -98,7 +98,7 @@ Settings
        | The key projection type the connector should use.
        |
        | **Default**: ``none``
-       | **Accepted Values**:  ``none``, ``BlockList``, or ``AllowList`` (*Deprecated: blacklist, whitelist*)
+       | **Accepted Values**:  ``none``, ``blacklist``, or ``whitelist``
 
    * - | **value.projection.list**
      - | **Type:** string
@@ -117,7 +117,7 @@ Settings
        | The type of value projection the connector should use.
        |
        | **Default**: ``none``
-       | **Accepted Values**: ``none``, ``BlockList``, or ``AllowList`` (*Deprecated: blacklist, whitelist*)
+       | **Accepted Values**: ``none``, ``blacklist``, or ``whitelist``
 
    * - | **writemodel.strategy**
      - | **Type:** string
