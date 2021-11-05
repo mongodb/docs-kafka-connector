@@ -1,7 +1,7 @@
 name = "kafka-connector"
 title = "MongoDB Kafka Connector"
 intersphinx = ["https://docs.mongodb.com/manual/objects.inv"]
-toc_landing_pages = ["/introduction", "/tutorials", "/sink-connector", "/source-connector", "/sink-connector/configuration-properties", "/source-connector/configuration-properties", "/sink-connector/fundamentals", "/source-connector/fundamentals", "/source-connector/usage-examples", "/security-and-authentication", "/troubleshooting"]
+toc_landing_pages = ["/introduction", "/sink-connector", "/source-connector", "/sink-connector/configuration-properties", "/source-connector/configuration-properties", "/sink-connector/fundamentals", "/source-connector/fundamentals", "/source-connector/usage-examples", "/security-and-authentication", "/troubleshooting"]
 
 [constants]
 mkc = "MongoDB Kafka Connector"
@@ -11,9 +11,7 @@ kc = "Kafka Connect"
 avro = "Apache Avro"
 avro-short = "Avro"
 kafka-connect = "Confluent Kafka Connect"
-connector_version="1.6"
-connector_driver_version="4.3"
+connector_version="1.3"
 sink-connector="MongoDB Kafka sink connector"
 source-connector="MongoDB Kafka source connector"
-connector_driver_url_base="https://docs.mongodb.com/drivers/java/sync/v{+connector_driver_version+}/"
 pipeline-size = "2.4 GB"

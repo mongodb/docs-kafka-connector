@@ -36,9 +36,6 @@ CDC events corresponding to changes in the datastores.
    change streams, see
    :doc:`the {+mkc+} guide on Change Streams </source-connector/fundamentals/change-streams>`.
 
-If you would like to view a tutorial demonstrating how to replicate data, see the 
-:doc:`Replicate Data With a Change Data Capture Handler tutorial </tutorials/replicate-with-cdc>`.
-
 Specify a CDC Handler
 ---------------------
 
@@ -59,7 +56,6 @@ The {+mkc+} provides CDC handlers for the following CDC event producers:
 
 - MongoDB
 - `Debezium <https://debezium.io/>`__
-- `Qlik Replicate <https://www.qlik.com/us/products/qlik-replicate>`__
 
 Click the following tabs to learn how to configure
 CDC handlers for the preceding event producers:
@@ -75,11 +71,6 @@ CDC handlers for the preceding event producers:
       :tabid: Debezium
 
       .. include:: /includes/fundamentals/cdc/debezium.rst
-
-   .. tab::
-      :tabid: Qlik Replicate
-
-      .. include:: /includes/fundamentals/cdc/qlik.rst
 
 .. _cdc-create-your-own:
 
