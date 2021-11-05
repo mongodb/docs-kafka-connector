@@ -32,7 +32,7 @@ If you would rather learn how to modify the sink records your connector receives
 connector writes them to MongoDB, read the :ref:`<sink-fundamentals-post-processors>` guide.
 
 To learn more about bulk writes, see the MongoDB Java driver
-`tutorial on bulk writes <https://mongodb.github.io/mongo-java-driver/4.2/driver/tutorials/bulk-writes/>`__.
+`tutorial on bulk writes <https://mongodb.github.io/mongo-java-driver/4.1/driver/tutorials/bulk-writes/>`__.
 
 To learn how write model strategies work in the connector, see 
 :github:`this section of the {+mkc+} source code <mongodb/mongo-kafka/blob/master/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/InsertOneDefaultStrategy.java>`.
@@ -61,7 +61,6 @@ A business key is a value composed of one or more fields in your sink record tha
 it as unique. The following write model strategies require a business key:
 
 - ``ReplaceOneBusinessKeyStrategy``
-- ``DeleteOneBusinessKeyStrategy``
 - ``UpdateOneBusinessKeyTimestampStrategy``
 
 Your sink connector uses the ``_id`` field of your sink record to retrieve
@@ -94,7 +93,6 @@ write model strategies:
 
 - :ref:`UpdateOneTimestampsStrategy <kafka-sink-write-model-time-example>`
 - :ref:`ReplaceOneBusinessKeyStrategy <kafka-sink-write-model-replace-example>`
-- :ref:`DeleteOneBusinessKeyStrategy <kafka-sink-write-model-delete-example>`
 
 .. _kafka-sink-write-model-time-example:
 
@@ -235,53 +233,6 @@ like this:
      "taste": "good",
      "quantity": 2
    }
-
-.. _kafka-sink-write-model-delete-example:
-
-Delete One Business Key Strategy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your sink connector receives messages with the following structure and your
-:ref:`business key <kafka-sink-business-key>` is the ``name`` field:
-
-.. code-block:: json
-
-   {
-     "name": "Spot",
-     "animal": "dog",
-   }
-
-First, create a unique index on the ``name`` field in your target collection
-by running the following command in the MongoDB shell:
-
-.. code-block:: javascript
-
-   db.collection.createIndex({ "name": 1 }, { unique: true })
-
-Then, specify your business key and write model strategy in your sink connector
-with the following configuration:
-
-.. code-block:: properties
-
-   document.id.strategy=com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy
-   document.id.strategy.partial.value.projection.list=reservation_no
-   document.id.strategy.partial.value.projection.type=AllowList
-   writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneBusinessKeyStrategy
-
-Your MongoDB collection contains the following document:
-
-.. code-block:: json
-
-   {
-     "_id": ObjectId('5db0b81199b7fbcc89631d06'),
-     "name": "Spot",
-     "animal": "dog",
-     "friendly": true
-   }
-
-Now, assume your sink connector receives the preceding sample message. After processing
-the sample message, your sink connector has deleted the preceding sample document from
-your collection. 
 
 .. _kafka-sink-write-model-create-custom-strategy:
 

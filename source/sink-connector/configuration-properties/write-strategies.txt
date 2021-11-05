@@ -85,18 +85,6 @@ Strategies
 
           writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneDefaultStrategy
 
-   * - | **DeleteOneBusinessKeyStrategy**
-       | 
-     - | **Description:**
-       | Deletes at most one MongoDB document that matches a sink record by a business key.
-       | Apply the following configuration to your sink connector to specify this setting: 
-       
-       .. code-block:: properties
-           
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneBusinessKeyStrategy
-
-       | To see an example showing how to use this strategy, see our :ref:`guide on write model strategies <kafka-sink-write-model-delete-example>`.
-
    * - | **UpdateOneTimestampsStrategy**
        | 
      - | **Description:**
