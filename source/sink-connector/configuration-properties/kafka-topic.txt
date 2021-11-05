@@ -36,36 +36,3 @@ Settings
        | **Description:**
        | A list of Kafka topics that the sink connector watches.
 
-       .. note::
-
-          You can define either the ``topics`` or the ``topics.regex``
-          setting, but not both.
-
-       | **Accepted Values**: A comma-separated list of valid Kafka topics
-
-   * - | **topics.regex**
-     - | *Required*
-       |
-       | **Type:** string
-       |
-       | **Description:**
-       | A regular expression that matches the Kafka topics that the sink
-         connector watches.
-
-       .. example::
-
-          .. code-block:: properties
-
-             topics.regex=activity\\.\\w+\\.clicks$
-
-          This regex matches topic names such as "activity.landing.clicks"
-          and "activity.support.clicks". It does not match the topic names 
-          "activity.landing.views" and "activity.clicks".
-
-       .. note::
-
-          You can define either the ``topics`` or the ``topics.regex``
-          setting, but not both.
-
-       | **Accepted Values**: A valid regular expression pattern using ``java.util.regex.Pattern``.
-

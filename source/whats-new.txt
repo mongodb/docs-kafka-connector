@@ -10,36 +10,6 @@ What's New
    :depth: 1
    :class: singlecol
 
-Learn what's new by version:
-
-* :ref:`Version 1.1 <kafka-connector-whats-new-1.1>`
-* :ref:`Version 1.0 <kafka-connector-whats-new-1.0>`
-
-.. _kafka-connector-whats-new-1.1:
-
-What's New in 1.1
------------------
-
-Sink Connector
-~~~~~~~~~~~~~~
-
-- Added support for the ``topics.regex`` property
-- Updated to ignore unused source record key or value fields
-- Added validation for the connection using ``MongoSìnkConnector.validate``
-
-Source Connector
-~~~~~~~~~~~~~~~~
-
-- Added validation for the connection using ``MongoSourceConnector.validate``
-
-Bug Fixes
-~~~~~~~~~
-
-- Removed the ``"Unrecognized field: startAfter"`` error for resuming a change
-  stream in the Source Connector
-
-.. _kafka-connector-whats-new-1.0:
-
 What's New in 1.0
 -----------------
 
