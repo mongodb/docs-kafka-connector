@@ -15,7 +15,8 @@ raw: kafka-connector/ -> ${base}/current/
 [*-master]: kafka-connector/${version}/kafka-sink-cdc/ -> ${base}/${version}/sink-connector/fundamentals/change-data-capture/
 [*-master]: kafka-connector/${version}/kafka-sink-properties/ -> ${base}/${version}/sink-connector/configuration-properties/
 [*-master]: kafka-connector/${version}/kafka-sink-data-formats/ -> ${base}/${version}/introduction/data-formats/
-[*-master]: kafka-connector/${version}/kafka-sink-postprocessors/ -> ${base}/${version}/fundamentals/post-processors/
+[*-master]: kafka-connector/${version}/kafka-sink-postprocessors/ -> ${base}/${version}/sink-connector/fundamentals/post-processors/
+[*-master]: kafka-connector/${version}/fundamentals/post-processors/ -> ${base}/${version}/sink-connector/fundamentals/post-processors/
 [*-master]: kafka-connector/${version}/kafka-sink-time-series-example/ -> ${base}/${version}/tutorials/migrate-time-series/
 [*-master]: kafka-connector/${version}/kafka-connect-migration/ -> ${base}/${version}/
 
