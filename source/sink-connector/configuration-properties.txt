@@ -67,6 +67,9 @@ See the following categories for a list of related configuration properties:
    * - :doc:`Change Data Capture Properties </sink-connector/configuration-properties/cdc>`
      - Specify how the connector captures CDC events from a Kafka topic.
 
+   * - :doc:`All Properties </sink-connector/configuration-properties/all-properties>`
+     - View all preceding categories of configuration properties on one page.
+
 See the `Confluent Sink Connector documentation <https://docs.confluent.io/current/installation/configuration/connect/sink-connect-configs.html>`__
 for more information on these settings.
 
@@ -83,4 +86,4 @@ for more information on these settings.
    Write Model Strategy <sink-connector/configuration-properties/write-strategies>
    Topic Override <sink-connector/configuration-properties/topic-override>
    Change Data Capture <sink-connector/configuration-properties/cdc>
-
+   All Properties <sink-connector/configuration-properties/all-properties>
