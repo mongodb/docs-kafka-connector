@@ -15,13 +15,19 @@ Copy Existing Properties
 Overview
 --------
 
+.. _source-configuration-copy-existing-description-start:
+
 Use the following configuration settings to enable the copy existing
 feature which converts MongoDB collections into Change Stream events.
+
+.. _source-configuration-copy-existing-description-end:
 
 .. include:: /includes/source-config-link.rst
 
 Settings
 --------
+
+.. _source-configuration-copy-existing-table-start:
 
 .. list-table::
    :header-rows: 1
@@ -57,4 +63,6 @@ Settings
        | The size of the queue the connector can use when copying data.
        | **Default**: ``16000``
        | **Accepted Values**: An integer
+
+.. _source-configuration-copy-existing-table-end:
 
