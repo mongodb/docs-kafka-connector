@@ -78,20 +78,6 @@ To view only the options related to change data capture handlers, see the
    :start-after: sink-configuration-message-processing-table-start
    :end-before: sink-configuration-message-processing-table-end
 
-Connector Error Handling
-------------------------
-
-.. include:: /sink-connector/configuration-properties/error-handling.txt
-   :start-after: sink-configuration-error-handling-description-start
-   :end-before: sink-configuration-error-handling-description-end
-
-To view only the options related to handling errors, see the
-:ref:`<sink-configuration-error-handling>` page.
-
-.. include:: /sink-connector/configuration-properties/error-handling.txt
-   :start-after: sink-configuration-error-handling-table-start
-   :end-before: sink-configuration-error-handling-table-end
-
 Post Processors
 ---------------
 
