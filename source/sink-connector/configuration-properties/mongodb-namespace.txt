@@ -1,3 +1,5 @@
+.. _sink-configuration-namespace-mapping:
+
 ==================================================
 MongoDB Namespace Mapping Configuration Properties
 ==================================================
@@ -13,13 +15,19 @@ MongoDB Namespace Mapping Configuration Properties
 Overview
 --------
 
+.. _sink-configuration-namespace-mapping-description-start:
+
 Use the following configuration settings to specify to which MongoDB database
 and collection your sink connector writes data.
+
+.. _sink-configuration-namespace-mapping-description-end:
 
 .. include:: /includes/sink-config-link.rst
 
 Settings
 --------
+
+.. _sink-configuration-namespace-mapping-table-start:
 
 .. list-table::
    :header-rows: 1
@@ -51,3 +59,4 @@ Settings
        |
        | **Accepted Values**: A MongoDB collection name
 
+.. _sink-configuration-namespace-mapping-table-end:
