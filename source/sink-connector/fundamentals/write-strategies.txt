@@ -35,7 +35,7 @@ To learn more about bulk writes, see the MongoDB Java driver
 `tutorial on bulk writes <https://mongodb.github.io/mongo-java-driver/4.1/driver/tutorials/bulk-writes/>`__.
 
 To learn how write model strategies work in the connector, see 
-:github:`this section of the {+mkc+} source code <mongodb/mongo-kafka/blob/master/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/InsertOneDefaultStrategy.java>`.
+:github:`this section of the {+mkc+} source code <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/InsertOneDefaultStrategy.java>`.
 
 To learn more about strategies, see the 
 `Wikipedia article on the strategy pattern <https://en.wikipedia.org/wiki/Strategy_pattern>`__.
@@ -246,7 +246,7 @@ Your custom write model strategy is a Java class that implements the
 ``WriteModelStrategy`` interface and overrides the ``createWriteModel()`` method.
 
 To learn more, see the
-:github:`source code for the WriteModelStrategy interface <mongodb/mongo-kafka/blob/master/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/WriteModelStrategy.java>`.
+:github:`source code for the WriteModelStrategy interface <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/WriteModelStrategy.java>`.
 
 Sample Write Model Strategy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
