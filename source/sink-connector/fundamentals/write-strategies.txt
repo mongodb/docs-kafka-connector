@@ -21,8 +21,8 @@ MongoDB.
 You can change how your connector writes data to MongoDB for use cases
 including the following:
 
-- Insert documents instead of upserting them
 - Replace documents that match a filter other than the ``_id`` field
+- Delete documents that match a filter
 
 You can configure how your connector writes data to MongoDB by specifying a
 **write model strategy**. A write model strategy is a class that defines
@@ -38,7 +38,7 @@ To learn more about bulk writes, see the MongoDB Java driver guide on
 `Bulk Writes <https://mongodb.github.io/mongo-java-driver/4.1/driver/tutorials/bulk-writes/>`__.
 
 To see a write model strategy implementation, see the source code of the
-:github:`WriteModelStrategyHelper class <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/ReplaceOneDefaultStrategy.java>`.
+:github:`ReplaceOneDefaultStrategy class <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/ReplaceOneDefaultStrategy.java>`.
 
 How to Specify Write Model Strategies
 -------------------------------------
@@ -104,6 +104,7 @@ model strategies:
 
 - :ref:`UpdateOneTimestampsStrategy <kafka-sink-write-model-time-example>`
 - :ref:`ReplaceOneBusinessKeyStrategy <kafka-sink-write-model-replace-example>`
+- :ref:`DeleteOneBusinessKeyStrategy <kafka-sink-write-model-delete-example>`
 
 .. _kafka-sink-write-model-time-example:
 
@@ -270,6 +271,73 @@ without changing the business key fields:
 
 After the connector processes the sink data, it replaces the original sample
 document in MongoDB with the preceding one.
+
+.. _kafka-sink-write-model-delete-example:
+
+Delete One Business Key Strategy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can configure the connector to remove a document when it receives
+messages that match a business key using the Delete One Business Key
+strategy. To set a business key from multiple fields of a record and
+configure the connector to delete a document that contains a matching
+business key, perform the following tasks:
+
+#. Create a :manual:`unique index </core/index-unique>` in your MongoDB
+   collection that corresponds to your business key fields.
+#. Specify the ``PartialValueStrategy`` as the id strategy to identify the
+   fields that belong to the business key in the connector configuration.
+#. Specify the ``DeleteOneBusinessKeyStrategy`` write model strategy in the
+   connector configuration.
+
+Suppose you need to delete a calendar event from a specific year from
+a collection that contains a document that resembles the following:
+
+.. _delete-one-business-key-sample-document:
+
+.. code-block:: json
+   :copyable: false
+
+   {
+     "year": 2005,
+     "month": 3,
+     "day": 15,
+     "event": "Dentist Appointment"
+   }
+
+To implement the strategy, using ``year`` as the business key, first create
+a unique index on these fields in the MongoDB shell:
+
+.. code-block:: javascript
+
+   db.collection.createIndex({ "year": 1 }, { unique: true })
+
+Next, specify your business key and write model strategy in your
+configuration as follows:
+
+.. code-block:: properties
+
+   document.id.strategy=com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy
+   document.id.strategy.partial.value.projection.list=year
+   document.id.strategy.partial.value.projection.type=AllowList
+   writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneBusinessKeyStrategy
+
+If your connector processes a sink record that contains the business key
+``year``, it deletes the first document with a matching field value
+returned by MongoDB. Suppose your connector processes a sink record that
+contains the following value data:
+
+.. code-block:: json
+
+   {
+     "year": 2005,
+     ...
+   }
+
+When the connector processes the preceding record, it deletes the first
+document from the collection that contains a ``year`` field with a value of
+"2005" such as the original
+:ref:`"Dentist Appointment" sample document <delete-one-business-key-sample-document>`.
 
 .. _kafka-sink-write-model-create-custom-strategy:
 
