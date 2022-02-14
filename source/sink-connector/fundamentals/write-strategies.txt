@@ -21,8 +21,8 @@ MongoDB.
 You can change how your connector writes data to MongoDB for use cases
 including the following:
 
-- Insert documents instead of upserting them
 - Replace documents that match a filter other than the ``_id`` field
+- Delete documents that match a filter
 
 You can configure how your connector writes data to MongoDB by specifying a
 **write model strategy**. A write model strategy is a class that defines
@@ -39,10 +39,6 @@ To learn more about bulk writes, see the MongoDB Java driver guide on
 
 To see a write model strategy implementation, see the source code of the
 :github:`ReplaceOneDefaultStrategy </mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/ReplaceOneDefaultStrategy.java>`.
-
-
-
-InsertOneDefaultStrategy class <mongodb/mongo-kafka/blob/master/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/InsertOneDefaultStrategy.java>`.
 
 How to Specify Write Model Strategies
 -------------------------------------
