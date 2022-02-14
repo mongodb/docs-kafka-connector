@@ -35,10 +35,10 @@ connector writes them to MongoDB, read the guide on
 :ref:`Sink Connector Post Processors <sink-fundamentals-post-processors>`.
 
 To learn more about bulk writes, see the MongoDB Java driver guide on
-`Bulk Writes <{+connector_driver_url_base+}fundamentals/crud/write-operations/bulk/>`__.
+`Bulk Writes <https://mongodb.github.io/mongo-java-driver/4.1/driver/tutorials/bulk-writes/>`__.
 
 To see a write model strategy implementation, see the source code of the
-:github:`InsertOneDefaultStrategy class <mongodb/mongo-kafka/blob/master/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/InsertOneDefaultStrategy.java>`.
+:github:`WriteModelStrategyHelper class <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/sink/writemodel/strategy/ReplaceOneDefaultStrategy.java>`.
 
 How to Specify Write Model Strategies
 -------------------------------------
