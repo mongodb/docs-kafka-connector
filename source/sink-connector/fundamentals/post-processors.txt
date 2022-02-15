@@ -54,6 +54,11 @@ connector, or you can implement your own by extending the
 :github:`PostProcessor <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/sink/processor/PostProcessor.java>`
 class.
 
+.. important:: Post Processors and Change Data Capture (CDC) Handlers
+
+   You cannot apply a post processor to :ref:`CDC handler <sink-fundamentals-cdc-handler>`
+   event data.
+
 .. _sink-post-processors-specify:
 
 How to Specify Post Processors
