@@ -98,6 +98,8 @@ connector closes its change stream when you stop it.
 To view the available options to configure your source connector's change stream,
 see the :ref:`<source-configuration-change-stream>` page.
 
+.. _source-connector-fundamentals-change-streams-resume-tokens:
+
 Resume Tokens
 ~~~~~~~~~~~~~
 
