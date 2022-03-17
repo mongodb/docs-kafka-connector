@@ -19,6 +19,16 @@ Overview
 Learn how to recover from an invalid resume token
 in a MongoDB Kafka Connector source connector. 
 
+.. important:: Upgrade your Connector
+
+   {+source-connector+} versions 1.3 or later enable you to use the following
+   strategies to recover from an invalid resume token error:
+
+   - Temporarily tolerate errors
+   - Change your offset partition name
+  
+   To use these strategies, upgrade your connector to version 1.3 or later.
+
 Stack Trace
 ~~~~~~~~~~~
 
@@ -41,11 +51,11 @@ The following stack trace indicates that the source connector has an invalid res
 Cause
 -----
 
-When the ID of your source connector's resume token does not correspond to any
-entry in your MongoDB deployment's :ref:`oplog <replica-set-oplog>`, 
-your connector has no way to determine where to begin to process your
-MongoDB change stream. Click the following tabs to see scenarios 
-in which you can experience this issue:
+When your source connector's resume token does not correspond to
+any entry in your MongoDB deployment's :ref:`oplog <replica-set-oplog>`, your
+connector has no way to determine where to begin to process your MongoDB change
+stream. Click the following tabs to see scenarios in which you can experience
+this issue:
 
 .. tabs::
 
@@ -84,44 +94,73 @@ in which you can experience this issue:
 For more information on the oplog, see the 
 :ref:`MongoDB Manual <replica-set-oplog>`.
 
-For more information on change streams, see the
-:ref:`<kafka-source-change-streams>` guide.
+For more information on resume tokens, see the
+:ref:`<source-connector-fundamentals-change-streams-resume-tokens>` guide.
+
+Solutions
+---------
+
+You can recover from an invalid resume token by 
+:ref:`resetting stored offsets <troubleshoot-delete-stored-offsets>`.
+
+To have access to more strategies to recover from an invalid resume token,
+upgrade your connector to version 1.3 or later.
 
 .. _troubleshoot-delete-stored-offsets:
+.. _troubleshoot-reset-stored-offsets:
 
-Delete Stored Offsets
-~~~~~~~~~~~~~~~~~~~~~
+Reset Stored Offsets
+~~~~~~~~~~~~~~~~~~~~
 
-You can delete your Kafka Connect offset data, which contains your resume token,
-to allow your connector to resume processing your change stream. This strategy is
-more complex than the preceding strategy, but does not risk tolerating errors
-unrelated to the invalid resume token.
+You can reset your Kafka Connect offset data, which contains your resume token,
+to allow your connector to resume processing your change stream. To reset your
+stored offsets, perform the following actions:
+
+#. Delete your connector
+#. Change the name of your connector with the ``name`` property.
+#. Start your newly named connector and continue to process change stream events. 
+
+.. tip:: Naming your Connector 
+
+   When resetting stored offset data, consider using the following pattern to
+   rename your connector:
+
+   .. code-block:: properties
+
+      name=<existing source connector name>.<monotonically increasing number>
+
+   This pattern records the number of times you have changed the name of your
+   connector to reset stored offsets.
+
+   .. example:: 
+
+      Assume you named your source connector
+      ``"source-values"`` and you are resetting your offset data for the first time.
+      You would configure your connector name as follows:
+
+      .. code-block:: properties
+
+         name=source-values.1
+
+      The next time you reset your connector's offset data, configure
+      your connector as follows:
+
+      .. code-block:: properties
+
+         name=source-values.2
 
 .. As far as I can tell, there is not a straightforward way to tell at runtime
    which mode you are in. The Data Engineer Persona likely knows how they
    configured their pipeline, but if they do not know they may
    have to attempt both choices.
 
-The steps to perform this strategy depend on whether you are running Kafka Connect
-in distributed mode or standalone mode. Click on the tab corresponding to the
-mode of your deployment: 
+.. note:: Delete Stored Offsets for All Topics
 
-.. tabs::
+   If you have a standalone {+kc+} process running only one connector, you can
+   recover from an invalid resume token by deleting stored offsets for all
+   topics in your {+kc+} deployment. To delete stored offsets, perform the
+   following actions:
 
-   .. tab:: Distributed
-      :tabid: distributed
-
-      #. Delete the topic specified in the ``offset.storage.topic`` property of your
-         Kafka Connect deployment. For more information on deleting topics in Apache Kafka, see the 
-         `official Apache Kafka documentation <https://kafka.apache.org/081/documentation.html#basic_ops_add_topic>`__.
-
-      #. Restart your source connector and continue to process change stream events. 
-
-   .. tab:: Standalone
-      :tabid: standalone
-
-      #. Delete the file referenced by the ``offset.storage.file.filename`` property of
-         your Kafka Connect deployment.
-
-      #. Restart your source connector and continue to process change stream events. 
-
+   #. Delete the file referenced by the ``offset.storage.file.filename`` property of 
+      your Kafka Connect deployment.
+   #. Restart your source connector and continue to process change stream events. 
