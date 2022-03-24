@@ -18,9 +18,6 @@ connector_driver_url_base="https://mongodb.github.io/mongo-java-driver/{+connect
 connector_version_github_tag="r{+connector_version+}.{+connector_patch_version+}"
 sink-connector="MongoDB Kafka sink connector"
 source-connector="MongoDB Kafka source connector"
-<<<<<<< HEAD
-=======
 connector_driver_url_base="https://www.mongodb.com/docs/drivers/java/sync/v{+connector_driver_version+}/"
 connector_driver_api_doc_url_base="https://mongodb.github.io/mongo-java-driver/{+connector_driver_version+}/"
->>>>>>> 3e36982 (DOCSP-20363: subdomain consolidation (#237))
 pipeline-size = "2.4 GB"
