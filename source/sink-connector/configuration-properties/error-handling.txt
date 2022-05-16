@@ -41,26 +41,30 @@ Settings
        |
        | **Description:**
        | Whether to continue processing messages if the connector encounters
-         an error.
+         an error. Allows the connector to override  the ``errors.tolerance``
+         Kafka cluster setting.
        | When set to ``none``, the connector reports any error and
          blocks further processing of the rest of the messages.
        | When set to ``all``, the connector ignores any problematic messages.
+       | To learn more about error handling strategies, see the
+         :ref:`<kafka-sink-handle-errors>` page.
 
        .. note::
 
           This property overrides the `errors.tolerance <https://docs.confluent.io/platform/current/installation/configuration/connect/sink-connect-configs.html#errors-tolerance>`__
           property of the Connect Framework.
 
-       | **Default:** ``"none"``
+       | **Default:** Inherits the value from the ``errors.tolerance``
+         setting.
        | **Accepted Values**: ``"none"`` or ``"all"``
 
    * - | **mongo.errors.log.enable**
      - | **Type:** boolean
        |
        | **Description:**
-       | Whether the connector should write details of errors including 
+       | Whether the connector should write details of errors including
          failed operations to the log file. The connector classifies
-         errors as "tolerated" or "not tolerated" using the 
+         errors as "tolerated" or "not tolerated" using the
          ``errors.tolerance`` or ``mongo.errors.tolerance`` settings.
 
        | When set to ``true``, the connector logs both "tolerated" and
@@ -93,7 +97,7 @@ Settings
        | Name of topic to use as the dead letter queue. If blank, the
          connector does not send any invalid messages to the dead letter
          queue.
-       | For more information about the dead letter queue, see the 
+       | For more information about the dead letter queue, see the
          :ref:`Dead Letter Queue Configuration Example <sink-dead-letter-queue-configuration-example>`.
        |
        | **Default:** ``""``
@@ -105,7 +109,7 @@ Settings
        | **Description:**
        | Whether the connector should include context headers when it
          writes messages to the dead letter queue.
-       | For more information about the dead letter queue, see the 
+       | To learn more about the dead letter queue, see the
          :ref:`Dead Letter Queue Configuration Example <sink-dead-letter-queue-configuration-example>`.
        |
        | **Default:** ``false``
@@ -131,8 +135,8 @@ Settings
 Dead Letter Queue Configuration Example
 ---------------------------------------
 
-Apache Kafka version 2.6 added support for handling errant records. The 
-Kafka connector automatically sends messages that it cannot process to the 
+Apache Kafka version 2.6 added support for handling errant records. The
+Kafka connector automatically sends messages that it cannot process to the
 **dead letter queue**. Once on the dead letter queue, you can inspect the
 errant records, update them, and resubmit them for processing.
 
