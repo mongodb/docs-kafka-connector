@@ -211,7 +211,14 @@ Replicate Data with a CDC Handler
 
       .. code-block:: bash
 
-         kafkacat -b broker:29092 -C -t CDCTutorial.Source
+         kc CDCTutorial.Source
+
+      .. note::
+
+         The ``kc`` command is a custom script included in the tutorial
+         development environment that calls the ``kafkacat`` application
+         with options to connect to Kafka and format the output of the
+         specified topic.
 
       Once started, you should see the following output that indicates there
       is currently no data to read:
@@ -219,7 +226,7 @@ Replicate Data with a CDC Handler
       .. code-block:: none
          :copyable: false
 
-         Reached end of topic CDCTutorial.Source [0] at offset 0
+         % Reached end of topic CDCTutorial.Source [0] at offset 0
 
    .. step:: Write Data into the Source and Watch the Data Flow
 
@@ -299,52 +306,53 @@ Replicate Data with a CDC Handler
            }
          ]
 
-      .. optional::
+  .. step:: (Optional) Generate Additional Changes
 
-         Try removing documents from the ``CDCTutorial.Source`` namespace
-         by running the following command from the MongoDB shell:
 
-         .. code-block:: json
+     Try removing documents from the ``CDCTutorial.Source`` namespace
+     by running the following command from the MongoDB shell:
 
-            db.Source.deleteMany({})
+     .. code-block:: json
 
-         You should see the following topic message in your **Shell1**
-         window:
+        db.Source.deleteMany({})
 
-         .. code-block:: none
-            :copyable: false
+     You should see the following topic message in your **Shell1**
+     window:
 
-            {
-              "schema": { "type": "string", "optional": false },
-              "payload": {
-                "_id": { "_data": "8261...." },
-                ...
-                "operationType": "delete",
-                "clusterTime": { "$timestamp": { "t": 1631108282, "i": 1 } },
-                "ns": { "db": "CDCTutorial", "coll": "Source" },
-                "documentKey": { "_id": { "$oid": "6138..." } }
-              }
-            }
+     .. code-block:: none
+        :copyable: false
 
-         Run the following command to retrieve the current number of documents
-         in the collection:
+        {
+          "schema": { "type": "string", "optional": false },
+          "payload": {
+            "_id": { "_data": "8261...." },
+            ...
+            "operationType": "delete",
+            "clusterTime": { "$timestamp": { "t": 1631108282, "i": 1 } },
+            "ns": { "db": "CDCTutorial", "coll": "Source" },
+            "documentKey": { "_id": { "$oid": "6138..." } }
+          }
+        }
 
-         .. code-block:: json
+     Run the following command to retrieve the current number of documents
+     in the collection:
 
-            db.Destination.count()
+     .. code-block:: json
 
-         This returns the following output, indicating the collection is empty:
+        db.Destination.count()
 
-         .. code-block:: none
-            :copyable: false
+     This returns the following output, indicating the collection is empty:
 
-            0
+     .. code-block:: none
+        :copyable: false
 
-         Run the following command to exit the MongoDB shell:
+        0
 
-         .. code-block:: none
+     Run the following command to exit the MongoDB shell:
 
-            exit
+     .. code-block:: none
+
+        exit
 
 Summary
 -------
