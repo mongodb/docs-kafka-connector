@@ -17,11 +17,14 @@ Overview
 Follow this tutorial to learn how to use a
 *change data capture (CDC) handler** to replicate data with the {+mkc+}.
 A CDC handler is an application that translates CDC events into MongoDB
-write operations. Use a CDC handler when you need to reproduce changes in
-one datastore into another datastore.
+write operations. Use a CDC handler when you need to reproduce the changes
+in one datastore into another datastore.
 
-In this tutorial, you run a CDC handler to make two MongoDB collections
-contain the same documents.
+In this tutorial, you configure and run MongoDB Kafka source and sink
+connectors to make two MongoDB collections contain the same documents using
+CDC. The source connector writes change stream data from the original
+collection to a Kafka topic and the e sink connector writes the Kafka topic
+data to the target MongoDB collection.
 
 If you want to learn more about how CDC handlers work, see the
 :ref:`<sink-fundamentals-cdc-handler>` guide.
@@ -34,14 +37,54 @@ Replicate Data with a CDC Handler
 .. procedure::
    :style: connected
 
+   .. step:: Start Interactive Shells
+
+      Start two interactive shells on the Docker container in separate
+      windows. In the tutorial, you can use the shells to run and observe
+      different tasks.
+
+      Run the following command in the terminal to start an interactive shell
+      called **Shell1** in one terminal window:
+
+      .. code-block:: bash
+         :caption: Shell1
+         :copyable: true
+
+         docker run --rm --name Shell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+
+      Run the following command in the terminal to start an interactive shell
+      called **Shell2** in the other terminal window:
+
+      .. code-block:: bash
+         :caption: Shell2
+         :copyable: true
+
+         docker run --rm --name Shell2 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+
+      Arrange the two windows on your screen to keep both of them visible to
+      see real-time updates.
+
+      Use **Shell1** to configure your connectors and monitor your Kafka
+      topic. Use **Shell2** to perform write operations in MongoDB.
+
    .. step:: Configure the Source Connector
 
+      In **Shell1**, configure a source connector to read from the
+      ``CDCTutorial`` collection in the ``Source`` database in your MongoDB
+      replica set and write to the ``CDCTutorial.Source`` Kafka topic.
+
+      Create a configuration file called ``cdc-source.json`` using the
+      following command:
 
       .. code-block:: bash
 
          nano cdc-source.json
 
+      Paste the following configuration information into the file and save
+      your changes:
+
       .. code-block:: json
+         :copyable: true
 
          {
            "name": "mongo-cdc-source",
@@ -52,6 +95,9 @@ Replicate Data with a CDC Handler
              "collection": "Source"
            }
          }
+
+      Run the following command in **Shell1** to start the source connector
+      using the configuration file you created:
 
       .. code-block:: bash
 
@@ -68,11 +114,15 @@ Replicate Data with a CDC Handler
 
             curl -X POST -H "Content-Type: application/json" -d @cdc-source.json http://connect:8083/connectors -w "\n"
 
-
+      Run the following command in the shell to check the status of the
+      connectors:
 
       .. code-block:: bash
 
          status
+
+      If your source connector started successfully, you should see the
+      following output:
 
       .. code-block:: none
 
@@ -89,13 +139,21 @@ Replicate Data with a CDC Handler
          ]
          ...
 
-
-
    .. step:: Configure the Sink Connector
+
+      In **Shell1**, configure a sink connector to copy data from the
+      ``CDCTutorial.Source`` Kafka topic to the ``Destination`` collection in
+       the ``CDCTutorial`` MongoDB database.
+
+      Create a configuration file called ``cdc-sink.json`` using the
+      following command:
 
       .. code-block:: bash
 
          nano cdc-sink.json
+
+      Paste the following configuration information into the file and save
+      your changes:
 
       .. code-block:: json
 
@@ -112,21 +170,41 @@ Replicate Data with a CDC Handler
         }
 
 
+      Run the following command in the shell to start the sink connector
+      using the configuration file you created:
+
       .. code-block:: bash
 
          cx cdc-sink.json
 
+      Run the following command in the shell to check the status of the
+      connectors:
 
       .. code-block:: bash
 
          status
 
+      If your sink connector started successfully, you should see the
+      following output:
+
+      .. code-block:: none
+         :copyable: false
+
+         TODO: test and add output
+
    .. step:: Monitor the Kafka Topic
 
+      In **Shell1**, monitor the Kafka topic for incoming events. Run the
+      following command to start the ``kafkacat`` application which outputs
+      data published to the topic:
 
       .. code-block:: bash
+         :copyable: true
 
          kafkacat -b broker:29092 -C -t CDCTutorial.Source
+
+      Once started, you should see the following output that indicates there
+      is currently no data to read:
 
       .. code-block:: none
 
@@ -134,48 +212,128 @@ Replicate Data with a CDC Handler
 
    .. step:: Write Data into the Source and Watch the Data Flow
 
+      In **Shell2**, connect to MongoDB using ``mongosh``, the MongoDB
+      shell by running the following command:
+
       .. code-block:: bash
 
          mongosh "mongodb://mongo1"
 
+      After you connect successfully, you should see the following
+      MongoDB shell prompt:
+
+      .. code-block::
+         :copyable: false
+
+         rs0 [direct: primary] test>
+
+      At the prompt, type the following commands to insert a new document
+      into the ``CDCTutorial.Source`` MongoDB namespace:
+
       .. code-block:: json
 
          use CDCTutorial
-         db.Source.insert({proclaim: "Hello World!"});
+         db.Source.insert({ proclaim: "Hello World!" });
+
+      Once MongoDB completes the insert command, you should receive an
+      acknowledgment that resembles the following text:
+
+      .. code-block:: json
+         :copyable: false
+
+         {
+           acknowledged: true,
+           insertedId: ObjectId("600b38ad...")
+         }
+
+      The source connector picks up the change and publishes it to the
+      Kafka topic. You should see the following topic message in your
+      **Shell1** window:
+
+      .. code-block:: json
+         :copyable: false
+
+         {
+           "schema": { "type": "string", "optional": false },
+           "payload": {
+             "_id": { "_data": "8260...4" },
+             "operationType": "insert",
+             "clusterTime": { "$timestamp": { "t": 1611..., "i": 2 } },
+             "fullDocument": {
+               "_id": { "$oid": "600b38ad..." },
+               "proclaim": "Hello World!"
+             },
+             "ns": { "db": "CDCTutorial", "coll": "Source" },
+             "documentKey": { "_id": { "$oid": "600b38a...." } }
+           }
+         }
+
+      The sink connector picks up the Kafka message and sinks the data
+      into MongoDB. You can retrieve the document from the
+      ``CDCTutorial.Destination`` namespace in MongoDB by running the
+      following command in the MongoDB shell you started in **Shell2**:
 
       .. code-block:: json
 
          db.Destination.find()
 
-      .. code-block:: json
+      .. TODO: output of the find
 
-         db.Source.deleteMany({})
 
-      .. code-block:: none
+      .. optional::
 
-         {"schema":{"type":"string","optional":false},"payload":"{\"_id\":
-         {\"_data\": \"8261...\"},
-         ...
-         \"operationType\": \"delete\", \"clusterTime\": {\"$timestamp\": {\"t\":
-         1631..., \"i\": 1}}, \"ns\": {\"db\": \"CDCTutorial\", \"coll\":
-         \"Source\"}, \"documentKey\": {\"_id\": {\"$oid\":
-         \"6138...\"}}}"}
+         Try removing documents from the ``CDCTutorial.Source`` namespace
+         by running the following command from the MongoDB shell:
 
-      .. code-block:: json
-db.Destination.count()
+         .. code-block:: json
 
-      .. code-block:: none
+            db.Source.deleteMany({})
 
-         0
+         You should see the following topic message in your **Shell1**
+         window:
 
-      .. code-block:: none
+         .. code-block:: none
+            :copyable: false
 
-         exit
+            {
+              "schema": { "type": "string", "optional": false },
+              "payload": {
+                "_id": { "_data": "8261...." },
+                ...
+                "operationType": "delete",
+                "clusterTime": { "$timestamp": { "t": 1631108282, "i": 1 } },
+                "ns": { "db": "CDCTutorial", "coll": "Source" },
+                "documentKey": { "_id": { "$oid": "6138..." } }
+              }
+            }
 
+         Run the following command to retrieve the current number of documents
+         in the collection:
+
+         .. code-block:: json
+
+            db.Destination.count()
+
+         This returns the following output, indicating the collection is empty:
+
+         .. code-block:: none
+            :copyable: false
+
+            0
+
+         Run the following command to exit the MongoDB shell:
+
+         .. code-block:: none
+
+            exit
 
 Summary
 -------
 
+In this tutorial, you set up a source connector to capture changes to a
+MongoDB collection and send them to Apache Kafka. You also configured a
+sink connector with a MongoDB CDC Handler to move the data from Apache
+Kafka to a MongoDB collection.
 
 Learn More
 ----------
