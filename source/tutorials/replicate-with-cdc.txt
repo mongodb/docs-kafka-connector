@@ -1,3 +1,5 @@
+.. _kafka-tutorial-replicate-with-cdc:
+
 =================================================
 Replicate Data with a Change Data Capture Handler
 =================================================
