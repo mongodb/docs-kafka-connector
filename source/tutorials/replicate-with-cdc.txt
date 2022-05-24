@@ -24,7 +24,7 @@ in one datastore into another datastore.
 In this tutorial, you configure and run MongoDB Kafka source and sink
 connectors to make two MongoDB collections contain the same documents using
 CDC. The source connector writes change stream data from the original
-collection to a Kafka topic and the e sink connector writes the Kafka topic
+collection to a Kafka topic and the sink connector writes the Kafka topic
 data to the target MongoDB collection.
 
 If you want to learn more about how CDC handlers work, see the
