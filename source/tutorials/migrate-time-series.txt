@@ -1,12 +1,17 @@
 .. _tutorial-migrate-time-series:
+.. _kafka-tutorial-migrate-time-series:
 
 ==========================================================
 Migrate an Existing Collection to a Time Series Collection
 ==========================================================
 
-.. default-domain:: mongodb
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
 
-In this tutorial, you can learn how to convert an existing MongoDB
+Follow this tutorial to learn how to convert an existing MongoDB
 collection to a **time series collection** using the {+mkc+}.
 
 Time series collections efficiently store sequences of measurements
