@@ -201,8 +201,6 @@ Replicate Data with a CDC Handler
          ]
          ...
 
-         ...
-
    .. step:: Monitor the Kafka Topic
 
       In **Shell1**, monitor the Kafka topic for incoming events. Run the
