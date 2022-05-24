@@ -13,7 +13,6 @@ Replicate Data with a Change Data Capture Handler
 Overview
 --------
 
-
 Follow this tutorial to learn how to use a
 **change data capture (CDC) handler** to replicate data with the {+mkc+}.
 A CDC handler is an application that translates CDC events into MongoDB
@@ -47,7 +46,7 @@ Replicate Data with a CDC Handler
       called **Shell1** in one terminal window:
 
       .. code-block:: bash
-         :caption: Shell1
+         :caption: This command starts an interactive shell called Shell1
 
          docker run --rm --name Shell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
@@ -55,7 +54,7 @@ Replicate Data with a CDC Handler
       called **Shell2** in the other terminal window:
 
       .. code-block:: bash
-         :caption: Shell2
+         :caption: This command starts an interactive shell called Shell2
 
          docker run --rm --name Shell2 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
@@ -68,8 +67,8 @@ Replicate Data with a CDC Handler
    .. step:: Configure the Source Connector
 
       In **Shell1**, configure a source connector to read from the
-      ``CDCTutorial`` collection in the ``Source`` database in your MongoDB
-      replica set and write to the ``CDCTutorial.Source`` Kafka topic.
+      ``CDCTutorial.Source`` MongoDB namespace and write to the
+      ``CDCTutorial.Source`` Kafka topic.
 
       Create a configuration file called ``cdc-source.json`` using the
       following command:
@@ -122,6 +121,7 @@ Replicate Data with a CDC Handler
       following output:
 
       .. code-block:: none
+         :copyable: false
 
          Kafka topics:
          ...
@@ -139,8 +139,8 @@ Replicate Data with a CDC Handler
    .. step:: Configure the Sink Connector
 
       In **Shell1**, configure a sink connector to copy data from the
-      ``CDCTutorial.Source`` Kafka topic to the ``Destination`` collection in
-       the ``CDCTutorial`` MongoDB database.
+      ``CDCTutorial.Source`` Kafka topic to ``CDCTutorial.Destination``
+      MongoDB namespace.
 
       Create a configuration file called ``cdc-sink.json`` using the
       following command:
@@ -295,6 +295,7 @@ Replicate Data with a CDC Handler
 
          db.Destination.find()
 
+      You should see the following document returned as the result:
 
       .. code-block:: json
          :copyable: false
@@ -308,7 +309,6 @@ Replicate Data with a CDC Handler
 
   .. step:: (Optional) Generate Additional Changes
 
-
      Try removing documents from the ``CDCTutorial.Source`` namespace
      by running the following command from the MongoDB shell:
 
@@ -319,7 +319,7 @@ Replicate Data with a CDC Handler
      You should see the following topic message in your **Shell1**
      window:
 
-     .. code-block:: none
+     .. code-block:: json
         :copyable: false
 
         {
