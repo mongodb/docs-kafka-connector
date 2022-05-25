@@ -78,7 +78,7 @@ Migrate a Collection to a Time Series Collection
       This configuration instructs the connector to copy existing data from
       the ``PriceData`` MongoDB collection to the
       ``marketdata.Stocks.PriceData`` Kafka topic, and once complete, any
-       future data inserted in that collection.
+      future data inserted in that collection.
 
       Run the following command in the shell to start the source connector
       using the configuration file you created:
