@@ -110,7 +110,6 @@ Migrate a Collection to a Time Series Collection
       If your source connector started successfully, you should see the
       following output:
 
-
       TODO: check the output of status
 
       .. code-block:: none
@@ -204,12 +203,12 @@ Migrate a Collection to a Time Series Collection
    .. step:: Verify the Time Series Collection Data
 
       Once the sink connector completes processing the topic data, the
-      ``StockDataMigrate`` time series collection should contain all the 
-      market data from your ``PriceData`` collection. 
+      ``StockDataMigrate`` time series collection should contain all the
+      market data from your ``PriceData`` collection.
 
-      To view the data in MongoDB, run the following command to connect to 
+      To view the data in MongoDB, run the following command to connect to
       your replica set using ``mongosh``:
- 
+
       .. code-block:: shell
 
          mongosh "mongodb://mongo1"
@@ -219,22 +218,22 @@ Migrate a Collection to a Time Series Collection
 
       .. code-block:: json
 
-         use Stocks 
+         use Stocks
          db.StockDataMigrate.find()
 
-      You should see documents returned from the command that resemble the 
+      You should see documents returned from the command that resemble the
       following document:
 
       .. code-block:: javascript
          :copyable: false
 
-        {
-          tx_time: 2021-07-12T20:05:35.000Z,
-          symbol: 'WSV',
-          company_name: 'WORRIED SNAKEBITE VENTURES',
-          price: 21.22,
-          _id: ObjectId("...")
-        }
+         {
+           tx_time: 2021-07-12T20:05:35.000Z,
+           symbol: 'WSV',
+           company_name: 'WORRIED SNAKEBITE VENTURES',
+           price: 21.22,
+           _id: ObjectId("...")
+         }
 
 Summary
 -------
