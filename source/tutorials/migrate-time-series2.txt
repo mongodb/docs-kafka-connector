@@ -1,0 +1,144 @@
+==========================================================
+Migrate an Existing Collection to a Time Series Collection
+==========================================================
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
+
+Follow this tutorial to learn how to convert an existing MongoDB
+collection to a **time series collection** using the {+mkc+}.
+
+Time series collections efficiently store sequences of measurements
+over a period of time. Time series data consists of measurement data collected
+over time, metadata that describes the measurement, and the time of the
+measurement.
+
+To convert data from a MongoDB collection to a time series collection using
+the connector, you need to perform the following tasks:
+
+#. Identify the time field common to all documents in the collection.
+#. Configure a source connector to copy the existing collection data to a Kafka topic.
+#. Configure a sink connector to copy the Kafka topic data to the time series collection.
+
+In this tutorial, you perform the preceding tasks to migrate generated stock
+data from a collection to a time series collection. The time series collection
+stores price data more efficiently and retains the ability to analyze stock
+performance over time using aggregation operators.
+
+.. include:: /includes/tutorials/setup.rst
+
+.. procedure::
+   :style: connected
+
+   .. step:: Configure the Sink Connector
+
+      Configure a sink connector to read data from the Kafka topic and write
+      it to a time series collection named ``StockDataMigrate`` in a database
+      named ``Stocks``.
+
+      Create a sink configuration file called ``stock-sink.json`` with the
+      following command:
+
+      .. code-block:: bash
+
+         nano stock-sink.json
+
+      Paste the following configuration information into the file and save
+      your changes:
+
+      .. code-block:: json
+
+         {
+           "name": "mongo-sink-marketdata",
+           "config": {
+             "connector.class": "com.mongodb.kafka.connect.MongoSinkConnector",
+             "topics": "marketdata.Stocks.PriceData",
+             "connection.uri": "mongodb://mongo1",
+             "database": "Stocks",
+             "collection": "StockDataMigrate",
+             "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+             "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+             "timeseries.timefield": "tx_time",
+             "timeseries.timefield.auto.convert": "true",
+             "timeseries.timefield.auto.convert.date.format": "yyyy-MM-dd'T'HH:mm:ss'Z'"
+           }
+         }
+
+      .. tip::
+
+         The sink connector configuration above uses the time field date
+         format converter. Alternatively, you can use the ``TimestampConverter``
+         Single Message Transform (SMT) to convert the ``tx_time`` field from a
+         ``String`` to an ``ISODate``. When using the ``TimestampConverter`` SMT,
+         you must define a schema for the data in the Kafka topic.
+
+         For information on how to use the ``TimestampConverter`` SMT, see the
+         `TimestampConverter <https://docs.confluent.io/platform/current/connect/transforms/timestampconverter.html#timestampconverter>`__
+         Confluent documentation.
+
+      Run the following command in the shell to start the sink connector
+      using the configuration file you updated:
+
+      .. code-block:: bash
+
+         cx stock-sink.json
+
+      After your sink connector finishes processing the topic data, the
+      documents in the ``StockDataMigrate`` time series collection contain
+      the ``tx_time`` field with an ``ISODate`` type value.
+
+   .. step:: Verify the Time Series Collection Data
+
+      Once the sink connector completes processing the topic data, the
+      ``StockDataMigrate`` time series collection should contain all the
+      market data from your ``PriceData`` collection.
+
+      To view the data in MongoDB, run the following command to connect to
+      your replica set using ``mongosh``:
+
+      .. code-block:: shell
+
+         mongosh "mongodb://mongo1"
+
+      At the prompt, type the following commands to retrieve all the
+      documents in the ``Stocks.StockDataMigrate`` MongoDB namespace:
+
+      .. code-block:: json
+
+         use Stocks
+         db.StockDataMigrate.find()
+
+      You should see documents returned from the command that resemble the
+      following document:
+
+      .. code-block:: javascript
+         :copyable: false
+
+         {
+           tx_time: 2021-07-12T20:05:35.000Z,
+           symbol: 'WSV',
+           company_name: 'WORRIED SNAKEBITE VENTURES',
+           price: 21.22,
+           _id: ObjectId("...")
+         }
+
+Summary
+-------
+
+In this tutorial, you created a stock ticker data generator that periodically
+wrote data into a MongoDB collection.
+You configured a source connector to copy the data into a Kafka topic and
+configured a sink connector to write that data into a new MongoDB time
+series collection.
+
+Learn More
+----------
+
+Read the following resources to learn more about concepts mentioned in
+this tutorial:
+
+- :ref:`<sink-configuration-time-series>`
+- :manual:`Time Series Collections </core/timeseries-collections/>`
