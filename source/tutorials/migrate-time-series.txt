@@ -22,11 +22,9 @@ measurement.
 To convert data from a MongoDB collection to a time series collection using
 the connector, you need to perform the following tasks:
 
-1. Identify the time field common to all documents in the collection.
-#. Configure a source connector to copy the existing collection data to a
-   Kafka topic.
-#. Configure a sink connector to copy the Kafka topic data to the time series
-   collection.
+#. Identify the time field common to all documents in the collection.
+#. Configure a source connector to copy the existing collection data to a Kafka topic.
+#. Configure a sink connector to copy the Kafka topic data to the time series collection.
 
 In this tutorial, you perform the preceding tasks to migrate generated stock
 data from a collection to a time series collection. The time series collection
@@ -141,7 +139,7 @@ Migrate a Collection to a Time Series Collection
          The ``kc`` command is a helper script that outputs the content of
          a Kafka topic.
 
-      .. TODO: add summary of output
+      TODO: add summary of output
 
    .. step:: Configure the Sink Connector
 
@@ -243,7 +241,6 @@ wrote data into a MongoDB collection.
 You configured a source connector to copy the data into a Kafka topic and
 configured a sink connector to write that data into a new MongoDB time
 series collection.
-
 
 Learn More
 ----------
