@@ -23,13 +23,23 @@ To convert data from a MongoDB collection to a time series collection using
 the connector, you need to perform the following tasks:
 
 #. Identify the time field common to all documents in the collection.
-#. Configure a source connector to copy the existing collection data to a Kafka topic.
-#. Configure a sink connector to copy the Kafka topic data to the time series collection.
+#. Configure a source connector to copy the existing collection data to a
+   Kafka topic.
+#. Configure a sink connector to copy the Kafka topic data to the time series
+   collection.
 
-In this tutorial, you perform the preceding tasks to migrate generated stock
-data from a collection to a time series collection. The time series collection
-stores price data more efficiently and retains the ability to analyze stock
+In this tutorial, you perform these preceding tasks to migrate stock data
+from a collection to a time series collection. The time series collection
+stores the data more efficiently and retains the ability to analyze stock
 performance over time using aggregation operators.
+
+.. note:: Apple M1 incompatibility
+
+   This tutorial requires the time series collection feature introduced in
+   MongoDB version 5.0. If you are using a computer with an Apple M1 CPU, the
+   MongoDB Docker image does not currently build for any version after 4.x,
+   and therefore cannot run the complete tutorial. MongoDB developers are
+   currently working on resolving this issue.
 
 .. include:: /includes/tutorials/setup.rst
 
@@ -39,6 +49,27 @@ Migrate a Collection to a Time Series Collection
 .. procedure::
    :style: connected
 
+
+   .. step:: Generate Sample Data
+
+      Run the following command to start a Docker container that generates
+      a sample collection containing fabricated stock symbols and their prices
+      in your tutorial MongoDB replica set:
+
+      .. code-block:: bash
+
+         docker run --rm --network mongodb-kafka-base_localnet -it robwma/stockgenmongo:1.0 -c “mongodb://mongo1” -db Stocks -col PriceData
+
+      Once the data generator starts running, you should see the generated
+      data that resembles the following:
+
+      .. code-block:: bash
+
+         1 _id=528e9... MSP MASSIVE SUBMARINE PARTNERS traded at 31.08 2022-05-25 21:15:15
+         2 _id=528e9... RWH RESPONSIVE_WHOLESALER HOLDINGS traded at 18.42 2022-05-25 21:15:15
+         3 _id=528e9... FAV FUZZY ATTACK VENTURES traded at 31.08 2022-05-25 21:15:15
+         ...
+
    .. step:: Configure the Source Connector
 
       Create an interactive shell session on the tutorial Docker container
@@ -46,7 +77,7 @@ Migrate a Collection to a Time Series Collection
 
       .. code-block:: bash
 
-         docker run --rm --name Shell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+         docker run --rm --name TimeSeriesTutorial --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
       Create a source configuration file called ``stock-source.json`` with the
       following command:
@@ -108,8 +139,6 @@ Migrate a Collection to a Time Series Collection
       If your source connector started successfully, you should see the
       following output:
 
-      TODO: check the output of status
-
       .. code-block:: none
          :copyable: false
 
@@ -118,7 +147,7 @@ Migrate a Collection to a Time Series Collection
 
          The status of the connectors:
 
-         source  |  mongo-source-marketdata |  RUNNING  |  RUNNING  |  com.mongodb.kafka.connect.MongoSourceConnector
+         source  |  mongo-source-marketdata  |  RUNNING  |  RUNNING  |  com.mongodb.kafka.connect.MongoSourceConnector
 
          Currently configured connectors
 
@@ -132,20 +161,58 @@ Migrate a Collection to a Time Series Collection
 
       .. code-block::
 
-         kc marketdata.Stocks.PriceData
+         kafkacat -b broker:29092 -C -t marketdata.Stocks.PriceData
 
-      .. note::
+      The output should show topic data as it is published by the source
+      connector that resembles the following:
 
-         The ``kc`` command is a helper script that outputs the content of
-         a Kafka topic.
+      .. code-block:: none
 
-      TODO: add summary of output
+         {"schema":{ ... }, "payload": "{ "_id": { "$oid": "628e9..."}, "company_symbol": "MSP", "Company_name": "MASSIVE SUBMARINE PARTNERS", "price": 309.98, "tx_time": { "$date": 16535..." }"}
+
+      You can exit ``kafkacat`` by typing :kbd:`CTRL+C`.
 
    .. step:: Configure the Sink Connector
 
       Configure a sink connector to read data from the Kafka topic and write
       it to a time series collection named ``StockDataMigrate`` in a database
       named ``Stocks``.
+
+      Before configuring the sink connector, ensure the MongoDB deployment
+      compatibility is set appropriately for time series collections.
+
+      Run the following command to connect to your MongoDB replica set using
+      ``mongosh``:
+
+      .. code-block:: shell
+
+         mongosh "mongodb://mongo1"
+
+      Run the following command to set the compatibility version for the
+      time series collection feature:
+
+      .. code-block:: javascript
+
+         db.adminCommand({ setFeatureCompatibilityVersion: "5.0" })
+
+      If successful, you should see a message that resembles the following:
+
+      .. code-block:: javascript
+         :copyable: false
+
+         {
+           ok: 1,
+           '$clusterTime': {
+             ...
+           },
+           operationTime: ...
+         }
+
+      Run the following command to exit the MongoDB shell:
+
+      .. code-block:: none
+
+         exit
 
       Create a sink configuration file called ``stock-sink.json`` with the
       following command:
@@ -226,11 +293,11 @@ Migrate a Collection to a Time Series Collection
          :copyable: false
 
          {
-           tx_time: 2021-07-12T20:05:35.000Z,
-           symbol: 'WSV',
-           company_name: 'WORRIED SNAKEBITE VENTURES',
-           price: 21.22,
-           _id: ObjectId("...")
+           tx_time: ISODate("2022-05-25T21:16:35.983Z"),
+           _id: ObjectId("628e9..."),
+           symbol: 'FAV',
+           price: 18.43,
+           company_name: 'FUZZY ATTACK VENTURES'
          }
 
 Summary
