@@ -22,5 +22,6 @@ read the :ref:`Tutorial Setup <kafka-tutorials-docker-setup>` first:
 - :ref:`Explore Change Streams <kafka-tutorial-explore-change-streams>`
 - :ref:`Getting Started with the MongoDB Kafka Source Connector <kafka-tutorial-source-connector>`
 - :ref:`Getting Started with the MongoDB Kafka Sink Connector <kafka-tutorial-sink-connector>`
-- :doc:`Replicate Data with a Change Data Capture Handler </tutorials/replicate-with-cdc>`
+- :ref:`Replicate Data with a Change Data Capture Handler <kafka-tutorial-replicate-with-cdc>`
 - :ref:`Migrate an Existing Collection to a Time Series Collection <kafka-tutorial-migrate-time-series>`
+
