@@ -33,13 +33,13 @@ from a collection to a time series collection. The time series collection
 stores the data more efficiently and retains the ability to analyze stock
 performance over time using aggregation operators.
 
-.. note:: Apple M1 incompatibility
+.. important:: Apple M1 incompatibility
 
    This tutorial requires the time series collection feature introduced in
-   MongoDB version 5.0. If you are using a computer with an Apple M1 CPU, the
-   MongoDB Docker image does not currently build for any version after 4.x,
-   and therefore cannot run the complete tutorial. MongoDB developers are
-   currently working on resolving this issue.
+   MongoDB version 5.0. The MongoDB Docker image does not currently build for
+   any version after 4.x on an M1 CPU, and therefore cannot run the complete
+   tutorial. MongoDB developers are currently working on resolving this
+   issue.
 
 .. include:: /includes/tutorials/setup.rst
 
