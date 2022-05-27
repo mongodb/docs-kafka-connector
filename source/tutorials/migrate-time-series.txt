@@ -68,6 +68,7 @@ Migrate a Collection to a Time Series Collection
 
       .. code-block:: bash
          :copyable: false
+
          ...
          1 _id=528e9... MSP MASSIVE SUBMARINE PARTNERS traded at 31.08 2022-05-25 21:15:15
          2 _id=528e9... RWH RESPONSIVE_WHOLESALER HOLDINGS traded at 18.42 2022-05-25 21:15:15
