@@ -21,17 +21,12 @@ used in a {+mkc+} source connector.
 Change Streams
 --------------
 
-Change streams are a feature of MongoDB that allow you to receive real-time
-updates on data changes. Change streams return
-**change event documents**. A change event document is a document in your
-**oplog** that contains idempotent instructions to recreate a change that
-occurred in your MongoDB deployment as well as the metadata related to that
-change.
+Change streams are a MongoDB feature that allow you to receive real-time
+updates on data changes. Change streams return **change event documents**.
 
-The oplog is a special collection in MongoDB that keeps track of all changes
-within a MongoDB replica set. Change streams help you use the change event data
-stored in the oplog without you having to learn details about how the oplog
-works.
+A change event document contains idempotent instructions to recreate a change
+that occurred in your MongoDB deployment and metadata related to that change.
+Change event documents are generated from data in the :term:`oplog`.
 
 .. important:: You must have a replica set or a sharded cluster
 
@@ -132,3 +127,16 @@ To learn more about offsets, see the following resources:
   `configuration option documentation <https://docs.confluent.io/platform/current/installation/configuration/connect/index.html#offset-storage-topic>`__
 - {+kc+} ``OffsetStorageReader``
   `API documentation  <https://kafka.apache.org/0110/javadoc/org/apache/kafka/connect/storage/OffsetStorageReader.html>`__
+
+
+Performance
+~~~~~~~~~~~
+
+The oplog is a special capped collection which cannot use indexes.  For more
+information on this limitation, see
+:manual:`Change Streams Production Recommendations </manual/administration/change-streams-production-recommendations/#indexes>`.
+
+If you need to improve change stream performance, try using a faster disk for
+your MongoDB cluster and increasing the size of your WiredTiger cache. To
+learn how to set your WiredTiger cache, see the guide on the
+:manual:`WiredTiger Storage Engine For more information </core/wiredtiger/#memory-use>`.
