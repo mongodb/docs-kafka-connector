@@ -92,7 +92,7 @@ information on this limitation, see
 If you need to improve change stream performance, try using a faster disk for
 your MongoDB cluster and increasing the size of your WiredTiger cache. To
 learn how to set your WiredTiger cache, see the guide on the
-:manual:`WiredTiger Storage Engine For more information </core/wiredtiger/#memory-use>`.
+:manual:`WiredTiger Storage Engine </core/wiredtiger/#memory-use>`.
 
 Source Connectors
 -----------------
