@@ -24,14 +24,13 @@ Change Streams
 Change streams are a MongoDB feature that allow you to receive real-time
 updates on data changes. Change streams return **change event documents**.
 
-A change event document contains idempotent instructions to recreate a change
+A change event document contains idempotent instructions to describe a change
 that occurred in your MongoDB deployment and metadata related to that change.
 Change event documents are generated from data in the :term:`oplog`.
 
-.. important:: You must have a replica set or a sharded cluster
+.. important:: Change streams only run on MongoDB replica sets and sharded clusters
 
-   Change streams are available for replica sets and sharded clusters. A
-   standalone MongoDB instance cannot produce a change stream.
+   A standalone MongoDB instance cannot produce a change stream.
 
 To view a list of all configuration options for change streams, see the
 :ref:`<source-configuration-change-stream>` page.
