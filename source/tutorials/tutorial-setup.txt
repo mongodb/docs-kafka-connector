@@ -207,6 +207,89 @@ Set Up Your Development Environment with Docker
       Since you have not started the connectors, the status and configured
       list are empty.
 
-      Your development environment setup is complete and you can proceed to
-      the next step of the tutorial.
+      Your tutorial development environment setup is complete and you can
+      proceed to one of the :ref:`Kafka Connector tutorials <kafka-connector-tutorials>`.
+
+
+.. _kafka-tutorials-docker-remove:
+
+Stop or Remove your Docker Containers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After you are finished running through the tutorials, you can stop your
+Docker containers through the Docker Desktop GUI or the command line.
+
+
+.. tabs::
+
+   .. tab:: Linux or Mac OS
+      :tabid: shell
+
+      Navigate to the tutorial directory "mongodb-kafka-base" within
+      the repository or unzipped archive using bash shell. If you
+      cloned the repository with git, your command resembles the
+      following:
+
+      .. code-block:: bash
+         :copyable: true
+
+         cd kafka-edu/docs-examples/source/mongodb-kafka-base/
+
+      Stop the Docker container and its volumes by r
+
+      .. code-block:: bash
+         :copyable: true
+
+         sh run.sh
+
+      .. tab:: Windows
+         :tabid: powershell
+
+         Navigate to the tutorial directory "mongodb-kafka-base" within
+         the repository or unzipped archive using PowerShell.  If you
+         cloned the repository with git, your command resembles the
+         following:
+
+            .. code-block:: none
+               :copyable: true
+
+               cd kafka-edu\docs-examples\source\mongodb-kafka-base\
+
+            Start the Docker image with the following command:
+
+            .. code-block:: bash
+               :copyable: true
+
+               powershell .\stop.ps1
+
+
+
+Once you have completed the tutorial,
+
+.. code-block:: bash
+
+   sh stop.sh
+
+If you completed
+To stop your tutorial setup
+
+ or tutorial Docker container
+.. note::
+
+   To access the tutorial shell
+
+.. code-block::
+
+   docker-compose stop
+
+
+To completely remove the tutorial or other image, use
+
+.. code-block:: bash
+
+   docker-compose down -v
+
+For more information on the preceding command, see the
+`docker-compose down Docker documentation <https://docs.docker.com/compose/reference/down/>`__
+
 
