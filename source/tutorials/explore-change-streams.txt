@@ -40,8 +40,8 @@ Explore Change Streams
 
    .. step:: Open a Change Stream
 
-      In **ChangeStreamShell1**, create a Python script to open a change stream using
-      the PyMongo driver.
+      In **ChangeStreamShell1**, create a Python script to open a change 
+      stream using the PyMongo driver.
 
       .. code-block:: bash
          :copyable: true
@@ -62,7 +62,7 @@ Explore Change Streams
          with db.orders.watch() as stream:
              print('\nChange Stream is opened on the Tutorial1.orders namespace.  Currently watching ...\n\n')
              for change in stream:
-                 print(dumps(change, indent=2))
+                 print(dumps(change, indent = 2))
 
       Run the Python script:
 
@@ -91,7 +91,7 @@ Explore Change Streams
       After you connect successfully, you should see the following
       MongoDB shell prompt:
 
-      .. code-block::
+      .. code-block:: none
          :copyable: false
 
          rs0 [direct: primary] test>
