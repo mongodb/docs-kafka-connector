@@ -45,7 +45,7 @@ Set Up Your Development Environment with Docker
          :copyable: true
 
          docker login
-         
+
       Run the following command in your terminal to download the image from
       Docker Hub:
 
