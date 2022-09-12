@@ -1,0 +1,234 @@
+.. _sink-configuration-metrics:
+
+======================
+Sink Connector Metrics
+======================
+
+.. default-domain:: mongodb
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+Overview
+--------
+
+.. _sink-configuration-metrics-description-start:
+
+Use the metrics in the following table to monitor the behavior of your sink
+connector.
+
+.. _sink-configuration-metrics-description-end:
+
+.. include:: /includes/sink-config-link.rst
+
+.. _sink-connector-metrics:
+
+Metrics
+-------
+
+.. _sink-configuration-metrics-table-start:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 75
+
+   * - Attribute Name
+     - Description
+
+   * - | **records**
+       | 
+     - | **Description:**
+       | The total number of Kafka records a MongoDB sink task recieved.
+
+   * - | **records-successful**
+       | 
+     - | **Description:**
+       | The total number of Kafka records a MongoDB sink task successfully wrote to MongoDB.
+
+   * - | **records-failed**
+       | 
+     - | **Description:**
+       | The total number of Kafka records a MongoDB sink task failed to write to MongoDB.
+
+   * - | **latest-kafka-time-difference-ms**
+       | 
+     - | **Description:**
+       | The number of milliseconds of the most recent time difference recorded between a MongoDB sink task and Kafka. This value is calculated by subtracting the current time of the connector's clock and the timestamp of the last record the task received.
+
+   * - | **in-task-put**
+       | 
+     - | **Description:**
+       | The total number of times the Kafka Connect framework executed the put() method of the MongoDB sink task.
+
+   * - | **in-task-put-duration**
+       | 
+     - | **Description:**
+       | The total number of milliseconds the Kafka Connect framework spent executing the put() method of a MongoDB sink task.
+
+   * - | **in-task-put-duration-over-1-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task put() method executions with a duration that exceeded 1ms.
+
+   * - | **in-task-put-duration-over-10-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task put() method executions with a duration that exceeded 10ms.
+
+   * - | **in-task-put-duration-over-100-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task put() method executions with a duration that exceeded 100ms.
+
+   * - | **in-task-put-duration-over-1000-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task put() method executions with a duration that exceeded 1000ms.
+
+   * - | **in-task-put-duration-over-10000-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task put() method executions with a duration that exceeded 10000ms.
+
+   * - | **in-connect-framework**
+       | 
+     - | **Description:**
+       | The total number of times code in the Kafka Connect framework executed after the first invocation of the put() method of the MongoDB sink task.
+
+   * - | **in-connect-framework-duration**
+       | 
+     - | **Description:**
+       | The total number of milliseconds spent executing code in the Kafka Connect framework since the framework first invoked the put() method of the MongoDB sink task. This metric does not count time executing code in the MongoDB sink task towards the total.
+
+   * - | **in-connect-framework-duration-over-1ms**
+       | 
+     - | **Description:**
+       | The total number of times code in the Kafka Connect framework executed for a duration that exceeded 1ms.
+
+   * - | **in-connect-framework-duration-over-10ms**
+       | 
+     - | **Description:**
+       | The total number of times code in the Kafka Connect framework executed for a duration that exceeded 10ms.
+
+   * - | **in-connect-framework-duration-over-100ms**
+       | 
+     - | **Description:**
+       | The total number of times code in the Kafka Connect framework executed for a duration that exceeded 100ms.
+
+   * - | **in-connect-framework-duration-over-1000ms**
+       | 
+     - | **Description:**
+       | The total number of times code in the Kafka Connect framework executed for a duration that exceeded 1000ms.
+
+   * - | **in-connect-framework-duration-over-10000ms**
+       | 
+     - | **Description:**
+       | The total number of times code in the Kafka Connect framework executed for a duration that exceeded 10000ms.
+
+   * - | **processing-phases**
+       | 
+     - | **Description:**
+       | The total number of times a MongoDB sink task executed the processing phase on a batch of records from Kafka. The processing phase of a MongoDB sink task is the set of actions that starts after records are obtained from Kafka and ends before records are written to MongoDB.
+
+   * - | **processing-phases-duration**
+       | 
+     - | **Description:**
+       | The total number of milliseconds a MongoDB sink task spent processing records before writing them to MongoDB.
+
+   * - | **processing-phases-duration-over-1-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task processing phase executions with a duration that exceeded 1ms.
+
+   * - | **processing-phases-duration-over-10-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task processing phase executions with a duration that exceeded 10ms.
+
+   * - | **processing-phases-duration-over-100-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task processing phase executions with a duration that exceeded 100ms.
+
+   * - | **processing-phases-duration-over-1000-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task processing phase executions with a duration that exceeded 1000ms.
+
+   * - | **processing-phases-duration-over-10000-ms**
+       | 
+     - | **Description:**
+       | The total number of MongoDB sink task processing phase executions with a duration that exceeded 10000ms.
+
+   * - | **batch-writes-successful**
+       | 
+     - | **Description:**
+       | The total number of batches a MongoDB sink task successfully wrote to the MongoDB server.
+
+   * - | **batch-writes-successful-duration**
+       | 
+     - | **Description:**
+       | The total number of milliseconds a MongoDB sink task spent succesfully writing to the MongoDB server.
+
+   * - | **batch-writes-successful-duration-over-1-ms**
+       | 
+     - | **Description:**
+       | The total number of successful batch writes performed by the MongoDB sink task with a duration that exceeded 1ms.
+
+   * - | **batch-writes-successful-duration-over-10-ms**
+       | 
+     - | **Description:**
+       | The total number of successful batch writes performed by the MongoDB sink task with a duration that exceeded 10ms.
+
+   * - | **batch-writes-successful-duration-over-100-ms**
+       | 
+     - | **Description:**
+       | The total number of successful batch writes performed by the MongoDB sink task with a duration that exceeded 100ms.
+
+   * - | **batch-writes-successful-duration-over-1000-ms**
+       | 
+     - | **Description:**
+       | The total number of successful batch writes performed by the MongoDB sink task with a duration that exceeded 1000ms.
+
+   * - | **batch-writes-successful-duration-over-10000-ms**
+       | 
+     - | **Description:**
+       | The total number of successful batch writes performed by the MongoDB sink task with a duration that exceeded 10000ms.
+
+   * - | **batch-writes-failed**
+       | 
+     - | **Description:**
+       | The number of times a batch failed to be written to the MongoDB server.
+
+   * - | **batch-writes-failed-duration**
+       | 
+     - | **Description:**
+       | The total milliseconds spent attempting to write to the MongoDB server, for failed writes. Included in "task-invocations-total-ms".
+
+   * - | **batch-writes-failed-duration-over-1-ms**
+       | 
+     - | **Description:**
+       | The number of times a failed batch write exceeded 1ms.
+
+   * - | **batch-writes-failed-duration-over-10-ms**
+       | 
+     - | **Description:**
+       | The number of times a failed batch write exceeded 10ms.
+
+   * - | **batch-writes-failed-duration-over-100-ms**
+       | 
+     - | **Description:**
+       | The number of times a failed batch write exceeded 100ms.
+
+   * - | **batch-writes-failed-duration-over-1000-ms**
+       | 
+     - | **Description:**
+       | The number of times a failed batch write exceeded 1000ms.
+
+   * - | **batch-writes-failed-duration-over-10000-ms**
+       | 
+     - | **Description:**
+       | The number of times a failed batch write exceeded 1000ms.
