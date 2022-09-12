@@ -1,8 +1,8 @@
 .. _sink-configuration-metrics:
 
-======================
-Sink Connector Metrics
-======================
+==========================
+Sink Connector JMX Metrics
+==========================
 
 .. default-domain:: mongodb
 
@@ -18,7 +18,7 @@ Overview
 .. _sink-configuration-metrics-description-start:
 
 Use the metrics in the following table to monitor the behavior of your sink
-connector.
+connector through {+jmx-long+} (JMX).
 
 .. _sink-configuration-metrics-description-end:
 

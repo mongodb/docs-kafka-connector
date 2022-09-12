@@ -71,7 +71,7 @@ See the following categories for a list of related configuration properties:
        collection.
 
    * - :doc:`JMX Metrics </sink-connector/configuration-properties/metrics>`
-     - Monitor the connector's performance using JMX.
+     - Monitor the connector's performance using {+jmx-long+} (JMX).
 
    * - :doc:`All Properties </sink-connector/configuration-properties/all-properties>`
      - View all preceding categories of configuration properties on one page.
