@@ -246,38 +246,43 @@ Metrics
    * - | **batch-writes-failed**
        | 
      - | **Description:**
-       | The number of times a batch failed to be written to the MongoDB
-         server.
+       | The total number of batches a MongoDB sink task failed to write
+         to the MongoDB server.
 
    * - | **batch-writes-failed-duration**
        | 
      - | **Description:**
-       | The total milliseconds spent attempting to write to the MongoDB
-         server, for failed writes. Included in "task-invocations-total-ms".
+       | The total number of milliseconds a MongoDB sink task spent
+         unsuccessfully attempting to write batches to the MongoDB server.
 
    * - | **batch-writes-failed-duration-over-1-ms**
        | 
      - | **Description:**
-       | The number of times a failed batch write exceeded 1 millisecond.
+       | The total number of failed batch writes attempted by the MongoDB
+         sink task with a duration that exceeded 1 millisecond.
 
    * - | **batch-writes-failed-duration-over-10-ms**
        | 
      - | **Description:**
-       | The number of times a failed batch write exceeded 10 milliseconds.
+       | The total number of failed batch writes attempted by the MongoDB
+         sink task with a duration that exceeded 10 milliseconds.
 
    * - | **batch-writes-failed-duration-over-100-ms**
        | 
      - | **Description:**
-       | The number of times a failed batch write exceeded 100 milliseconds.
+       | The total number of failed batch writes attempted by the MongoDB sink
+         task with a duration that exceeded 100 milliseconds.
 
    * - | **batch-writes-failed-duration-over-1000-ms**
        | 
      - | **Description:**
-       | The number of times a failed batch write exceeded 1000 milliseconds.
+       | The total number of failed batch writes attempted by the MongoDB sink
+         task with a duration that exceeded 1000 milliseconds.
 
    * - | **batch-writes-failed-duration-over-10000-ms**
        | 
      - | **Description:**
-       | The number of times a failed batch write exceeded 1000 milliseconds.
+       | The total number of failed batch writes attempted by the MongoDB sink
+         task with a duration that exceeded 10000 milliseconds.
 
 .. _sink-configuration-metrics-table-end:
