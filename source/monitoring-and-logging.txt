@@ -20,7 +20,68 @@ connector through **monitoring** and **logging**.
 Monitoring is the process of getting information about the
 activities a running program performs for use in an application
 or an application performance management library.
-
 Logging is the process of a programming writing output to log
-files for an application maintainer to read or process.
+files.
 
+The {+mkc+} uses {+jmx-long+} to enable monitoring, and
+{+l4j+} to enable logging.
+
+
+Monitoring
+----------
+
+The {+mkc+} uses {+kafka-connect+}'s metrics infrastructure to
+serve metrics. To read the metrics produced by your connector,
+enable JMX and launch your {+kafka-connect+} deployment.
+
+To learn how to enable JMX for a {+kafka-connect+} instance
+running on your host machine, see the
+`Official Kafka Documentation <https://kafka.apache.org/documentation/#monitoring>`__.
+
+To learn how to enable JMX for a containerized {+kafka-connect+}
+deployment, see
+`Kafka Monitoring and Metrics Using JMX with Docker <https://docs.confluent.io/platform/current/installation/docker/operations/monitoring.html>`__.
+
+Example - Monitor the Quick Start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The sample environment provided in the Quick Start exposes metrics
+on your host machine at the URI ``localhost:35000``.
+
+To view these metrics with ``jconsole``, perform the following actions:
+
+.. procedure::
+   :style: normal
+
+   .. step:: Start The Quick Start Pipeline and Add Connectors
+
+      Follow the Quick Start until the :ref:`<kafka-quick-start-send-a-document>`
+      step.
+
+   .. step:: Start jconsole
+
+      Run the following command to start ``jconsole``:
+
+      .. code-block:: shell
+
+         jconsole
+
+   .. step:: Connect to {+kafka-connect+} JMX Server
+
+      Enter the URI ``localhost:35000`` into the Remote Process
+      text input box in the JConsole interface.
+
+      Press the Connect button.
+
+      Press the Insecure Connection in the dialog box.
+
+   .. step:: Explore Metrics
+
+      Navigate to the MBeans tab.
+
+      Inspect connector metrics in the ``{+metrics-path+}`` path. 
+
+             
+
+Logging
+-------
