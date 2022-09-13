@@ -1,0 +1,26 @@
+.. _kafka-monitorin-logging:
+
+======================
+Monitoring and Logging
+======================
+
+.. default-domain:: mongodb
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+Overview
+--------
+
+Learn how to observe the behavior of your MongoDB source or sink
+connector through **monitoring** and **logging**.
+Monitoring is the process of getting information about the
+activities a running program performs for use in an application
+or an application performance management library.
+
+Logging is the process of a programming writing output to log
+files for an application maintainer to read or process.
+
