@@ -40,7 +40,7 @@ Metrics
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 75
+   :widths: 40 60
 
    * - Attribute Name
      - Description
@@ -48,7 +48,7 @@ Metrics
    * - | **records**
        | 
      - | **Description:**
-       | The total number of Kafka records a MongoDB sink task recieved.
+       | The total number of Kafka records a MongoDB sink task received.
 
    * - | **records-successful**
        | 
@@ -86,7 +86,7 @@ Metrics
        | 
      - | **Description:**
        | The total number of MongoDB sink task ``put()`` method executions
-         with a duration that exceeded 1 milliseconds.
+         with a duration that exceeded 1 millisecond.
 
    * - | **in-task-put-duration-over-10-ms**
        | 
@@ -131,7 +131,7 @@ Metrics
        | 
      - | **Description:**
        | The total number of times code in the Kafka Connect framework
-         executed for a duration that exceeded 1 milliseconds.
+         executed for a duration that exceeded 1 millisecond.
 
    * - | **in-connect-framework-duration-over-10-ms**
        | 
@@ -173,7 +173,7 @@ Metrics
        | 
      - | **Description:**
        | The total number of MongoDB sink task processing phase executions with
-         a duration that exceeded 1 milliseconds.
+         a duration that exceeded 1 millisecond.
 
    * - | **processing-phases-duration-over-10-ms**
        | 
@@ -208,14 +208,14 @@ Metrics
    * - | **batch-writes-successful-duration**
        | 
      - | **Description:**
-       | The total number of milliseconds a MongoDB sink task spent succesfully
+       | The total number of milliseconds a MongoDB sink task spent successfully
          writing to the MongoDB server.
 
    * - | **batch-writes-successful-duration-over-1-ms**
        | 
      - | **Description:**
        | The total number of successful batch writes performed by the MongoDB
-         sink task with a duration that exceeded 1 milliseconds.
+         sink task with a duration that exceeded 1 millisecond.
 
    * - | **batch-writes-successful-duration-over-10-ms**
        | 
@@ -256,7 +256,7 @@ Metrics
    * - | **batch-writes-failed-duration-over-1-ms**
        | 
      - | **Description:**
-       | The number of times a failed batch write exceeded 1 milliseconds.
+       | The number of times a failed batch write exceeded 1 millisecond.
 
    * - | **batch-writes-failed-duration-over-10-ms**
        | 
