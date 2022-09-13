@@ -161,7 +161,9 @@ Metrics
        | 
      - | **Description:**
        | The total number of times a MongoDB sink task executed the processing
-         phase on a batch of records from Kafka. The processing phase of a MongoDB sink task is the set of actions that starts after records are obtained from Kafka and ends before records are written to MongoDB.
+         phase on a batch of records from Kafka. The processing phase of a
+         MongoDB sink task is the set of actions that starts after records are
+         obtained from Kafka and ends before records are written to MongoDB.
 
    * - | **processing-phases-duration**
        | 
