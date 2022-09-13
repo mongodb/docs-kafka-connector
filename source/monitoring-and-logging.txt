@@ -1,8 +1,8 @@
-.. _sink-configuration-metrics:
+.. _kafka-monitorin-logging:
 
-==========================
-Sink Connector JMX Metrics
-==========================
+======================
+Monitoring and Logging
+======================
 
 .. default-domain:: mongodb
 
@@ -12,24 +12,14 @@ Sink Connector JMX Metrics
    :depth: 2
    :class: singlecol
 
-Overview
---------
 
-.. _sink-configuration-metrics-description-start:
+
+
+Sink Connector JMX Metrics
+--------------------------
 
 Use the metrics in the following table to monitor the behavior of your sink
-connector through {+jmx-long+} (JMX).
-
-.. _sink-configuration-metrics-description-end:
-
-.. include:: /includes/sink-config-link.rst
-
-.. _sink-connector-metrics:
-
-Metrics
--------
-
-.. _sink-configuration-metrics-table-start:
+connector through {+jmx-long+} (JMX):
 
 .. tip:: JMX Attributes
 
@@ -284,5 +274,3 @@ Metrics
      - | **Description:**
        | The total number of failed batch writes attempted by the MongoDB sink
          task with a duration that exceeded 10000 milliseconds.
-
-.. _sink-configuration-metrics-table-end:

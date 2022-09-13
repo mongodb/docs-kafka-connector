@@ -70,9 +70,6 @@ See the following categories for a list of related configuration properties:
      - Configure the connector to sink data to a MongoDB time series
        collection.
 
-   * - :doc:`JMX Metrics </sink-connector/configuration-properties/metrics>`
-     - Monitor the connector's performance using {+jmx-long+} (JMX).
-
    * - :doc:`All Properties </sink-connector/configuration-properties/all-properties>`
      - View all preceding categories of configuration properties on one page.
 
@@ -93,5 +90,4 @@ for more information on these settings.
    Topic Override <sink-connector/configuration-properties/topic-override>
    Change Data Capture <sink-connector/configuration-properties/cdc>
    Time Series <sink-connector/configuration-properties/time-series>
-   JMX Metrics <sink-connector/configuration-properties/metrics>
    All Properties <sink-connector/configuration-properties/all-properties>
