@@ -277,3 +277,5 @@ Metrics
        | 
      - | **Description:**
        | The number of times a failed batch write exceeded 1000 milliseconds.
+
+.. _sink-configuration-metrics-table-end:

@@ -176,3 +176,16 @@ To view only the options related to time series collections, see the
    :start-after: sink-configuration-time-series-table-start
    :end-before: sink-configuration-time-series-table-end
 
+JMX Metrics
+-----------
+
+.. include:: /sink-connector/configuration-properties/metrics.txt
+   :start-after: sink-configuration-metrics-description-start
+   :end-before: sink-configuration-metrics-description-end
+
+To view only the options related to {+jmx-hover+} metrics, see the
+:ref:`<sink-configuration-metrics>` page.
+
+.. include:: /sink-connector/configuration-properties/metrics.txt
+   :start-after: sink-configuration-metrics-table-start
+   :end-before: sink-configuration-metrics-table-end
