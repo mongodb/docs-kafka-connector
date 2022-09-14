@@ -207,6 +207,9 @@ Source Connector JMX Metrics
    :header-rows: 1
    :widths: 40 60
 
+   * - Attribute Name
+     - Description
+
    * - **records**
      - The total number of records a MongoDB source task passed to the
        {+kafka-connect+} framework.
@@ -408,4 +411,3 @@ Source Connector JMX Metrics
    * - **getmore-commands-failed-duration-over-10000-ms**
      - The total number of failed ``getMore`` commands issued by a MongoDB
        source task with a duration that exceeded 10000 milliseconds.
-
