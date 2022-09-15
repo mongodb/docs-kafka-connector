@@ -149,7 +149,7 @@ Sink Connector JMX Metrics
      - The total number of times the {+kc+} framework executed the
        ``put()`` method of the MongoDB sink task.
 
-   * - **in-task-put-duration**
+   * - **in-task-put-duration-ms**
      - The total number of milliseconds the {+kc+} framework spent
        executing the ``put()`` method of a MongoDB sink task.
 
@@ -178,7 +178,7 @@ Sink Connector JMX Metrics
        executed after the first invocation of the ``put()`` method of the
        MongoDB sink task.
 
-   * - **in-connect-framework-duration**
+   * - **in-connect-framework-duration-ms**
      - The total number of milliseconds spent executing code in the Kafka
        Connect framework since the framework first invoked the ``put()``
        method of the MongoDB sink task. This metric does not count time
@@ -210,7 +210,7 @@ Sink Connector JMX Metrics
        MongoDB sink task is the set of actions that starts after records are
        obtained from Kafka and ends before records are written to MongoDB.
 
-   * - **processing-phases-duration**
+   * - **processing-phases-duration-ms**
      - The total number of milliseconds a MongoDB sink task spent processing
        records before writing them to MongoDB.
 
@@ -238,7 +238,7 @@ Sink Connector JMX Metrics
      - The total number of batches a MongoDB sink task successfully wrote
        to the MongoDB server.
 
-   * - **batch-writes-successful-duration**
+   * - **batch-writes-successful-duration-ms**
      - The total number of milliseconds a MongoDB sink task spent successfully
        writing to the MongoDB server.
 
@@ -266,7 +266,7 @@ Sink Connector JMX Metrics
      - The total number of batches a MongoDB sink task failed to write
        to the MongoDB server.
 
-   * - **batch-writes-failed-duration**
+   * - **batch-writes-failed-duration-ms**
      - The total number of milliseconds a MongoDB sink task spent
        unsuccessfully attempting to write batches to the MongoDB server.
 
@@ -317,6 +317,18 @@ Source Connector JMX Metrics
    * - **mongodb-bytes-read**
      - The total number of bytes a MongoDB source task read from the
        MongoDB server.
+
+       .. tip:: Average Record size
+
+          You can calculate the average record size over a span of time can by
+          performing the following actions:
+
+          - Determine the change in the value of the ``mongodb-bytes-read``
+            attribute for span of time.
+          - Determine the change in the value of the ``records`` attribute
+            for the same span of time.
+          - Divide the change in the value of the ``mongodb-bytes-read`` attribute
+            by the change in the value of the ``records`` attribute.
 
    * - **latest-mongodb-time-difference-secs**
      - The number of seconds of the most recent time difference recorded between
