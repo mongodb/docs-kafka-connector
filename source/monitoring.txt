@@ -21,13 +21,13 @@ Monitoring is the process of getting information about the
 activities a running program performs for use in an application
 or an application performance management library.
 
-To learn more about logging in the connector see <TODO: logging>.
+To learn more about logging in the connector, see <TODO: logging>.
 
 Monitor the Connector
 ---------------------
 
 The {+mkc+} uses {+jmx-long+} to enable monitoring.
-You can read the metrics produced by the connector with any
+You can view the metrics produced by the connector with any
 JMX console.
 
 To learn more about JMX, see the
@@ -61,7 +61,7 @@ source task's use of the ``poll()`` method and a MongoDB sink task's use of the
    MongoDB cursor. A ``getMore`` command is a MongoDB command that fetches
    a new set of documents to replace a set of documents populating a cursor.
 
-   To learn more about ``getMore`` commands, see TODO: waiting on ref.
+   To learn more about ``getMore`` commands, see <TODO: link to getMore in server>.
 
 To learn more about tasks in {+kc+}, see the following resources:
 
@@ -132,14 +132,14 @@ To view these metrics with ``jconsole``, perform the following actions:
 
          .. step:: Press the :guilabel:`Connect` button.
 
-         .. step:: Press the :guilabel:`Insecure Connection` in the dialog box.
+         .. step:: Press the :guilabel:`Insecure Connection` button in the dialog box.
 
    .. step:: Explore Metrics
 
       .. procedure::
          :style: connected
 
-         .. step:: Navigate to the :guilabel:`MBeans` tab.
+         .. step:: Navigate to the :guilabel:`MBeans` tab in ``jconsole``.
 
          .. step:: Inspect connector metrics in the ``{+metrics-path+}`` path.
 
@@ -369,15 +369,15 @@ Source Connector JMX Metrics
 
        .. tip:: Average Record size
 
-          You can calculate the average record size over a span of time can by
-          performing the following actions:
+          You can calculate the average size of the records your sink connector
+          processed over a span of time by performing the following actions:
 
-          - Determine the change in the value of the ``mongodb-bytes-read``
-            attribute for span of time.
-          - Determine the change in the value of the ``records`` attribute
-            for the same span of time.
-          - Divide the change in the value of the ``mongodb-bytes-read`` attribute
-            by the change in the value of the ``records`` attribute.
+          #. Determine the change in the value of the ``mongodb-bytes-read``
+             attribute for a span of time.
+          #. Determine the change in the value of the ``records`` attribute
+             for the same span of time you used for the preceding step.
+          #. Divide the change in the value of the ``mongodb-bytes-read`` attribute
+             by the change in the value of the ``records`` attribute.
 
    * - **latest-mongodb-time-difference-secs**
      - The number of seconds of the most recent time difference recorded between
