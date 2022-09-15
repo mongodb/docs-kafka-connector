@@ -21,7 +21,18 @@ Monitoring is the process of getting information about the
 activities a running program performs for use in an application
 or an application performance management library.
 
+To learn how monitoring works in the connector and how to use
+it, see the :ref:`<kafka-monitoring-information>` section.
+
+To view an example that shows how to monitor a running connector,
+see the :ref:`<kafka-monitoring-example>` section. 
+
+To view a list of all metrics produced by MongoDB source and sink
+connectors, see the :ref:`<kafka-monitoring-all-attributes>` section.
+
 To learn more about logging in the connector, see <TODO: logging>.
+
+.. _kafka-monitoring-information:
 
 Monitor the Connector
 ---------------------
@@ -89,8 +100,10 @@ To learn how to enable JMX for a containerized {+kc+}
 deployment, see
 `Kafka Monitoring and Metrics Using JMX with Docker <https://docs.confluent.io/platform/current/installation/docker/operations/monitoring.html>`__.
 
+.. _kafka-monitoring-example:
+
 Example - Monitor the Quick Start
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 The sample environment provided in the Quick Start exposes metrics
 on your host machine at the URI ``localhost:35000``.
@@ -154,6 +167,8 @@ To view these metrics with ``jconsole``, perform the following actions:
             Notice that the ``{+metrics-path+}.sink-task-0.records``
             attribute now has a value of ``1``.            
 
+.. _kafka-monitoring-all-attributes:
+
 Available Metrics
 -----------------
 
@@ -166,6 +181,8 @@ sink connectors through {+jmx-long+} (JMX).
    To learn more about attributes and ``MBeans``, see the
    `Standard MBeans Tutorial <https://docs.oracle.com/javase/tutorial/jmx/mbeans/standard.html>`__
    from Oracle.
+
+.. _kafka-monitoring-sink-attributes:
 
 Sink Connector JMX Metrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -338,6 +355,8 @@ Sink Connector JMX Metrics
    * - **batch-writes-failed-duration-over-10000-ms**
      - The total number of failed batch writes attempted by the MongoDB sink
        task with a duration that exceeded 10000 milliseconds.
+
+.. _kafka-monitoring-source-attributes:
 
 Source Connector JMX Metrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
