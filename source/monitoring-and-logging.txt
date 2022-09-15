@@ -1,8 +1,8 @@
-.. _kafka-monitoring-logging:
+.. _kafka-monitoring:
 
-======================
-Monitoring and Logging
-======================
+==========
+Monitoring
+==========
 
 .. default-domain:: mongodb
 
@@ -16,20 +16,14 @@ Overview
 --------
 
 Learn how to observe the behavior of your MongoDB source or sink
-connector through **monitoring** and **logging**.
+connector through **monitoring**.
 Monitoring is the process of getting information about the
 activities a running program performs for use in an application
 or an application performance management library.
-Logging is the process of a programming writing output to log
-files.
 
-The {+mkc+} uses {+jmx-long+} to enable monitoring, and
-{+l4j+} to enable logging.
+The {+mkc+} uses {+jmx-long+} to enable monitoring.
 
-Logging
--------
-
-TODO: WRITE
+To learn more about logging in the connector see <TODO: logging>.
 
 Monitoring
 ----------
@@ -100,16 +94,16 @@ To view these metrics with ``jconsole``, perform the following actions:
 
          .. step:: Inspect connector metrics in the ``{+metrics-path+}`` path.
 
-            Notice that the ``{+metrics-path+}.sink-task-0.Attributes.records``
-            metric has a value of ``0``.
+            Notice that the ``{+metrics-path+}.sink-task-0.records``
+            attribute has a value of ``0``.
 
          .. step:: Continue the Quick Start
 
             Continue the Quick Start until, but not through, the
             :ref:`<kafka-quickstart-remove-the-sandbox>` step.
 
-            Notice that the ``{+metrics-path+}.sink-task-0.Attributes.records``
-            metric now has a value of ``1``.            
+            Notice that the ``{+metrics-path+}.sink-task-0.records``
+            attribute now has a value of ``1``.            
 
 Available Metrics
 -----------------
