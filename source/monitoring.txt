@@ -83,7 +83,7 @@ To learn more about ``poll()`` and ``put()`` methods, see the following
 resources:
 
 - `{+kc+} API documentation for SourceTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/source/SourceTask.html>`__
-- `{+kc+} API documentation for SinkTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/source/SinkTask.html>`__
+- `{+kc+} API documentation for SinkTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/sink/SinkTask.html>`__
 
 Enable Monitoring
 ~~~~~~~~~~~~~~~~~
