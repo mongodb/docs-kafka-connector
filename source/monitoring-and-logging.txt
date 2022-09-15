@@ -54,6 +54,13 @@ on your host machine at the URI ``localhost:35000``.
 
 To view these metrics with ``jconsole``, perform the following actions:
 
+.. tip:: Download jconsole
+
+   ``jconsole`` is part of the Java Platform, Standard Edition. To download
+   ``jconsole``, download the
+   `Java SE Development Kit <https://www.oracle.com/java/technologies/downloads/>`__
+   from Oracle.
+
 .. procedure::
    :style: normal
 
@@ -64,7 +71,7 @@ To view these metrics with ``jconsole``, perform the following actions:
 
    .. step:: Start jconsole
 
-      Run the following command to start ``jconsole``:
+      Run the following command from your command line to start ``jconsole``:
 
       .. code-block:: shell
 
@@ -72,18 +79,34 @@ To view these metrics with ``jconsole``, perform the following actions:
 
    .. step:: Connect to {+kc+} JMX Server
 
-      Enter the URI ``localhost:35000`` into the Remote Process
-      text input box in the JConsole interface.
+      .. procedure::
+         :style: connected
 
-      Press the Connect button.
+         .. step:: Enter Your JMX Server URI
 
-      Press the Insecure Connection in the dialog box.
+            Enter the URI ``localhost:35000`` into the :guilabel:`Remote Process`
+            text input box in the JConsole interface.
+
+         .. step:: Press the :guilabel:`Connect` button.
+
+         .. step:: Press the :guilabel:`Insecure Connection` in the dialog box.
 
    .. step:: Explore Metrics
 
-      Navigate to the MBeans tab.
+      .. procedure::
+         :style: connected
 
-      Inspect connector metrics in the ``{+metrics-path+}`` path. 
+         .. step:: Navigate to the :guilabel:`MBeans` tab.
+
+         .. step:: Inspect connector metrics in the ``{+metrics-path+}`` path.
+
+            TODO: write
+
+         .. step:: Complete the Quick Start
+
+            
+
+            
 
 Available Metrics
 -----------------
