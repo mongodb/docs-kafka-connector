@@ -100,13 +100,16 @@ To view these metrics with ``jconsole``, perform the following actions:
 
          .. step:: Inspect connector metrics in the ``{+metrics-path+}`` path.
 
-            TODO: write
+            Notice that the ``{+metrics-path+}.sink-task-0.Attributes.records``
+            metric has a value of ``0``.
 
-         .. step:: Complete the Quick Start
+         .. step:: Continue the Quick Start
 
-            
+            Continue the Quick Start until, but not through, the
+            :ref:`<kafka-quickstart-remove-the-sandbox>` step.
 
-            
+            Notice that the ``{+metrics-path+}.sink-task-0.Attributes.records``
+            metric now has a value of ``1``.            
 
 Available Metrics
 -----------------
