@@ -34,15 +34,15 @@ TODO: WRITE
 Monitoring
 ----------
 
-The {+mkc+} uses {+kafka-connect+}'s metrics infrastructure to
+The {+mkc+} uses {+kc+}'s metrics infrastructure to
 serve metrics. To read the metrics produced by your connector,
-enable JMX and launch your {+kafka-connect+} deployment.
+enable JMX and launch your {+kc+} deployment.
 
-To learn how to enable JMX for a {+kafka-connect+} instance
+To learn how to enable JMX for a {+kc+} instance
 running on your host machine, see the
 `Official Kafka Documentation <https://kafka.apache.org/documentation/#monitoring>`__.
 
-To learn how to enable JMX for a containerized {+kafka-connect+}
+To learn how to enable JMX for a containerized {+kc+}
 deployment, see
 `Kafka Monitoring and Metrics Using JMX with Docker <https://docs.confluent.io/platform/current/installation/docker/operations/monitoring.html>`__.
 
@@ -70,7 +70,7 @@ To view these metrics with ``jconsole``, perform the following actions:
 
          jconsole
 
-   .. step:: Connect to {+kafka-connect+} JMX Server
+   .. step:: Connect to {+kc+} JMX Server
 
       Enter the URI ``localhost:35000`` into the Remote Process
       text input box in the JConsole interface.
@@ -126,11 +126,11 @@ Sink Connector JMX Metrics
        of the last record the task received.
 
    * - **in-task-put**
-     - The total number of times the {+kafka-connect+} framework executed the
+     - The total number of times the {+kc+} framework executed the
        ``put()`` method of the MongoDB sink task.
 
    * - **in-task-put-duration**
-     - The total number of milliseconds the {+kafka-connect+} framework spent
+     - The total number of milliseconds the {+kc+} framework spent
        executing the ``put()`` method of a MongoDB sink task.
 
    * - **in-task-put-duration-over-1-ms**
@@ -154,7 +154,7 @@ Sink Connector JMX Metrics
        with a duration that exceeded 10000 milliseconds.
 
    * - **in-connect-framework**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed after the first invocation of the ``put()`` method of the
        MongoDB sink task.
 
@@ -165,23 +165,23 @@ Sink Connector JMX Metrics
        executing code in the MongoDB sink task towards the total.
 
    * - **in-connect-framework-duration-over-1-ms**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed for a duration that exceeded 1 millisecond.
 
    * - **in-connect-framework-duration-over-10-ms**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed for a duration that exceeded 10 milliseconds.
 
    * - **in-connect-framework-duration-over-100-ms**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed for a duration that exceeded 100 milliseconds.
 
    * - **in-connect-framework-duration-over-1000-ms**
-     - The total number of times code in the {+kafka-connect+} framework executed
+     - The total number of times code in the {+kc+} framework executed
        for a duration that exceeded 1000 milliseconds.
 
    * - **in-connect-framework-duration-over-10000-ms**
-     - The total number of times code in the {+kafka-connect+} framework executed
+     - The total number of times code in the {+kc+} framework executed
        for a duration that exceeded 10000 milliseconds.
 
    * - **processing-phases**
@@ -282,16 +282,16 @@ Source Connector JMX Metrics
 
    * - **records**
      - The total number of records a MongoDB source task passed to the
-       {+kafka-connect+} framework.
+       {+kc+} framework.
 
    * - **records-filtered**
      - The number of records a MongoDB source task passed to the
-       {+kafka-connect+} framework that were then filtered by the framework.
+       {+kc+} framework that were then filtered by the framework.
        A filtered record is not written to Kafka.
 
    * - **records-acknowledged**
      - The total number of records a MongoDB source task passed to the
-       {+kafka-connect+} framework that were then successfully
+       {+kc+} framework that were then successfully
        written to Kafka.
 
    * - **mongodb-bytes-read**
@@ -306,11 +306,11 @@ Source Connector JMX Metrics
        the most recent successful MongoDB command executed by the task.
 
    * - **in-task-poll**
-     - The total number of times the {+kafka-connect+} framework executed
+     - The total number of times the {+kc+} framework executed
        the ``poll()`` method of a MongoDB source task.
 
    * - **in-task-poll-duration-ms**
-     - The total number of milliseconds the {+kafka-connect+} framework
+     - The total number of milliseconds the {+kc+} framework
        spent executing the ``poll()`` method of a MongoDB source task.
 
    * - **in-task-poll-duration-over-1-ms**
@@ -334,34 +334,34 @@ Source Connector JMX Metrics
        with a duration that exceeded 10000 milliseconds.
 
    * - **in-connect-framework**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed after the first invocation of the ``poll()`` method of the
        MongoDB source task.
 
    * - **in-connect-framework-duration-ms**
      - The total number of milliseconds spent executing code in the
-       {+kafka-connect+} framework since the framework first invoked the
+       {+kc+} framework since the framework first invoked the
        ``poll()`` method of the MongoDB source task. This metric does
        not count time executing code in the MongoDB sink task towards the total.
 
    * - **in-connect-framework-duration-over-1-ms**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed for a duration that exceeded 1 millisecond.
 
    * - **in-connect-framework-duration-over-10-ms**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed for a duration that exceeded 10 milliseconds.
 
    * - **in-connect-framework-duration-over-100-ms**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed for a duration that exceeded 100 milliseconds.
 
    * - **in-connect-framework-duration-over-1000-ms**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed for a duration that exceeded 1000 milliseconds.
 
    * - **in-connect-framework-duration-over-10000-ms**
-     - The total number of times code in the {+kafka-connect+} framework
+     - The total number of times code in the {+kc+} framework
        executed for a duration that exceeded 10000 milliseconds.
 
    * - **initial-commands-successful**
