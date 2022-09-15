@@ -52,6 +52,17 @@ and send them to MongoDB. The {+mkc+} provides metrics to track a MongoDB
 source task's use of the ``poll()`` method and a MongoDB sink task's use of the
 ``put()`` method. 
 
+.. note:: Source Connector Tasks and getMore
+
+   Metrics for source connector tasks distinguish between
+   **initial commands** and ``getMore`` commands. An initial
+   command is a ``find`` or ``aggregate`` command sent to a MongoDB
+   instance that retrieves the first set of documents in a client-side
+   MongoDB cursor. A ``getMore`` command is a MongoDB command that fetches
+   a new set of documents to replace a set of documents populating a cursor.
+
+   To learn more about ``getMore`` commands, see TODO: waiting on ref.
+
 To learn more about tasks in {+kc+}, see the following resources:
 
 - `Kafka Connect Concepts from Confluent <https://docs.confluent.io/platform/current/connect/concepts.html#tasks>`__
