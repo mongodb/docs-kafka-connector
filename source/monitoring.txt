@@ -392,8 +392,8 @@ Source Connector JMX Metrics
 
        .. tip:: Average Record size
 
-          You can calculate the average size of the records your sink connector
-          processed over a span of time by performing the following actions:
+          To calculate the average size of the records your sink connector
+          processed over a span of time, perform the following actions:
 
           #. Determine the change in the value of the ``mongodb-bytes-read``
              attribute for a span of time.
