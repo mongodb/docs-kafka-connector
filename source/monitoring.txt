@@ -86,18 +86,18 @@ To view these metrics with {+jconsole+}, perform the following actions:
 .. procedure::
    :style: normal
 
-   .. step:: Download {+jconsole+}
+   .. step:: Download {+jconsole+}.
 
       {+jconsole+} is part of the {+java-se+}. To download {+jconsole+}, download the
       `Java SE Development Kit <https://www.oracle.com/java/technologies/downloads/>`__
       from Oracle.
 
-   .. step:: Start The Quick Start Pipeline and Add Connectors
+   .. step:: Start the Quick Start pipeline and add connectors.
 
       Follow the Quick Start until the :ref:`<kafka-quick-start-send-a-document>`
       step.
 
-   .. step:: Start {+jconsole+}
+   .. step:: Start {+jconsole+}.
 
       Run the following command from your command line to start {+jconsole+}:
 
@@ -105,44 +105,44 @@ To view these metrics with {+jconsole+}, perform the following actions:
 
          {+jconsole_command+}
 
-   .. step:: Connect to {+kc+} JMX Server
+   .. step:: Connect to the {+kc+} JMX server.
 
       .. procedure::
          :style: connected
 
-         .. step:: Enter Your JMX Server URI
+         .. step:: Enter your JMX Server URI.
 
             Enter the URI ``localhost:35000`` into the :guilabel:`Remote Process`
             text input box in the {+jconsole+} interface.
 
-         .. step:: Click :guilabel:`Connect`
+         .. step:: Click :guilabel:`Connect`.
 
-         .. step:: Click :guilabel:`Insecure Connection` in the dialog box
+         .. step:: In the dialog box, click :guilabel:`Insecure Connection`.
 
-   .. step:: Explore Metrics
+   .. step:: Explore your connectors' metrics.
 
       .. procedure::
          :style: connected
 
-         .. step:: Navigate to the :guilabel:`MBeans` tab in {+jconsole+}
+         .. step:: Navigate to the :guilabel:`MBeans` tab in {+jconsole+}.
 
          .. step:: Inspect connector metrics.
 
             Notice that the ``{+metrics-path+}.sink-task-0.records``
             attribute has a value of ``0``.
 
-         .. step:: Continue the Quick Start
+         .. step:: Continue the Quick Start.
 
             Continue the Quick Start until, but not through, the
             :ref:`<kafka-quickstart-remove-the-sandbox>` step.
 
-         .. step:: Return to JConsole
+         .. step:: Return to {+jconsole+}.
 
             Navigate back to the :guilabel:`MBeans` tab in {+jconsole+}.
             The ``{+metrics-path+}.sink-task-0.records``
             attribute should now have a value of ``1``.
 
-   .. step:: Stop and Remove the Quick Start
+   .. step:: Stop and remove the Quick Start.
 
       To stop and remove the Quick Start environment, follow the
       :ref:`<kafka-quickstart-remove-the-sandbox>` step of the Quick Start.
