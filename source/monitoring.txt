@@ -42,7 +42,7 @@ The {+mkc+} uses **{+jmx-long+} (JMX)** to enable monitoring.
 JMX is a technology included in the {+java-se+} that provides
 tools to monitor applications and devices. You can view the
 metrics produced by the connector with any JMX console, such
-as ``jconsole``.
+as {+jconsole+}.
 
 The {+mkc+} provides metrics for individual connector **tasks**.
 Tasks are classes instantiated by a connector that copy data to and
@@ -51,7 +51,7 @@ from data stores and {+ak+}. A connector manages one or more tasks.
 To learn more about JMX, see the following resources from Oracle:
 
 - `Java Management Extensions Guide <https://docs.oracle.com/en/java/javase/17/jmx/introduction-jmx-technology.html>`__
-- `Using JConsole <https://docs.oracle.com/en/java/javase/17/management/using-jconsole.html>`__
+- `Using {+jconsole+} <https://docs.oracle.com/en/java/javase/17/management/using-jconsole.html>`__
 
 To learn more about tasks in {+kc+}, see the following resources:
 
@@ -81,29 +81,29 @@ Example - Monitor the Quick Start
 The sample environment provided in the Quick Start exposes metrics
 on your host machine at the URI ``localhost:35000``.
 
-To view these metrics with ``jconsole``, perform the following actions:
-
-.. tip:: Download jconsole
-
-   ``jconsole`` is part of the {+java-se+}. To download ``jconsole``, download the
-   `Java SE Development Kit <https://www.oracle.com/java/technologies/downloads/>`__
-   from Oracle.
+To view these metrics with {+jconsole+}, perform the following actions:
 
 .. procedure::
    :style: normal
+
+   .. step:: Download {+jconsole+}
+
+      {+jconsole+} is part of the {+java-se+}. To download {+jconsole+}, download the
+      `Java SE Development Kit <https://www.oracle.com/java/technologies/downloads/>`__
+      from Oracle.
 
    .. step:: Start The Quick Start Pipeline and Add Connectors
 
       Follow the Quick Start until the :ref:`<kafka-quick-start-send-a-document>`
       step.
 
-   .. step:: Start jconsole
+   .. step:: Start {+jconsole+}
 
-      Run the following command from your command line to start ``jconsole``:
+      Run the following command from your command line to start {+jconsole+}:
 
       .. code-block:: shell
 
-         jconsole
+         {+jconsole_command+}
 
    .. step:: Connect to {+kc+} JMX Server
 
@@ -113,18 +113,18 @@ To view these metrics with ``jconsole``, perform the following actions:
          .. step:: Enter Your JMX Server URI
 
             Enter the URI ``localhost:35000`` into the :guilabel:`Remote Process`
-            text input box in the JConsole interface.
+            text input box in the {+jconsole+} interface.
 
-         .. step:: Press the :guilabel:`Connect` button.
+         .. step:: Click :guilabel:`Connect`.
 
-         .. step:: Press the :guilabel:`Insecure Connection` button in the dialog box.
+         .. step:: Click :guilabel:`Insecure Connection` in the dialog box.
 
    .. step:: Explore Metrics
 
       .. procedure::
          :style: connected
 
-         .. step:: Navigate to the :guilabel:`MBeans` tab in ``jconsole``.
+         .. step:: Navigate to the :guilabel:`MBeans` tab in {+jconsole+}.
 
          .. step:: Inspect connector metrics.
 
