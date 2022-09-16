@@ -142,10 +142,10 @@ To view these metrics with {+jconsole+}, perform the following actions:
             The ``{+metrics-path+}.sink-task-0.records``
             attribute should now have a value of ``1``.
 
-    .. step:: Stop and Remove the Quick Start
+   .. step:: Stop and Remove the Quick Start
 
-       To stop and remove the Quick Start environment, follow the
-       :ref:`<kafka-quickstart-remove-the-sandbox>` step of the Quick Start.
+      To stop and remove the Quick Start environment, follow the
+      :ref:`<kafka-quickstart-remove-the-sandbox>` step of the Quick Start.
  
 .. _kafka-monitoring-all-attributes:
 
