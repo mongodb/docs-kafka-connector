@@ -52,7 +52,7 @@ from Oracle.
 Read Task Level Metrics
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The {+mkc+} provides metrics at the **task** level.
+The {+mkc+} provides metrics for connector **tasks**.
 Tasks are classes instantiated by a connector that copy data to and
 from data stores and {+ak+}. A connector manages one or more tasks.
 
@@ -164,8 +164,9 @@ To view these metrics with ``jconsole``, perform the following actions:
             Continue the Quick Start until, but not through, the
             :ref:`<kafka-quickstart-remove-the-sandbox>` step.
 
-            Notice that the ``{+metrics-path+}.sink-task-0.records``
-            attribute now has a value of ``1``.            
+            After completeing the preceding sections of the Quick Start,
+            the ``{+metrics-path+}.sink-task-0.records``
+            attribute should now have a value of ``1``.            
 
 .. _kafka-monitoring-all-attributes:
 
