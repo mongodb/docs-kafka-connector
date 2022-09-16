@@ -38,53 +38,25 @@ To learn more about logging in the connector, see the
 Monitor the Connector
 ---------------------
 
-The {+mkc+} uses {+jmx-long+} to enable monitoring.
-You can view the metrics produced by the connector with any
-JMX console.
+The {+mkc+} uses **{+jmx-long+} (JMX)** to enable monitoring.
+JMX is a technology included in the {+java-se+} that provides
+tools to monitor applications and devices. You can view the
+metrics produced by the connector with any JMX console, such
+as ``jconsole``.
 
-To learn more about JMX, see the
-`Java Management Extensions Guide <https://docs.oracle.com/en/java/javase/17/jmx/introduction-jmx-technology.html>`__
-from Oracle.
-
-To learn more about JMX consoles, see
-`Using JConsole <https://docs.oracle.com/en/java/javase/17/management/using-jconsole.html>`__
-from Oracle.
-
-Read Task Level Metrics
-~~~~~~~~~~~~~~~~~~~~~~~
-
-The {+mkc+} provides metrics for connector **tasks**.
+The {+mkc+} provides metrics for individual connector **tasks**.
 Tasks are classes instantiated by a connector that copy data to and
 from data stores and {+ak+}. A connector manages one or more tasks.
 
-A MongoDB source connector task has a ``poll()`` method to retrieve
-documents from MongoDB and send them to {+ak+}. A MongoDB sink
-connector task has a ``put()`` method to retrieve documents from {+ak+}
-and send them to MongoDB. The {+mkc+} provides metrics to track a MongoDB
-source task's use of the ``poll()`` method and a MongoDB sink task's use of the
-``put()`` method. 
+To learn more about JMX, see the following resources from Oracle:
 
-.. note:: Source Connector Tasks and getMore
-
-   Metrics for source connector tasks distinguish between
-   **initial commands** and ``getMore`` commands. An initial
-   command is a ``find`` or ``aggregate`` command sent to a MongoDB
-   instance that retrieves the first set of documents in a client-side
-   MongoDB cursor. A ``getMore`` command is a MongoDB command that fetches
-   a new set of documents to replace a set of documents populating a cursor.
-
-   To learn more about ``getMore`` commands, see <TODO: link to getMore in server>.
+- `Java Management Extensions Guide <https://docs.oracle.com/en/java/javase/17/jmx/introduction-jmx-technology.html>`__
+- `Using JConsole <https://docs.oracle.com/en/java/javase/17/management/using-jconsole.html>`__
 
 To learn more about tasks in {+kc+}, see the following resources:
 
 - `Kafka Connect Concepts from Confluent <https://docs.confluent.io/platform/current/connect/concepts.html#tasks>`__
 - `{+kc+} API documentation for Task interface <https://kafka.apache.org/21/javadoc/index.html?org/apache/kafka/connect/connector/Task.html>`__
-
-To learn more about ``poll()`` and ``put()`` methods, see the following
-resources:
-
-- `{+kc+} API documentation for SourceTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/source/SourceTask.html>`__
-- `{+kc+} API documentation for SinkTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/sink/SinkTask.html>`__
 
 Enable Monitoring
 ~~~~~~~~~~~~~~~~~
@@ -113,8 +85,7 @@ To view these metrics with ``jconsole``, perform the following actions:
 
 .. tip:: Download jconsole
 
-   ``jconsole`` is part of the Java Platform, Standard Edition. To download
-   ``jconsole``, download the
+   ``jconsole`` is part of the {+java-se+}. To download ``jconsole``, download the
    `Java SE Development Kit <https://www.oracle.com/java/technologies/downloads/>`__
    from Oracle.
 
@@ -183,6 +154,19 @@ sink connectors through {+jmx-long+} (JMX).
    To learn more about attributes and ``MBeans``, see the
    `Standard MBeans Tutorial <https://docs.oracle.com/javase/tutorial/jmx/mbeans/standard.html>`__
    from Oracle.
+
+.. note:: Poll and Put Methods
+
+   A MongoDB source connector task has a ``poll()`` method to retrieve
+   documents from MongoDB and send them to {+ak+}. A MongoDB sink
+   connector task has a ``put()`` method to retrieve documents from {+ak+}
+   and send them to MongoDB.
+
+   To learn more about ``poll()`` and ``put()`` methods, see the following
+   resources:
+
+   - `{+kc+} API documentation for SourceTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/source/SourceTask.html>`__
+   - `{+kc+} API documentation for SinkTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/sink/SinkTask.html>`__
 
 .. _kafka-monitoring-sink-attributes:
 
@@ -362,6 +346,17 @@ Sink Connector JMX Metrics
 
 Source Connector JMX Metrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note:: Source Connector Tasks and getMore
+
+   Some metrics for source connector tasks distinguish between
+   **initial commands** and ``getMore`` commands. An initial
+   command is a ``find`` or ``aggregate`` command sent to a MongoDB
+   instance that retrieves the first set of documents in a client-side
+   MongoDB cursor. A ``getMore`` command is a MongoDB command that fetches
+   a new set of documents to replace a set of documents populating a cursor.
+
+   To learn more about ``getMore`` commands, see <TODO: link to getMore in server>.
 
 .. list-table::
    :header-rows: 1

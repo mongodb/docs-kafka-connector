@@ -30,6 +30,7 @@ jmx-long = "Java Management Extensions"
 jmx-hover = ":abbr:`JMX ({+jmx-long+})`"
 l4j = "Log4j"
 metrics-path = "com.mongodb.kafka.connect"
+java-se = "Java Platform, Standard Edition"
 
 write-exception-version="1"
 write-concern-exception-version="1"
