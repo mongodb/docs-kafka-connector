@@ -115,16 +115,16 @@ To view these metrics with {+jconsole+}, perform the following actions:
             Enter the URI ``localhost:35000`` into the :guilabel:`Remote Process`
             text input box in the {+jconsole+} interface.
 
-         .. step:: Click :guilabel:`Connect`.
+         .. step:: Click :guilabel:`Connect`
 
-         .. step:: Click :guilabel:`Insecure Connection` in the dialog box.
+         .. step:: Click :guilabel:`Insecure Connection` in the dialog box
 
    .. step:: Explore Metrics
 
       .. procedure::
          :style: connected
 
-         .. step:: Navigate to the :guilabel:`MBeans` tab in {+jconsole+}.
+         .. step:: Navigate to the :guilabel:`MBeans` tab in {+jconsole+}
 
          .. step:: Inspect connector metrics.
 
@@ -136,10 +136,17 @@ To view these metrics with {+jconsole+}, perform the following actions:
             Continue the Quick Start until, but not through, the
             :ref:`<kafka-quickstart-remove-the-sandbox>` step.
 
-            After completeing the preceding sections of the Quick Start,
-            the ``{+metrics-path+}.sink-task-0.records``
-            attribute should now have a value of ``1``.            
+         .. step:: Return to JConsole
 
+            Navigate back to the :guilabel:`MBeans` tab in {+jconsole+}.
+            The ``{+metrics-path+}.sink-task-0.records``
+            attribute should now have a value of ``1``.
+
+    .. step:: Stop and Remove the Quick Start
+
+       To stop and remove the Quick Start environment, follow the
+       :ref:`<kafka-quickstart-remove-the-sandbox>` step of the Quick Start.
+ 
 .. _kafka-monitoring-all-attributes:
 
 Available Metrics
@@ -347,7 +354,7 @@ Sink Connector JMX Metrics
 Source Connector JMX Metrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: Source Connector Tasks and getMore
+.. note:: Initial Commands and ``getMore`` Commands
 
    Some metrics for source connector tasks distinguish between
    **initial commands** and ``getMore`` commands. An initial
