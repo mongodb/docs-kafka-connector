@@ -1,4 +1,4 @@
-.. _kafka-monitoring:
+.. _kafka-logging:
 
 =======
 Logging

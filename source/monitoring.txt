@@ -31,7 +31,7 @@ To view a list of all metrics produced by MongoDB source and sink
 connectors, see the :ref:`<kafka-monitoring-all-attributes>` section.
 
 To learn more about logging in the connector, see the
-:ref:`<kafka-monitoring>` guide.
+:ref:`<kafka-logging>` guide.
 
 .. _kafka-monitoring-information:
 
@@ -63,7 +63,7 @@ Enable Monitoring
 
 The {+mkc+} uses {+kc+}'s metrics infrastructure to
 serve metrics. To read the metrics produced by your connector,
-enable JMX and launch your {+kc+} deployment.
+enable JMX in your {+kc+} deployment.
 
 To learn how to enable JMX for a {+kc+} instance
 running on your host machine, see the
@@ -126,7 +126,7 @@ To view these metrics with ``jconsole``, perform the following actions:
 
          .. step:: Navigate to the :guilabel:`MBeans` tab in ``jconsole``.
 
-         .. step:: Inspect connector metrics in the ``{+metrics-path+}`` path.
+         .. step:: Inspect connector metrics.
 
             Notice that the ``{+metrics-path+}.sink-task-0.records``
             attribute has a value of ``0``.
