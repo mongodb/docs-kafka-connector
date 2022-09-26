@@ -33,6 +33,7 @@ metrics-path = "com.mongodb.kafka.connect"
 java-se = "Java Platform, Standard Edition"
 jconsole = "JConsole"
 jconsole_command = "jconsole"
+kafka_api_docs_base = "https://kafka.apache.org/32/"
 
 write-exception-version="1"
 write-concern-exception-version="1"

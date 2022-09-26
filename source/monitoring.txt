@@ -44,19 +44,28 @@ tools to monitor applications and devices. You can view the
 metrics produced by the connector with any JMX console, such
 as {+jconsole+}.
 
-The {+mkc+} provides metrics for individual connector **tasks**.
-Tasks are classes instantiated by a connector that copy data to and
-from data stores and {+ak+}. A connector manages one or more tasks.
+The {+mkc+} provides metrics for individual **tasks**.
+Tasks are classes instantiated by {+kc+} that copy
+data to and from datastores and {+ak+}. The names and
+responsibilities or the two types of tasks in {+kc+} are as
+follows:
+
+- A source task copies data from a data store to {+ak+}.
+- A sink task copies data from {+ak+} to a data store.
+
+A sink connector configures one or more sink tasks.
+A source connector configures one or more source tasks.
 
 To learn more about JMX, see the following resources from Oracle:
 
 - `Java Management Extensions Guide <https://docs.oracle.com/en/java/javase/17/jmx/introduction-jmx-technology.html>`__
 - `Using {+jconsole+} <https://docs.oracle.com/en/java/javase/17/management/using-jconsole.html>`__
 
-To learn more about tasks in {+kc+}, see the following resources:
+To learn more about tasks and connectors in {+kc+}, see the following resources:
 
 - `Kafka Connect Concepts from Confluent <https://docs.confluent.io/platform/current/connect/concepts.html#tasks>`__
-- `{+kc+} API documentation for Task interface <https://kafka.apache.org/21/javadoc/index.html?org/apache/kafka/connect/connector/Task.html>`__
+- `{+kc+} API documentation for the Task interface <{+kafka_api_docs_base+}javadoc/index.html?org/apache/kafka/connect/connector/Task.html>`__
+- `{+kc+} API documentation for the Connector abstract class <{+kafka_api_docs_base+}javadoc/org/apache/kafka/connect/connector/Connector.html>`__
 
 Enable Monitoring
 ~~~~~~~~~~~~~~~~~
@@ -128,8 +137,9 @@ To view these metrics with {+jconsole+}, perform the following actions:
 
          .. step:: Inspect connector metrics.
 
-            Notice that the ``{+metrics-path+}.sink-task-0.records``
-            attribute has a value of ``0``.
+            Notice that the attribute ``{+metrics-path+}.sink-task-metrics.sink-task-0.records``
+            attribute has a value of ``0``. This value indicates that
+            your sink task has not recieved any records from {+ak+}.
 
          .. step:: Continue the Quick Start.
 
@@ -139,7 +149,7 @@ To view these metrics with {+jconsole+}, perform the following actions:
          .. step:: Return to {+jconsole+}.
 
             Navigate back to the :guilabel:`MBeans` tab in {+jconsole+}.
-            The ``{+metrics-path+}.sink-task-0.records``
+            The ``{+metrics-path+}.sink-task-metrics.sink-task-0.records``
             attribute should now have a value of ``1``.
 
    .. step:: Stop and remove the Quick Start environment.
@@ -172,8 +182,8 @@ sink connectors through {+jmx-long+} (JMX).
    To learn more about ``poll()`` and ``put()`` methods, see the following
    resources:
 
-   - `{+kc+} API documentation for SourceTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/source/SourceTask.html>`__
-   - `{+kc+} API documentation for SinkTask interface <https://kafka.apache.org/21/javadoc/org/apache/kafka/connect/sink/SinkTask.html>`__
+   - `{+kc+} API documentation for SourceTask interface <{+kafka_api_docs_base+}javadoc/org/apache/kafka/connect/source/SourceTask.html>`__
+   - `{+kc+} API documentation for SinkTask interface <{+kafka_api_docs_base+}javadoc/org/apache/kafka/connect/sink/SinkTask.html>`__
 
 .. _kafka-monitoring-sink-attributes:
 
@@ -360,10 +370,11 @@ Source Connector JMX Metrics
    **initial commands** and ``getMore`` commands. An initial
    command is a ``find`` or ``aggregate`` command sent to a MongoDB
    instance that retrieves the first set of documents in a client-side
-   MongoDB cursor. A ``getMore`` command is a MongoDB command that fetches
-   a new set of documents to replace a set of documents populating a cursor.
+   MongoDB cursor. The ``getMore`` command is the MongoDB command that fetches
+   the subsequent sets of documents in a cursor.
 
-   To learn more about ``getMore`` commands, see <TODO: link to getMore in server>.
+   To learn more about ``getMore`` commands, see the
+   :ref:`<manual-reference-commands-getMore>` page.
 
 .. list-table::
    :header-rows: 1
