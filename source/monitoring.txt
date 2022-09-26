@@ -430,7 +430,7 @@ Source Connector JMX Metrics
    the subsequent sets of documents in a cursor.
 
    To learn more about ``getMore`` commands, see the
-   :command:`getMore` page.
+   :manual:`reference/command/getMore` page.
 
 .. list-table::
    :header-rows: 1
