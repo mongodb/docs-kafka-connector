@@ -110,15 +110,15 @@ paths:
 To relate {+kc+} metrics to {+mkc+} metrics, you must remember the
 order in which you added your connectors to {+kc+}.
 
-.. note:: Naming Conflict
+.. note:: Naming Conflicts
 
    If the {+mkc+} ever encounters a naming conflict when it attempts
-   to register an MBean on a JMX path, the {+mkc+} adds a version suffix
-   to the MBean.
+   to register an ``MBean`` on a JMX path, the {+mkc+} adds a version suffix
+   to the ``MBean``.
 
-   For example, if the connector tries to register an Mbean under the path 
+   For example, if the connector tries to register an ``MBean`` under the path 
    ``{+metrics-path+}.sink-task-metrics.sink-task-0`` and is unable to do
-   so, it attempts to register the Mbean under
+   so, it attempts to register the ``MBean`` under
    ``{+metrics-path+}.sink-task-metrics.sink-task-0-v1``. 
 
 
