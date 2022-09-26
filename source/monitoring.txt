@@ -47,7 +47,7 @@ as {+jconsole+}.
 The {+mkc+} provides metrics for individual **tasks**.
 Tasks are classes instantiated by {+kc+} that copy
 data to and from datastores and {+ak+}. The names and
-responsibilities or the two types of tasks in {+kc+} are as
+responsibilities of the two types of tasks in {+kc+} are as
 follows:
 
 - A source task copies data from a data store to {+ak+}.
@@ -137,7 +137,7 @@ To view these metrics with {+jconsole+}, perform the following actions:
 
          .. step:: Inspect connector metrics.
 
-            Notice that the attribute ``{+metrics-path+}.sink-task-metrics.sink-task-0.records``
+            Notice that the ``{+metrics-path+}.sink-task-metrics.sink-task-0.records``
             attribute has a value of ``0``. This value indicates that
             your sink task has not recieved any records from {+ak+}.
 
