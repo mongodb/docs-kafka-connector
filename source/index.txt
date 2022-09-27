@@ -20,6 +20,7 @@ MongoDB Kafka Connector
    Source Connector </source-connector>
    Security and Authentication </security-and-authentication>
    Monitoring and Logging </monitoring-and-logging>
+   Logging </logging>
    Migrate from the Community Connector <migrate-from-kafka-connect-mongodb>
    Troubleshooting </troubleshooting>
    How to Contribute </contribute>
@@ -45,6 +46,7 @@ sections:
 - :doc:`Sink Connector </sink-connector>`
 - :doc:`Source Connector </source-connector>`
 - :doc:`Security and Authentication </security-and-authentication>`
+  :doc:`Logging </logging>`
   :doc:`Migrate from the Community Connector </migrate-from-kafka-connect-mongodb>`
 - :doc:`Troubleshooting </troubleshooting>`
 - :doc:`How to Contribute </contribute>`
