@@ -29,23 +29,17 @@ What's New in 1.8
 -----------------
 
 - Updated the MongoDB Java driver dependency to version 4.7
-- Updated log messages in source and sink connectors. For a complete list
-  of log message updates, see
-  `KAFKA-302 <https://jira.mongodb.org/browse/KAFKA-302>`__ in JIRA. 
-- Added support for monitoring source and sink connectors with JMX.
+- Added several logger events and details in source and sink connectors to help with debugging. For a complete list
+  of updates, see the
+  `KAFKA-302 <https://jira.mongodb.org/browse/KAFKA-302>`__ issue in JIRA. 
+- Added JMX monitoring support for the source and sink connectors.
   To learn more about monitoring connectors, see the
   :ref:`<kafka-monitoring>` page.
 
 Sink Connector
 ~~~~~~~~~~~~~~
 
-- Added support in the MongoDB sink connector's Debezium change data
-  capture (CDC) handler for events produced by Debezium's MongoDB
-  change stream CDC handler. To learn more about Debezium's
-  MongoDB change stream CDC handler, see
-  `DBZ-4205 <https://issues.redhat.com/browse/DBZ-4205>`__
-  from RedHat. To learn more about the MongoDB sink connector's
-  Debezium CDC handler, see :ref:`<sink-fundamentals-cdc-handler>`.
+- Added support for the Debezium MongoDB change stream CDC handler. You can now configure the connector to listen for events produced by this handler.
 
 .. _kafka-connector-whats-new-1.7:
 
