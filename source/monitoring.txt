@@ -60,13 +60,17 @@ to satisfy those use cases:
      - Use the ``records`` metric.
 
    * - You need to how old the most recent change stream event your connector
-       is.
+       processed is.
      - Use the ``latest-mongodb-time-difference-secs``
        metric.
 
-   * - You need to know the percentage of records your source connector
-       received from MongoDB the connector wrote to Kafka.
+   * - You need to know the percentage of records your connector
+       received that it failed to write to {+ak+}.
      - Use the ``records-filtered`` and ``records`` metrics.
+
+   * - You need to know the average size of the documents your connector
+       has processed.
+     - Use the ``mongodb-bytes-read`` and ``records`` metrics.
 
    * - You need to find a bottleneck in how {+kc+} and your MongoDB source
        connector write MongoDB documents to {+ak+}.
@@ -103,6 +107,11 @@ to satisfy those use cases:
        wrote to MongoDB.
      - Use the ``records`` metric.
 
+   * - You need to know the how long the interval of time is between
+       when a record arrives in a Kafka topic to when your connector writes
+       that record to MongoDB.
+     - Use the ``latest-kafka-time-difference-ms`` metric.
+
    * - You need to know the total number of write errors your connector
        encountered when attempting to write to MongoDB.
      - Use the ``batch-writes-failed`` metric.
@@ -110,6 +119,7 @@ to satisfy those use cases:
    * - You need to know if your MongoDB performance is getting slower
        over time.
      - Use the ``getmore-commands-successful-duration-over-<number>-ms``
+       and ``getmore-commands-failed-duration-over-<number>-ms``
        metrics. Track the change in these metrics over
        time, and see if the values of tne longer-duration metrics are increasing
        at a faster rate than the values of the shorter-duration metrics.
