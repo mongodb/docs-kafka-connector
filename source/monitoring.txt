@@ -41,6 +41,52 @@ Use Cases
 This section describes use cases for monitoring MongoDB source and sink
 connectors.
 
+Sink Connector
+~~~~~~~~~~~~~~
+
+The following table describes some use cases for monitoring the MongoDB
+sink connector and the metrics the sink connector provides
+to satisfy those use cases:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - Use Case
+     - Metrics to Use
+
+   * - You need to know the total number of records your connector
+       wrote to MongoDB.
+     - Use the ``records`` metric.
+
+   * - You need to know how long the interval of time is between
+       when a record arrives in a Kafka topic and when your connector writes
+       that record to MongoDB.
+     - Use the ``latest-kafka-time-difference-ms`` metric.
+
+   * - You need to know the total number of write errors your connector
+       encountered when attempting to write to MongoDB.
+     - Use the ``batch-writes-failed`` metric.
+
+   * - You need to know if your MongoDB performance is getting slower
+       over time.
+     - Use the ``getmore-commands-successful-duration-over-<number>-ms``
+       and ``getmore-commands-failed-duration-over-<number>-ms``
+       metrics. Track the change in these metrics over
+       time, and see if the values of the longer-duration metrics are increasing
+       at a faster rate than the values of the shorter-duration metrics.
+ 
+   * - You need to find a bottleneck in how {+kc+} and your MongoDB sink
+       connector write {+ak+} records to MongoDB.
+     - Compare the values of the following metrics:
+     
+       - ``in-task-put-duration-ms``
+       - ``in-connect-framework-duration-ms``
+       - ``processing-phase-duration-ms``
+
+You can find descriptions of all MongoDB sink connector metrics in the
+:ref:`<kafka-monitoring-sink-attributes>` section.
+
 Source Connector
 ~~~~~~~~~~~~~~~~
 
@@ -88,52 +134,6 @@ to satisfy those use cases:
 
 You can find descriptions of all MongoDB source connector metrics in the
 :ref:`<kafka-monitoring-source-attributes>` section.
-
-Sink Connector
-~~~~~~~~~~~~~~
-
-The following table describes some use cases for monitoring the MongoDB
-sink connector and the metrics the sink connector provides
-to satisfy those use cases:
-
-.. list-table::
-   :header-rows: 1
-   :widths: 40 60
-
-   * - Use Case
-     - Metrics to Use
-
-   * - You need to know the total number of records your connector
-       wrote to MongoDB.
-     - Use the ``records`` metric.
-
-   * - You need to know how long the interval of time is between
-       when a record arrives in a Kafka topic and when your connector writes
-       that record to MongoDB.
-     - Use the ``latest-kafka-time-difference-ms`` metric.
-
-   * - You need to know the total number of write errors your connector
-       encountered when attempting to write to MongoDB.
-     - Use the ``batch-writes-failed`` metric.
-
-   * - You need to know if your MongoDB performance is getting slower
-       over time.
-     - Use the ``getmore-commands-successful-duration-over-<number>-ms``
-       and ``getmore-commands-failed-duration-over-<number>-ms``
-       metrics. Track the change in these metrics over
-       time, and see if the values of the longer-duration metrics are increasing
-       at a faster rate than the values of the shorter-duration metrics.
- 
-   * - You need to find a bottleneck in how {+kc+} and your MongoDB sink
-       connector write {+ak+} records to MongoDB.
-     - Compare the values of the following metrics:
-     
-       - ``in-task-put-duration-ms``
-       - ``in-connect-framework-duration-ms``
-       - ``processing-phase-duration-ms``
-
-You can find descriptions of all MongoDB sink connector metrics in the
-:ref:`<kafka-monitoring-sink-attributes>` section.
 
 Monitor the Connector
 ---------------------
