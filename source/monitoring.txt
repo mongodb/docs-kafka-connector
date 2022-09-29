@@ -65,23 +65,22 @@ to satisfy those use cases:
        metric.
 
    * - You need to know the percentage of records your source connector
-       recieved from MongoDB the connector wrote to Kafka.
+       received from MongoDB the connector wrote to Kafka.
      - Use the ``records-filtered`` and ``records`` metrics.
 
    * - You need to find a bottleneck in how {+kc+} and your MongoDB source
        connector write MongoDB documents to {+ak+}.
      - Compare the values of the following metrics:
 
-       - ``in-task-poll-duration-ms`` (reading from MongoDB)
-       - ``in-connect-framework-duration-ms`` (executing Kafka Connect framework
-         operations, such as executing SMTs)
+       - ``in-task-poll-duration-ms``
+       - ``in-connect-framework-duration-ms``
 
    * - You need to know if your MongoDB performance is getting slower
        over time.
      - Use the ``getmore-commands-successful-duration-over-<number>-ms``
        metrics. Track the change in these metrics over
-       time, and see if the number of longer duration metrics are increasing
-       at a faster rate than the shorter duration metrics.
+       time, and see if the values of the longer-duration metrics are increasing
+       at a faster rate than the values of the shorter-duration metrics.
 
 You can find descriptions of all MongoDB source connector metrics in the
 :ref:`<kafka-monitoring-source-attributes>` section.
@@ -100,11 +99,11 @@ to satisfy those use cases:
    * - Use Case
      - Metrics to Use
 
-   * - You need the to know the total number of records your connector
+   * - You need to know the total number of records your connector
        wrote to MongoDB.
      - Use the ``records`` metric.
 
-   * - You need the to know the total number of write errors your connector
+   * - You need to know the total number of write errors your connector
        encountered when attempting to write to MongoDB.
      - Use the ``batch-writes-failed`` metric.
 
@@ -112,15 +111,15 @@ to satisfy those use cases:
        over time.
      - Use the ``getmore-commands-successful-duration-over-<number>-ms``
        metrics. Track the change in these metrics over
-       time, and see if the number of longer duration metrics are increasing
-       at a faster rate than the shorter duration metrics.
+       time, and see if the values of tne longer-duration metrics are increasing
+       at a faster rate than the values of the shorter-duration metrics.
  
    * - You need to find a bottleneck in how {+kc+} and your MongoDB sink
        connector write {+ak+} records to MongoDB.
      - Compare the values of the following metrics:
      
-       - ``in-task-put-duration-ms`` (getting records from Kafka and writing to MongoDB)
-       - ``in-connect-framework-duration-ms`` ()
+       - ``in-task-put-duration-ms``
+       - ``in-connect-framework-duration-ms``
        - ``processing-phase-duration-ms``
 
 You can find descriptions of all MongoDB sink connector metrics in the
