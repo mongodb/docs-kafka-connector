@@ -36,13 +36,13 @@ To learn more about logging in the connector, see the
 .. _kafka-monitoring-information:
 
 Use Cases
-~~~~~~~~~
+---------
 
 This section describes use cases for monitoring MongoDB source and sink
 connectors.
 
 Source Connector
-`````````````````
+~~~~~~~~~~~~~~~~
 
 The following table describes some use cases for monitoring the MongoDB
 source connector and the metrics the source connector provides
@@ -90,7 +90,7 @@ You can find descriptions of all MongoDB source connector metrics in the
 :ref:`<kafka-monitoring-source-attributes>` section.
 
 Sink Connector
-``````````````
+~~~~~~~~~~~~~~
 
 The following table describes some use cases for monitoring the MongoDB
 sink connector and the metrics the sink connector provides
