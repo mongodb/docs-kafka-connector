@@ -107,8 +107,8 @@ to satisfy those use cases:
        wrote to MongoDB.
      - Use the ``records`` metric.
 
-   * - You need to know the how long the interval of time is between
-       when a record arrives in a Kafka topic to when your connector writes
+   * - You need to know how long the interval of time is between
+       when a record arrives in a Kafka topic and when your connector writes
        that record to MongoDB.
      - Use the ``latest-kafka-time-difference-ms`` metric.
 
@@ -121,7 +121,7 @@ to satisfy those use cases:
      - Use the ``getmore-commands-successful-duration-over-<number>-ms``
        and ``getmore-commands-failed-duration-over-<number>-ms``
        metrics. Track the change in these metrics over
-       time, and see if the values of tne longer-duration metrics are increasing
+       time, and see if the values of the longer-duration metrics are increasing
        at a faster rate than the values of the shorter-duration metrics.
  
    * - You need to find a bottleneck in how {+kc+} and your MongoDB sink
