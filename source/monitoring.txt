@@ -120,10 +120,8 @@ to satisfy those use cases:
 
    * - You need to find a bottleneck in how {+kc+} and your MongoDB source
        connector write MongoDB documents to {+ak+}.
-     - Compare the values of the following metrics:
-
-       - ``in-task-poll-duration-ms``
-       - ``in-connect-framework-duration-ms``
+     - Compare the values of the ``in-task-poll-duration-ms`` and
+       ``in-connect-framework-duration-ms`` metrics.
 
    * - You need to know if your MongoDB performance is getting slower
        over time.
