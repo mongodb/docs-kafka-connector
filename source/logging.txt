@@ -51,9 +51,9 @@ Update or add the following setting in your ``connect-log4j.properties`` file
 To toggle logging for errors see: TODO
 
 TODO: what do these mean:
-%d
-%p
-%X{connector.context
+%d Default date format
+%p 
+%X{connector.context} Output of the Thread Context Map. The value within the curly braces is the key to the value the loggerg will output
 %m
 %c
 %L
