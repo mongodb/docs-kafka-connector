@@ -65,7 +65,7 @@ Replicate Data with a CDC Handler
          .. code-block:: bash
             :caption: This command starts an interactive shell called CDCShell1
 
-            docker run --platform='linux/arm' --rm --name CDCShell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+            docker run --platform='linux/arm64' --rm --name CDCShell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
       Run the following command in the terminal to start an interactive shell
       called **CDCShell2** in the other terminal window:
@@ -84,7 +84,7 @@ Replicate Data with a CDC Handler
          .. code-block:: bash
             :caption: This command starts an interactive shell called CDCShell2
 
-            docker run --platform='linux/arm' --rm --name CDCShell2 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+            docker run --platform='linux/arm64' --rm --name CDCShell2 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
       Arrange the two windows on your screen to keep both of them visible to
       see real-time updates.

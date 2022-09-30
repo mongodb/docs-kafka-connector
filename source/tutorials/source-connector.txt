@@ -44,7 +44,7 @@ Get Started with the MongoDB Kafka Source Connector
 
             .. code-block:: bash
 
-               docker run --platform='linux/arm' --rm --name SourceTutorialShell --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+               docker run --platform='linux/arm64' --rm --name SourceTutorialShell --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
 
       Create a source configuration file called ``simplesource.json`` with
