@@ -51,40 +51,44 @@ Replicate Data with a CDC Handler
       Run the following command in the terminal to start an interactive shell
       called **CDCShell1** in one terminal window:
 
-      .. tab:: Intel Processors
-         :tabid: intel-cpu
+      .. tabs::
 
-         .. code-block:: bash
-            :caption: This command starts an interactive shell called CDCShell1
+         .. tab:: Intel Processors
+            :tabid: intel-cpu
 
-            docker run --rm --name CDCShell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+            .. code-block:: bash
+               :caption: This command starts an interactive shell called CDCShell1
 
-      .. tab:: Apple M1 Processors
-         :tabid: apple-m1-cpu
+               docker run --rm --name CDCShell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
-         .. code-block:: bash
-            :caption: This command starts an interactive shell called CDCShell1
+         .. tab:: Apple M1 Processors
+            :tabid: apple-m1-cpu
 
-            docker run --platform='linux/arm64' --rm --name CDCShell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+            .. code-block:: bash
+               :caption: This command starts an interactive shell called CDCShell1
+
+               docker run --platform='linux/arm64' --rm --name CDCShell1 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
       Run the following command in the terminal to start an interactive shell
       called **CDCShell2** in the other terminal window:
 
-      .. tab:: Intel Processors
-         :tabid: intel-cpu
+      .. tabs::
 
-         .. code-block:: bash
-            :caption: This command starts an interactive shell called CDCShell2
+         .. tab:: Intel Processors
+            :tabid: intel-cpu
 
-            docker run --rm --name CDCShell2 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+            .. code-block:: bash
+               :caption: This command starts an interactive shell called CDCShell2
 
-      .. tab:: Apple M1 Processors
-         :tabid: apple-m1-cpu
+               docker run --rm --name CDCShell2 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
-         .. code-block:: bash
-            :caption: This command starts an interactive shell called CDCShell2
+         .. tab:: Apple M1 Processors
+            :tabid: apple-m1-cpu
 
-            docker run --platform='linux/arm64' --rm --name CDCShell2 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
+            .. code-block:: bash
+               :caption: This command starts an interactive shell called CDCShell2
+
+               docker run --platform='linux/arm64' --rm --name CDCShell2 --network mongodb-kafka-base_localnet -it robwma/mongokafkatutorial:latest bash
 
       Arrange the two windows on your screen to keep both of them visible to
       see real-time updates.
