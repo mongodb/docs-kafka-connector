@@ -128,7 +128,7 @@ to satisfy those use cases:
      - Use the ``getmore-commands-successful-duration-over-<number>-ms``
        metrics. Track the change in these metrics over
        time. See if the number of longer running commands is increasing
-       at a faster rate than the number of the shorter running commands.
+       at a faster rate than the number of shorter running commands.
 
 You can find descriptions of all MongoDB source connector metrics in the
 :ref:`<kafka-monitoring-source-attributes>` section.
