@@ -73,8 +73,8 @@ to satisfy those use cases:
      - Use the ``getmore-commands-successful-duration-over-<number>-ms``
        and ``getmore-commands-failed-duration-over-<number>-ms``
        metrics. Track the change in these metrics over
-       time, and see if the values of the longer-duration metrics are increasing
-       at a faster rate than the values of the shorter-duration metrics.
+       time. See if the number of longer running commands is increasing
+       at a faster rate than the number of shorter running commands.
  
    * - You need to find a bottleneck in how {+kc+} and your MongoDB sink
        connector write {+ak+} records to MongoDB.
@@ -105,13 +105,13 @@ to satisfy those use cases:
        has processed. 
      - Use the ``records`` metric.
 
-   * - You need to how old the most recent change stream event your connector
+   * - You need to know how old the most recent change stream event your connector
        processed is.
      - Use the ``latest-mongodb-time-difference-secs``
        metric.
 
    * - You need to know the percentage of records your connector
-       received that it failed to write to {+ak+}.
+       received but failed to write to {+ak+}.
      - Use the ``records-filtered`` and ``records`` metrics.
 
    * - You need to know the average size of the documents your connector
@@ -127,8 +127,8 @@ to satisfy those use cases:
        over time.
      - Use the ``getmore-commands-successful-duration-over-<number>-ms``
        metrics. Track the change in these metrics over
-       time, and see if the values of the longer-duration metrics are increasing
-       at a faster rate than the values of the shorter-duration metrics.
+       time. See if the number of longer running commands is increasing
+       at a faster rate than the number of the shorter running commands.
 
 You can find descriptions of all MongoDB source connector metrics in the
 :ref:`<kafka-monitoring-source-attributes>` section.
