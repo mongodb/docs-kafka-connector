@@ -52,6 +52,7 @@ Replicate Data with a CDC Handler
       called **CDCShell1** in one terminal window:
 
       .. tabs::
+
          .. tab:: Intel Processors
             :tabid: intel-cpu
 
@@ -72,6 +73,7 @@ Replicate Data with a CDC Handler
       called **CDCShell2** in the other terminal window:
 
       .. tabs::
+
          .. tab:: Intel Processors
             :tabid: intel-cpu
 
