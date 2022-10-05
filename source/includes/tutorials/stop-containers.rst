@@ -1,7 +1,6 @@
 After you complete this tutorial, you can free resources by stopping the
-tutorial Docker containers and MongoDB data. Navigate to the tutorial
-directory "mongodb-kafka-base" that you created in the setup step and run the
-following command:
+tutorial Docker containers and removing images with the following
+command:
 
 .. code-block:: bash
    :copyable: true

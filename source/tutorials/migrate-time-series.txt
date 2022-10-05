@@ -44,7 +44,7 @@ Migrate a Collection to a Time Series Collection
 
    .. step:: Generate Sample Data
 
-      Run the following command to run a script in your Docker environment that generates
+      Run the following command to start a script in your Docker environment that generates
       a sample collection containing fabricated stock symbols and their prices
       in your tutorial MongoDB replica set:
 

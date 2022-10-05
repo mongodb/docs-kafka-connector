@@ -46,22 +46,21 @@ Replicate Data with a CDC Handler
       windows. In the tutorial, you can use the shells to run and observe
       different tasks.
 
-      Run the following command in the terminal to start an interactive shell,
-      which we will refer to in this tutorial as **CDCShell1**, in one terminal window:
+      Run the following command from a terminal to start an interactive shell.
 
       .. code-block:: bash
-         :caption: This command starts an interactive
 
          docker exec -it mongo1 /bin/bash
 
-      Run the following command in the terminal to start an interactive shell,
-      which we will refer to in this tutorial as **CDCShell2**, in the other
-      terminal window:
+      We will refer to this interactive shell as **CDCShell1** throughout this tutorial.
+
+      Run the following command in a second terminal to start an interactive shell:
 
       .. code-block:: bash
-         :caption: This command starts an interactive 
 
          docker exec -it mongo1 /bin/bash
+
+      We will refer to this interactive shell as **CDCShell2** throughout this tutorial.
 
       Arrange the two windows on your screen to keep both of them visible to
       see real-time updates.
