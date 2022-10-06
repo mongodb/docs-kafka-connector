@@ -34,6 +34,7 @@ To learn more about logging in the connector, see the
 :ref:`<kafka-logging>` guide.
 
 .. _kafka-monitoring-information:
+.. _kafka-monitoring-use-cases:
 
 Use Cases
 ---------
@@ -227,6 +228,8 @@ following values from provided metrics:
 - The value of a metric over a span of time
 - How does one metric compare to another metric    
 
+To view some examples of computed metrics, see the
+:ref:`<kafka-monitoring-use-cases>` section.
 
 JMX Paths
 ~~~~~~~~~
