@@ -62,14 +62,16 @@ to satisfy those use cases:
    * - Use Case
      - Metrics to Use
 
+   * - You need to know if a component of your pipeline is falling behind.
+     - Use the ``latest-kafka-time-difference-ms``
+       metric. This metric indicates the interval of time between
+       when a record arrived in a Kafka topic and when your connector
+       received that record. If the value of this metric is increasing,
+       it signals that there may be a problem with {+ak+} or MongoDB. 
+
    * - You need to know the total number of records your connector
        wrote to MongoDB.
      - Use the ``records`` metric.
-
-   * - You need to know how long the interval of time is between
-       when a record arrives in a Kafka topic and when your connector writes
-       that record to MongoDB.
-     - Use the ``latest-kafka-time-difference-ms`` metric.
 
    * - You need to know the total number of write errors your connector
        encountered when attempting to write to MongoDB.
@@ -79,6 +81,8 @@ to satisfy those use cases:
        over time.
      - Use the following metrics:
      
+       - ``initial-commands-successful-duration-over-<number>-ms``
+       - ``initial-commands-failed-duration-over-<number>-ms``
        - ``getmore-commands-successful-duration-over-<number>-ms``
        - ``getmore-commands-failed-duration-over-<number>-ms``
        - ``processing-phase-duration-over-<number>-ms``
@@ -111,14 +115,15 @@ to satisfy those use cases:
    * - Use Case
      - Metrics to Use
 
+   * - You need to know if a component of your pipeline is falling behind.
+     - Use the ``latest-mongodb-time-difference-secs``
+       metric. This metric indicates how old the most recent change
+       stream event your connector processed is. If this metric is increasing,
+       it signals that there may be a problem with {+ak+} or MongoDB. 
+
    * - You need to know the total number of change stream events your source connector
        has processed. 
      - Use the ``records`` metric.
-
-   * - You need to know how old the most recent change stream event your connector
-       processed is.
-     - Use the ``latest-mongodb-time-difference-secs``
-       metric.
 
    * - You need to know the percentage of records your connector
        received but failed to write to {+ak+}.
@@ -137,6 +142,9 @@ to satisfy those use cases:
        .. code-block:: text
 
           mongodb-bytes-read / records
+      
+       To learn how to calculate the average size of records over a span of
+       time, see :ref:`mongodb-bytes-read <kafka-monitoring-averge-record-size-span>`.
 
    * - You need to find a bottleneck in how {+kc+} and your MongoDB source
        connector write MongoDB documents to {+ak+}.
@@ -595,7 +603,9 @@ Source Connector JMX Metrics
      - The total number of bytes a MongoDB source task read from the
        MongoDB server.
 
-       .. tip:: Average Record size
+       .. _kafka-monitoring-averge-record-size-span:      
+
+       .. tip:: Average Record Size Over a Span of Time
 
           To calculate the average size of the records your sink connector
           processed over a span of time, perform the following actions:
