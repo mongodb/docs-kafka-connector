@@ -85,10 +85,8 @@ to satisfy those use cases:
 
        Use the following metrics to further diagnose any issues:
      
-       - ``initial-commands-successful-duration-over-<number>-ms``
-       - ``initial-commands-failed-duration-over-<number>-ms``
-       - ``getmore-commands-successful-duration-over-<number>-ms``
-       - ``getmore-commands-failed-duration-over-<number>-ms``
+       - ``batch-writes-successful-duration-over-<number>-ms``
+       - ``batch-writes-failed-duration-over-<number>-ms``
        - ``processing-phase-duration-over-<number>-ms``
  
    * - You need to find a bottleneck in how {+kc+} and your MongoDB sink
@@ -132,7 +130,7 @@ to satisfy those use cases:
 
        .. code-block:: text
       
-          records - (records-acknowledged + records-filtered)
+          (records - (records-acknowledged + records-filtered)) / records
 
    * - You need to know the average size of the documents your connector
        has processed.
@@ -148,16 +146,22 @@ to satisfy those use cases:
 
    * - You need to find a bottleneck in how {+kc+} and your MongoDB source
        connector write MongoDB documents to {+ak+}.
-     - Compare the values of the ``in-task-poll-duration-ms`` and
-       ``in-connect-framework-duration-ms`` metrics.
+     - Compare the values of the following metrics:
+     
+       - ``in-task-poll-duration-ms``
+       - ``in-connect-framework-duration-ms``
 
    * - You need to know if your MongoDB performance is getting slower
        over time.
      - Use the ``in-task-poll-duration-ms`` metric to initially diagnose
        a slowdown.
      
-       Use the ``getmore-commands-successful-duration-over-<number>-ms``
-       metrics to further diagnose any issues.
+       Use the following metrics to further diagnose any issues:
+     
+       - ``initial-commands-successful-duration-over-<number>-ms``
+       - ``initial-commands-failed-duration-over-<number>-ms``
+       - ``getmore-commands-successful-duration-over-<number>-ms``
+       - ``getmore-commands-failed-duration-over-<number>-ms``
 
 You can find descriptions of all MongoDB source connector metrics in the
 :ref:`<kafka-monitoring-source-attributes>` section.
@@ -218,7 +222,7 @@ The connector provides metrics related to the following
 types of quantities:
 
 - The number of times an event has occurred in total for a connector task
-- The value related to the most recent occurence of an event
+- The value related to the most recent occurrence of an event
 
 For some use cases, you must perform extra computations with the
 metrics the connector provides. For example, you must compute the
