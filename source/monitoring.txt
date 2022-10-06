@@ -79,17 +79,16 @@ to satisfy those use cases:
 
    * - You need to know if your MongoDB performance is getting slower
        over time.
-     - Use the following metrics:
+     - Use the ``in-task-put-duration-ms`` metric to initally diagnose
+       a slowdown.
+
+       Use the following metrics to further diagnose any issues:
      
        - ``initial-commands-successful-duration-over-<number>-ms``
        - ``initial-commands-failed-duration-over-<number>-ms``
        - ``getmore-commands-successful-duration-over-<number>-ms``
        - ``getmore-commands-failed-duration-over-<number>-ms``
        - ``processing-phase-duration-over-<number>-ms``
-       
-       Track the change in these metrics over time. See if the number of
-       longer running commands is increasing at a faster rate than the
-       number of shorter running commands.
  
    * - You need to find a bottleneck in how {+kc+} and your MongoDB sink
        connector write {+ak+} records to MongoDB.
@@ -153,10 +152,11 @@ to satisfy those use cases:
 
    * - You need to know if your MongoDB performance is getting slower
        over time.
-     - Use the ``getmore-commands-successful-duration-over-<number>-ms``
-       metrics. Track the change in these metrics over
-       time. See if the number of longer running commands is increasing
-       at a faster rate than the number of shorter running commands.
+     - Use the ``in-task-poll-duration-ms`` metric to initially diagnose
+       a slowdown.
+     
+       Use the ``getmore-commands-successful-duration-over-<number>-ms``
+       metrics to further diagnose any issues.
 
 You can find descriptions of all MongoDB source connector metrics in the
 :ref:`<kafka-monitoring-source-attributes>` section.
