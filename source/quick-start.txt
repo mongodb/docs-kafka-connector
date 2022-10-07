@@ -316,7 +316,7 @@ Select the tab that corresponds to the removal task you want to run.
 
       .. code-block:: shell
 
-         docker-compose -p mongo-kafka down --rmi 'all'
+         docker-compose -p mongo-kafka down --rmi all
 
    .. tab:: Remove Containers
       :tabid: remove-containers
