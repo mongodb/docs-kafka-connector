@@ -79,15 +79,7 @@ When you start the sandbox, Docker downloads any images it needs to run.
 After Docker downloads and builds the images, you should see the following
 output in your development environment:
 
-.. code-block:: shell
-   :copyable: false
-
-   Creating mongo1    ... done
-   Creating zookeeper ... done
-   Creating broker       ... done
-   Creating mongo1-setup ... done
-   Creating connect      ... done
-   Creating shell        ... done
+.. include:: /includes/tutorials/docker-success.rst
 
 .. include:: /includes/tutorials/port-mapping-note.rst
 

@@ -95,18 +95,10 @@ Set Up Your Development Environment with Docker
       .. figure:: /includes/figures/mongo-kafka-base-container.png
          :alt: Diagram that shows the Docker compose containers in mongo-kafka-base
 
-      When the script completes successfully, it outputs the following
-      information:
+      When the command completes successfully, it outputs the following
+      text:
 
-      .. code-block:: bash
-         :copyable: false
-
-         The following services are running:
-
-         MongoDB on port 27017
-         Kafka Broker on 9092
-         Kafka Zookeeper on 2181
-         Kafka Connect on 8083
+      .. include:: /includes/tutorials/docker-success.rst
 
    .. step:: Verify the Successful Setup
 
