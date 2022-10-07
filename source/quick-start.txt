@@ -89,6 +89,7 @@ output in your development environment:
    Creating connect      ... done
    Creating shell        ... done
 
+.. include:: /includes/tutorials/port-mapping-note.rst
 
 Add Connectors
 --------------
