@@ -105,7 +105,6 @@ Set Up Your Development Environment with Docker
       Confirm the development environment started normally by running the
       following commands:
 
-
       .. code-block:: bash
 
          docker exec mongo1 status
@@ -139,10 +138,10 @@ Set Up Your Development Environment with Docker
       Your development environment setup is complete and you can proceed to
       the next step of the tutorial.
 
-      .. tip:: Connect To Sandbox MongoDB From Host Machine
+      .. tip:: Connect To Development Environment MongoDB
 
          You can connect to the MongoDB server running in your
-         sandbox environment with the following connection string:
+         development environment with the following connection string:
 
          .. code-block:: text
 

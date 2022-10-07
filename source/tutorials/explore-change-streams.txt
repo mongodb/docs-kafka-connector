@@ -28,12 +28,23 @@ Explore Change Streams
    .. step:: Connect to the Docker Container
 
       Create two interactive shell sessions on the tutorial Docker
-      Container, each in a separate window, using the following command:
+      Container, each in a separate window.
+
+      Run the following command from a terminal to start an interactive shell.
 
       .. code-block:: bash
-         :caption: This command starts an interactive shell called ChangeStreamShell1
 
          docker exec -it mongo1 /bin/bash
+
+      We will refer to this interactive shell as **ChangeStreamShell1** throughout this tutorial.
+
+      Run the following command in a second terminal to start an interactive shell:
+
+      .. code-block:: bash
+
+         docker exec -it mongo1 /bin/bash
+
+      We will refer to this interactive shell as **ChangeStreamShell2** throughout this tutorial.
 
    .. step:: Open a Change Stream
 
