@@ -66,8 +66,9 @@ Migrate a Collection to a Time Series Collection
 
    .. step:: Configure the Source Connector
 
-      Create an interactive shell session on the tutorial Docker container
-      downloaded for the Tutorial Setup using the following command:
+      In a seperate terminal window, create an interactive shell session on the
+      tutorial Docker container downloaded for the Tutorial Setup using
+      the following command:
 
       .. code-block:: bash
 

@@ -284,6 +284,12 @@ Get Started with the MongoDB Kafka Source Connector
          use Tutorial1
          db.orders.insertOne( { 'order_id' : 2, 'item' : 'oatmeal' } )
 
+      Exit ``mongosh`` by running the following command:
+
+      .. code-block:: bash
+
+         exit
+
       Confirm the content of data on the new Kafka topic by running the
       following command:
 
