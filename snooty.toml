@@ -31,3 +31,5 @@ query-api = "MongoDB Query API"
 
 write-exception-version="1"
 write-concern-exception-version="1"
+mongodb-port-mapping="35001"
+jmx-port-mapping="35000"
