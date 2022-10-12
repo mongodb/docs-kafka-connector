@@ -230,7 +230,7 @@ following values from provided metrics:
 
 - The rate of change of a metric
 - The value of a metric over a span of time
-- How does one metric compare to another metric    
+- The difference between one metric and another metric    
 
 To view some examples of computed metrics, see the
 :ref:`<kafka-monitoring-use-cases>` section.
