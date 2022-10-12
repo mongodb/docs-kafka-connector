@@ -26,3 +26,4 @@ connector_driver_api_doc_url_base="https://mongodb.github.io/mongo-java-driver/{
 pipeline-size = "2.4 GB"
 default-heartbeat-topic = "__mongodb_heartbeats"
 mongodb-port-mapping="35001"
+jmx-port-mapping="35000"
