@@ -2,7 +2,9 @@ Kafka topics:
 ...
 
 The status of the connectors:
+
 source  |  mongo-simple-source  |  RUNNING  |  RUNNING  |  com.mongodb.kafka.connect.MongoSourceConnector
+
 Currently configured connectors
 
 [

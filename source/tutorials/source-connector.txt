@@ -42,7 +42,8 @@ Get Started with the MongoDB Kafka Source Connector
       Paste the following configuration information into the file and save
       your changes:
 
-      .. literalinclude:: /includes/tutorials/
+      .. literalinclude:: /includes/tutorials/source_connector/source.json
+         :language: json
 
       Run the following command in the shell to start the source connector
       using the configuration file you created:
@@ -72,22 +73,9 @@ Get Started with the MongoDB Kafka Source Connector
       If your source connector started successfully, you should see the
       following output:
 
-      .. code-block:: none
+      .. literalinclude:: /includes/tutorials/source_connector/output/status.out
+         :language: text
          :copyable: false
-
-         Kafka topics:
-         ...
-
-         The status of the connectors:
-
-         source  |  mongo-simple-source  |  RUNNING  |  RUNNING  |  com.mongodb.kafka.connect.MongoSourceConnector
-
-         Currently configured connectors
-
-         [
-           "mongo-simple-source"
-         ]
-         ...
 
    .. step:: Create Change Events
 
