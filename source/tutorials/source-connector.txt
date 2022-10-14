@@ -247,8 +247,6 @@ Get Started with the MongoDB Kafka Source Connector
          :language: json
          :copyable: false
 
-
-
    .. step:: (Optional) Stop the Docker Containers
 
       .. include:: /includes/tutorials/stop-containers.rst
