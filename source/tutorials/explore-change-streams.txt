@@ -58,7 +58,7 @@ Explore Change Streams
 
       Paste the following code into the file and save the changes:
 
-      .. literalinclude:: /includes/tutorials/cdc-handler/open_change_stream.py
+      .. literalinclude:: /includes/tutorials/cdc-handler/openchangestream.py
          :language: python
          :copyable: true
 

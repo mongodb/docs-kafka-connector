@@ -103,7 +103,7 @@ Get Started with the MongoDB Kafka Sink Connector
 
       Paste the following code into the file and save your changes:
 
-      .. literalinclude:: /includes/tutorials/sink-connector/kafka_write.py
+      .. literalinclude:: /includes/tutorials/sink-connector/kafkawrite.py
          :language: python
          :copyable: true
 
