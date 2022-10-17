@@ -42,7 +42,7 @@ Get Started with the MongoDB Kafka Source Connector
       Paste the following configuration information into the file and save
       your changes:
 
-      .. literalinclude:: /includes/tutorials/source_connector/source.json
+      .. literalinclude:: /includes/tutorials/source-connector/source.json
          :language: json
 
       Run the following command in the shell to start the source connector
@@ -73,7 +73,7 @@ Get Started with the MongoDB Kafka Source Connector
       If your source connector started successfully, you should see the
       following output:
 
-      .. literalinclude:: /includes/tutorials/source_connector/output/status.out
+      .. literalinclude:: /includes/tutorials/source-connector/output/status.out
          :language: text
          :copyable: false
 
@@ -147,7 +147,7 @@ Get Started with the MongoDB Kafka Source Connector
       You should see the following Kafka topic data, organized by "Key"
       and "Value" sections when you run the preceding command:
 
-      .. literalinclude: /includes/tutorials/source_connector/output/kc.txt
+      .. literalinclude: /includes/tutorials/source-connector/output/kc.txt
          :language: text
          :copyable: false
          :emphasize-lines: 3,5,7,9
@@ -156,7 +156,7 @@ Get Started with the MongoDB Kafka Source Connector
       ``payload`` that includes the ``fullDocument`` data as highlighted in
       the following formatted JSON document:
 
-      .. literalinclude:: /includes/tutorials/source_connector/output/document.json
+      .. literalinclude:: /includes/tutorials/source-connector/output/document.json
          :language: json
          :copyable: false
          :emphasize-lines: 15-20
@@ -192,7 +192,7 @@ Get Started with the MongoDB Kafka Source Connector
       Remove the existing configuration, add the following configuration,
       and save the file:
 
-      .. literalinclude:: /includes/tutorials/source_connector/source-full.json
+      .. literalinclude:: /includes/tutorials/source-connector/source-full.json
          :language: json
 
       Run the following command in the shell to start the source connector
@@ -231,7 +231,7 @@ Get Started with the MongoDB Kafka Source Connector
       The ``payload`` field in the "Value" document should contain only the
       following document data:
 
-      .. literalinclude:: /includes/tutorials/source_connector/output/kc.json 
+      .. literalinclude:: /includes/tutorials/source-connector/output/kc.json 
          :language: json
          :copyable: false
 
