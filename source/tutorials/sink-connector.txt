@@ -45,7 +45,7 @@ Get Started with the MongoDB Kafka Sink Connector
       Paste the following configuration information into the file and save
       your changes:
 
-      .. literalinclude:: /includes/tutorials/sink_connector/simple_sink.json 
+      .. literalinclude:: /includes/tutorials/sink-connector/simple_sink.json 
          language: json
          :copyable: true
          :emphasize-lines: 7-9
@@ -87,7 +87,7 @@ Get Started with the MongoDB Kafka Sink Connector
       If your sink connector started successfully, you should see the
       following output:
 
-      .. literalinclude:: /includes/tutorials/sink_connector/output/kc.txt
+      .. literalinclude:: /includes/tutorials/sink-connector/output/kc.txt
          :language: text
          :copyable: false
 
@@ -103,7 +103,7 @@ Get Started with the MongoDB Kafka Sink Connector
 
       Paste the following code into the file and save your changes:
 
-      .. literalinclude:: /includes/tutorials/sink_connector/kafka_write.py
+      .. literalinclude:: /includes/tutorials/sink-connector/kafka_write.py
          :language: python
          :copyable: true
 
