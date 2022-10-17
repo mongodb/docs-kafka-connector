@@ -45,7 +45,7 @@ Get Started with the MongoDB Kafka Sink Connector
       Paste the following configuration information into the file and save
       your changes:
 
-      .. literalinclude:: /includes/tutorials/sink-connector/simple_sink.json 
+      .. literalinclude:: /includes/tutorials/sink-connector/simplesink.json 
          language: json
          :copyable: true
          :emphasize-lines: 7-9
