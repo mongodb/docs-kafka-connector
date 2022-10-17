@@ -115,7 +115,7 @@ Replicate Data with a CDC Handler
       If your source connector started successfully, you should see the
       following output:
 
-      .. literalinclude:: /includes/tutorials/cdc-handler/output/status_output.txt
+      .. literalinclude:: /includes/tutorials/cdc-handler/output/status.txt
          :language: text
          :copyable: false
 
@@ -155,7 +155,7 @@ Replicate Data with a CDC Handler
       If your sink connector started successfully, you should see the
       following output:
 
-      .. literalinclude:: /includes/tutorials/cdc-handler/output/status_output_2.txt
+      .. literalinclude:: /includes/tutorials/cdc-handler/output/status-2.txt
          :language: text
          :copyable: false
 
