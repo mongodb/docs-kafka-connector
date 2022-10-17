@@ -156,7 +156,7 @@ Get Started with the MongoDB Kafka Source Connector
       ``payload`` that includes the ``fullDocument`` data as highlighted in
       the following formatted JSON document:
 
-      .. literalinclude:: /includes/tutorials/source_connector/output/full_document.json
+      .. literalinclude:: /includes/tutorials/source_connector/output/document.json
          :language: json
          :copyable: false
          :emphasize-lines: 15-20
