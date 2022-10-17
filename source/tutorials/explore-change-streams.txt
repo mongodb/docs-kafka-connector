@@ -58,7 +58,7 @@ Explore Change Streams
 
       Paste the following code into the file and save the changes:
 
-      .. literalinclude:: /includes/tutorials/cdc-handler/openchangestream.py
+      .. literalinclude:: /includes/tutorials/change-streams/openchangestream.py
          :language: python
          :copyable: true
 
@@ -105,7 +105,7 @@ Explore Change Streams
       After entering the preceding commands, switch to **ChangeStreamShell1** to view
       the change stream output, which should resemble the following:
 
-      .. literalinclude:: /includes/tutorials/cdc-handler/output/change.json
+      .. literalinclude:: /includes/tutorials/change-streams/output/change.json
          :language: json
          :copyable: true
          :emphasize-lines: 5
@@ -130,7 +130,7 @@ Explore Change Streams
 
       Paste the following code into the file and save the changes:
 
-      .. literalinclude:: /includes/tutorials/cdc-handler/pipeline.py
+      .. literalinclude:: /includes/tutorials/change-streams/pipeline.py
          :language: python
          :copyable: true
          :emphasize-lines: 6
