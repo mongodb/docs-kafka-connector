@@ -224,7 +224,7 @@ Replicate Data with a CDC Handler
       Kafka topic. You should see the following topic message in your
       **CDCShell1** window:
 
-      .. literalinclude:: /includes/tutorials/cdc-handler/output/full_document.json 
+      .. literalinclude:: /includes/tutorials/cdc-handler/output/document.json 
          :language: json
          :copyable: false
 
@@ -261,7 +261,7 @@ Replicate Data with a CDC Handler
       You should see the following topic message in your **CDCShell1**
       window:
 
-      .. literalinclude:: /includes/tutorials/cdc-handler/output/full_document_2.json 
+      .. literalinclude:: /includes/tutorials/cdc-handler/output/document-2.json 
          :language: json
          :copyable: false
 
