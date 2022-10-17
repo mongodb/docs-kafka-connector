@@ -134,7 +134,7 @@ Migrate a Collection to a Time Series Collection
       The output should show topic data as it is published by the source
       connector that resembles the following:
 
-      .. literalinclude:: /includes/tutorials/time_series/output/kc_output.txt 
+      .. literalinclude:: /includes/tutorials/time_series/output/kc.txt 
          :language: text
          :copyable: false
 
