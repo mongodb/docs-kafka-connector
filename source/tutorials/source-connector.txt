@@ -192,7 +192,7 @@ Get Started with the MongoDB Kafka Source Connector
       Remove the existing configuration, add the following configuration,
       and save the file:
 
-      .. literalinclude:: /includes/tutorials/source_connector/source_2.json
+      .. literalinclude:: /includes/tutorials/source_connector/source-full.json
          :language: json
 
       Run the following command in the shell to start the source connector
