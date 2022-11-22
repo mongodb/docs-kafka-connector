@@ -1,19 +1,21 @@
-Kafka topics:
+.. code-block: text
 
-    "topic": "docker-connect-status",
-    "topic": "docker-connect-offsets",
-    "topic": "docker-connect-configs",
-    "topic": "__consumer_offsets",
+   Kafka topics:
 
-The status of the connectors:
+       "topic": "docker-connect-status",
+       "topic": "docker-connect-offsets",
+       "topic": "docker-connect-configs",
+       "topic": "__consumer_offsets",
 
-
-Currently configured connectors
-
-[]
+   The status of the connectors:
 
 
-Version of MongoDB Connector for Apache Kafka installed:
+   Currently configured connectors
 
-{"class":"com.mongodb.kafka.connect.MongoSinkConnector","type":"sink","version":"1.8.0"}
-{"class":"com.mongodb.kafka.connect.MongoSourceConnector","type":"source","version":"1.8.0"}
+   []
+
+
+   Version of MongoDB Connector for Apache Kafka installed:
+
+   {"class":"com.mongodb.kafka.connect.MongoSinkConnector","type":"sink","version":"1.8.0"}
+   {"class":"com.mongodb.kafka.connect.MongoSourceConnector","type":"source","version":"1.8.0"}
