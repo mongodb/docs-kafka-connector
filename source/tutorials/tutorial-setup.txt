@@ -112,8 +112,8 @@ Set Up Your Development Environment with Docker
       This command should output the following information if the Docker
       development environment was set up successfully:
 
-      ..literalinclude:: /includes/tutorials/status-setup.out
-      
+      .. literalinclude:: /includes/tutorials/status-setup.out
+
       Since you have not started the connectors, the status and configured
       list are empty.
 
@@ -127,4 +127,4 @@ Set Up Your Development Environment with Docker
 
          .. code-block:: text
 
-            mongodb://localhost:{+mongodb-port-mapping+}/?directConnection=true   
+            mongodb://localhost:{+mongodb-port-mapping+}/?directConnection=true
