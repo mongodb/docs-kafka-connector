@@ -80,7 +80,6 @@ After Docker downloads and builds the images, you should see the following
 output in your development environment:
 
 .. include:: /includes/tutorials/docker-success.txt
-   :language: text
 
 .. include:: /includes/tutorials/port-mapping-note.rst
 
