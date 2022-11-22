@@ -98,7 +98,8 @@ Set Up Your Development Environment with Docker
       When the command completes successfully, it outputs the following
       text:
 
-      .. include:: /includes/tutorials/docker-success.rst
+      .. literalinclude:: /includes/tutorials/docker-success.txt
+         :language: text
 
    .. step:: Verify the Successful Setup
 
