@@ -98,7 +98,7 @@ Set Up Your Development Environment with Docker
       When the command completes successfully, it outputs the following
       text:
 
-      .. literalinclude:: /includes/tutorials/docker-success.txt
+      .. include:: /includes/tutorials/docker-success.txt
          :language: text
 
    .. step:: Verify the Successful Setup
@@ -113,7 +113,7 @@ Set Up Your Development Environment with Docker
       This command should output the following information if the Docker
       development environment was set up successfully:
 
-      .. literalinclude:: /includes/tutorials/setup/status-setup.txt
+      .. include:: /includes/tutorials/setup/status-setup.txt
 
       Since you have not started the connectors, the status and configured
       list are empty.
