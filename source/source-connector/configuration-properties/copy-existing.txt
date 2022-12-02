@@ -1,4 +1,5 @@
 .. _source-configuration-startup:
+.. _source-configuration-copy-existing:
 
 ==================
 Startup Properties
@@ -16,11 +17,13 @@ Overview
 --------
 
 .. _source-configuration-startup-description-start:
+.. _source-configuration-copy-existing-description-start:
 
 This guide describes the settings you can use to configure the startup
 mode which converts MongoDB collections into Change Stream events.
 
 .. _source-configuration-startup-description-end:
+.. _source-configuration-copy-existing-description-end:
 
 .. important:: ``copy.existing*`` Properties are Deprecated
 
@@ -39,6 +42,7 @@ Settings
 --------
 
 .. _source-configuration-startup-table-start:
+.. _source-configuration-copy-existing-table-start:
 
 .. list-table::
    :header-rows: 1
@@ -153,3 +157,4 @@ Settings
        | **Accepted Values**: ``true`` or ``false``
 
 .. _source-configuration-startup-table-end:
+.. _source-configuration-copy-existing-table-end:

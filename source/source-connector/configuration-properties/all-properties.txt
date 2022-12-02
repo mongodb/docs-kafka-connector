@@ -81,14 +81,14 @@ To view only the options related to the format of your output, see the
 Startup Mode
 ------------
 
-.. include:: /source-connector/configuration-properties/startup-properties.txt
+.. include:: /source-connector/configuration-properties/copy-existing.txt
    :start-after: source-configuration-startup-description-start
    :end-before: source-configuration-startup-description-end
 
 To view only the options related to startup modes, see the
 :ref:`<source-configuration-startup>` page.
 
-.. include:: /source-connector/configuration-properties/startup-properties.txt
+.. include:: /source-connector/configuration-properties/copy-existing.txt
    :start-after: source-configuration-startup-table-start
    :end-before: source-configuration-startup-table-end
 
