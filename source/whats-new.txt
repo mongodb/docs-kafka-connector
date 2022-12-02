@@ -98,7 +98,7 @@ Source Connector
 - Added support for the
   :manual:`allow disk use </reference/command/aggregate/#std-label-aggregate-cmd-allowDiskUse>`
   field of the {+query-api+} in the copy existing aggregation with the
-  ``copy.existing.allow.disk.use`` :ref:`configuration property <source-configuration-copy-existing>`
+  ``copy.existing.allow.disk.use`` :ref:`configuration property <source-configuration-startup>`
 - Added support for `Avro schema namespaces <https://avro.apache.org/docs/current/spec.html#names>`__
   in the ``output.schema.value`` and ``output.schema.key``
   :ref:`configuration properties <source-configuration-output-format>`

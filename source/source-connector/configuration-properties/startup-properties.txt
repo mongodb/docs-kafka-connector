@@ -1,8 +1,8 @@
-.. _source-configuration-copy-existing:
+.. _source-configuration-startup:
 
-========================
-Copy Existing Properties
-========================
+==================
+Startup Properties
+==================
 
 .. default-domain:: mongodb
 
@@ -15,16 +15,22 @@ Copy Existing Properties
 Overview
 --------
 
-.. _source-configuration-copy-existing-description-start:
+.. _source-configuration-startup-description-start:
 
-Use the following configuration settings to enable the copy existing
-feature which converts MongoDB collections into Change Stream events.
+This guide describes the configuration settings you can use to configure the startup
+mode which converts MongoDB collections into Change Stream events.
 
-.. _source-configuration-copy-existing-description-end:
+.. _source-configuration-startup-description-end:
 
-.. seealso::
+.. important:: ``copy.existing*`` Properties are Deprecated
 
-   For an example of the copy existing feature, see the
+   Starting in Version 1.9 of the {+mkc+}, ``copy.existing*`` properties
+   are deprecated. You must use ``startup.mode*`` properties to configure
+   the startup feature, previously known as the copy existing feature.
+
+.. tip::
+
+   For an example enabling a startup mode, see the
    :ref:`<source-usage-example-copy-existing-data>` Usage Example.
 
 .. include:: /includes/source-config-link.rst
@@ -32,7 +38,7 @@ feature which converts MongoDB collections into Change Stream events.
 Settings
 --------
 
-.. _source-configuration-copy-existing-table-start:
+.. _source-configuration-startup-table-start:
 
 .. list-table::
    :header-rows: 1
@@ -41,11 +47,11 @@ Settings
    * - Name
      - Description
 
-   * - | **copy.existing**
-     - | **Type:** boolean
+   * - | ``startup.mode``
+     - | **Type:** string
        |
        | **Description:**
-       | Whether to enable the copy existing feature which converts all
+       | Whether to enable the startup feature which converts all
          data in a MongoDB collection to Change Stream events and
          publishes them on Kafka topics. If MongoDB changes the source
          collection data after the connector starts the copy process, the
@@ -54,10 +60,25 @@ Settings
 
        .. include:: /includes/copy-existing-admonition.rst
 
-       | **Default**:``false``
-       | **Accepted Values**: ``true`` or ``false``
+       | **Default**:``latest``
+       | **Accepted Values**: ``latest``, ``timestamp``, ``copy_existing``
+       
+   * - | ``startup.mode.timestamp.start.at.operation.time``
+     - | **Type:** string
+       |
+       | **Description:**
+       | Actuated only if ``startup.mode = timestamp``. Specifies the
+         starting point for the change stream.
+       | **Default**: ``""``
+       | **Accepted Values**:
+         - An integer number of seconds since the
+           Epoch in decimal format (for example, "30")
+         - An instant in the ISO-8601 format with one second precision (for example,
+           "1970-01-01T00:00:30Z")
+         - A BSON Timestamp in the canonical extended JSON (v2) format
+           (for example, "{\"$timestamp\": {\"t\": 30, \"i\": 0}}")
 
-   * - | **copy.existing.namespace.regex**
+   * - | ``startup.mode.copy.existing.namespace.regex``
      - | **Type:** string
        |
        | **Description:**
@@ -73,7 +94,7 @@ Settings
 
           .. code-block:: none
 
-             copy.existing.namespace.regex=stats\.page.*
+             startup.mode.copy.existing.namespace.regex=stats\\.page.*
 
           The "\\" character in the example above escapes the "." character
           that follows it in the regular expression. For more information on
@@ -83,11 +104,11 @@ Settings
        | **Default**: ``""``
        | **Accepted Values**: A valid regular expression
 
-   * - | **copy.existing.pipeline**
+   * - | ``startup.mode.copy.existing.pipeline``
      - | **Type:** string
        |
        | **Description:**
-       | An array of :manual:`pipeline operations </core/aggregation-pipeline/>`
+       | An inline array of :manual:`pipeline operations </core/aggregation-pipeline/>`
          the connector runs when copying existing data. You can use this
          setting to filter the source collection and improve the use of
          indexes in the copying process.
@@ -100,12 +121,12 @@ Settings
 
           .. code-block:: none
 
-             copy.existing.pipeline=[ { "$match": { "closed": "false" } } ]
+             startup.mode.copy.existing.pipeline=[{\"$match\": {\"closed\": \"false\"}}]
 
-       | **Default**: ``[]``
+       | **Default**: ``""``
        | **Accepted Values**: Valid aggregation pipeline stages
 
-   * - | **copy.existing.max.threads**
+   * - | ``startup.mode.copy.existing.max.threads``
      - | **Type:** int
        |
        | **Description:**
@@ -113,7 +134,7 @@ Settings
        | **Default**: number of processors available in the environment
        | **Accepted Values**: An integer
 
-   * - | **copy.existing.queue.size**
+   * - | ``startup.mode.copy.existing.queue.size``
      - | **Type:** int
        |
        | **Description:**
@@ -121,7 +142,7 @@ Settings
        | **Default**: ``16000``
        | **Accepted Values**: An integer
 
-   * - | **copy.existing.allow.disk.use**
+   * - | ``startup.mode.copy.existing.allow.disk.use``
      - | **Type:** boolean
        |
        | **Description:**
@@ -129,5 +150,6 @@ Settings
          the connector sets the copy existing aggregation 
          to use temporary disk storage. 
        | **Default**: ``true``
+       | **Accepted Values**: ``true`` or ``false``
 
-.. _source-configuration-copy-existing-table-end:
+.. _source-configuration-startup-table-end:
