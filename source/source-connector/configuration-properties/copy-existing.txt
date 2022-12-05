@@ -29,7 +29,7 @@ events.
 .. important:: ``copy.existing*`` Properties are Deprecated
 
    Starting in Version 1.9 of the {+mkc+}, ``copy.existing*`` properties
-   are deprecated. You should use ``startup.mode*`` properties to configure
+   are deprecated. You should use ``startup.mode*`` properties to
    configure the copy existing feature.
 
 .. tip::
@@ -47,7 +47,7 @@ Settings
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 40 60
 
    * - Name
      - Description
@@ -63,6 +63,7 @@ Settings
          ignore all or some of the existing source data, or may at first
          copy all existing source data and then continue with processing
          new data.
+       |
        | If ``startup.mode=latest``, the connector ignores all existing
          source data. If ``startup.mode=timestamp``, the connector
          actuates ``startup.mode.timestamp.*`` properties. If no
@@ -81,7 +82,7 @@ Settings
        | **Description:**
        | Actuated only if ``startup.mode=timestamp``. Specifies the
          starting point for the change stream. To learn more about
-         Change Stream parameters, see the :rapid:`Server manual entry </rapid/reference/operator/aggregation/changeStream/>`.
+         Change Stream parameters, see the :rapid:`Server manual entry </reference/operator/aggregation/changeStream/>`.
        | **Default**: ``""``
        | **Accepted Values**:
        | - An integer number of seconds since the
