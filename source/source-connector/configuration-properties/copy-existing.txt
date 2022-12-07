@@ -22,7 +22,7 @@ Overview
    Starting in Version 1.9 of the {+mkc+}, ``copy.existing*`` properties
    are deprecated and may be removed in a future release. You should use
    ``startup.mode*`` properties to configure the copy existing feature.
-   To learn more about ``startup.mode*`` settings, see
+   To learn about ``startup.mode*`` settings, see
    :ref:`source-configuration-startup`.
 
 Use the following configuration settings to enable the copy existing
