@@ -50,16 +50,6 @@ Strategies
        | 
        | This is the default value for the ``writemodel.strategy`` configuration setting.
 
-   * - | **InsertOneDefaultStrategy**
-       | 
-     - | **Description:**
-       | Insert each sink record into MongoDB as a document. 
-       | Apply the following configuration to your sink connector to specify this setting: 
-       
-       .. code-block:: properties
-           
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.InsertOneDefaultStrategy
-
    * - | **ReplaceOneDefaultStrategy**
        |
      - | **Description:**
