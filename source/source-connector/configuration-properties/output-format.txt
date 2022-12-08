@@ -56,8 +56,6 @@ Settings
        | **Default**: ``json``
        | **Accepted Values**: ``bson``, ``json``, ``schema``
 
-<<<<<<< HEAD
-=======
        .. note:: Protobuf Output Format Support
 
           The connector supports Protobuf as an
@@ -66,7 +64,6 @@ Settings
           <protobuf-converter-sample-properties>` the `Kafka Connect Protobuf
           Converter <https://www.confluent.io/hub/confluentinc/kafka-connect-protobuf-converter>`__.
 
->>>>>>> 3e9eb06 (CC suggestion)
    * - | **output.json.formatter**
      - | **Type:** string
        |
