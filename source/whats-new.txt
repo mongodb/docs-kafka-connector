@@ -83,7 +83,7 @@ Sink Connector
 
       connection.uri=mongodb://mongodb0.example.com:27017,mongodb1.example.com:27017,mongodb2.example.com:27017/?replicaSet=myRepl&retryWrites=false
 
-   To learn more about connecting the {+mkc+} to MongoDB, see the
+   To learn more about connecting the {+connector-short+} to MongoDB, see the
    :ref:`<kafka-intro-connect>` guide.
 
    To learn more about connection URI options, see the
