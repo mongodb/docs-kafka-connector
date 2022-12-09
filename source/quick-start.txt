@@ -15,13 +15,13 @@ Quick Start
 Overview
 --------
 
-This guide shows you how to configure the {+connector-short+} to send data between MongoDB
+This guide shows you how to configure the {+connector+} to send data between MongoDB
 and {+apache-kafka+}.
 
 .. include:: /includes/m1-incompatibility.rst
 
-After completing this guide, you should understand how to use the {+kafka-short+}
-REST API to configure {+connector-short+}s to read data from MongoDB and write it to a
+After completing this guide, you should understand how to use the {+kafka+}
+REST API to configure {+connector+}s to read data from MongoDB and write it to a
 Kafka topic, and to read data from a Kafka topic and write it to MongoDB.
 
 To complete the steps in this guide, you must download and work in a
@@ -86,8 +86,8 @@ output in your development environment:
 Add Connectors
 --------------
 
-To complete the sample data pipeline, you must add connectors to {+kafka-short+}
-to transfer data between {+kafka-short+} and MongoDB. Add a **source connector** to
+To complete the sample data pipeline, you must add connectors to {+kafka+}
+to transfer data between {+kafka+} and MongoDB. Add a **source connector** to
 transfer data from MongoDB to {+apache-kafka+}. Add a **sink connector** to transfer
 data from {+apache-kafka+} to MongoDB.
 
@@ -111,12 +111,12 @@ Add a Source Connector
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Use the shell in your Docker container to add a source connector using the
-{+kafka-short+} REST API.
+{+kafka+} REST API.
 
 The following API request adds a source connector configured with the
 following properties:
 
-- The class {+kafka-short+} uses to instantiate the connector
+- The class {+kafka+} uses to instantiate the connector
 - The connection URI, database, and collection of the MongoDB replica set from
   which the connector reads data
 - An aggregation pipeline that adds a field ``travel`` with the value
@@ -141,7 +141,7 @@ following properties:
 
 .. note:: Why do I see the message 'Failed to connect'?
 
-   It takes up to three minutes for the {+kafka-short+} REST API to start. If
+   It takes up to three minutes for the {+kafka+} REST API to start. If
    you receive the following error, wait three minutes and run the preceding
    command again:
 
@@ -176,12 +176,12 @@ Add a Sink Connector
 ~~~~~~~~~~~~~~~~~~~~
 
 Use the shell in your Docker container to add a sink connector using the
-{+kafka-short+} REST API.
+{+kafka+} REST API.
 
 The following API request adds a sink connector configured with the
 following properties:
 
-- The class {+kafka-short+} uses to instantiate the connector
+- The class {+kafka+} uses to instantiate the connector
 - The connection URI, database, and collection of the MongoDB replica set to
   which the connector writes data
 - The {+apache-kafka+} topic from which the connector reads data
@@ -331,7 +331,7 @@ Select the tab that corresponds to the removal task you want to run.
 Next Steps
 ----------
 
-To learn how to install the {+connector-short+}, see the :ref:`<kafka-installation>` guide.
+To learn how to install the {+connector+}, see the :ref:`<kafka-installation>` guide.
 
 To learn more about how to process and move data from {+apache-kafka+} to MongoDB, see
 the :ref:`<kafka-sink-overview>` guide.

@@ -16,7 +16,7 @@ Overview
 --------
 
 In this section, you can read descriptions of source connector properties,
-including essential {+kafka-long+} settings and {+connector-short+}-specific
+including essential {+confluent-kafka+} settings and {+connector+}-specific
 settings.
 
 For an example source connector configuration file, see

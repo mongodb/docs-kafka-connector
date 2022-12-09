@@ -149,8 +149,8 @@ Heartbeats with Single Message Transforms
 -----------------------------------------
 
 If you enable heartbeats and specify **Single Message Transforms (SMTs)** in your
-{+kafka-short+} deployment, you must exclude your heartbeat messages from
-your SMTs. SMTs are a feature of {+kafka-short+} that enables you to specify transformations on
+{+kafka+} deployment, you must exclude your heartbeat messages from
+your SMTs. SMTs are a feature of {+kafka+} that enables you to specify transformations on
 the messages that pass through your {+source-connector+} without having to deploy a
 stream processing application.
 

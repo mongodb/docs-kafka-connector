@@ -16,7 +16,7 @@ Overview
 --------
 
 In this guide, you can learn about **change streams** and how they are
-used in a {+connector-short+} source connector.
+used in a {+connector+} source connector.
 
 Change Streams
 --------------
@@ -131,7 +131,7 @@ To learn more about resume tokens, see the following resources:
 
 To learn more about offsets, see the following resources:
 
-- {+kafka-short+} ``offset.storage.topic``
+- {+kafka+} ``offset.storage.topic``
   `configuration option documentation <https://docs.confluent.io/platform/current/installation/configuration/connect/index.html#offset-storage-topic>`__
-- {+kafka-short+} ``OffsetStorageReader``
+- {+kafka+} ``OffsetStorageReader``
   `API documentation  <https://kafka.apache.org/0110/javadoc/org/apache/kafka/connect/storage/OffsetStorageReader.html>`__

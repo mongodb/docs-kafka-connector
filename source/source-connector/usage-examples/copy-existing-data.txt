@@ -7,7 +7,7 @@ Copy Existing Data
 .. default-domain:: mongodb
 
 This usage example demonstrates how to copy data from a MongoDB collection to an
-{+apache-kafka+} topic using the {+connector-short+}.
+{+apache-kafka+} topic using the {+connector+}.
 
 Example
 -------
@@ -73,7 +73,7 @@ To learn more about change event documents, see the
 :ref:`Change Streams <source-connector-fundamentals-change-event>` guide.
 
 To learn more about the ``copy.existing`` option, see
-:ref:`<source-configuration-copy-existing>` in the {+connector-short+}.
+:ref:`<source-configuration-copy-existing>` in the {+connector+}.
 
 .. _source-usage-example-copy-existing-data-mask-data:
 
@@ -90,7 +90,7 @@ documents with "Mexico" in the ``country`` field:
    copy.existing.pipeline=[{ "$match": { "country": "Mexico" } }]
 
 To learn more about  the ``copy.existing.pipeline`` option, see
-:ref:`<source-configuration-copy-existing>` in the {+connector-short+}.
+:ref:`<source-configuration-copy-existing>` in the {+connector+}.
 
 To learn more about aggregation pipelines, see the following resources:
 

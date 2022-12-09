@@ -4,13 +4,13 @@ intersphinx = ["https://www.mongodb.com/docs/manual/objects.inv"]
 toc_landing_pages = ["/introduction", "/tutorials", "/sink-connector", "/source-connector", "/sink-connector/configuration-properties", "/source-connector/configuration-properties", "/sink-connector/fundamentals", "/source-connector/fundamentals", "/source-connector/usage-examples", "/security-and-authentication", "/troubleshooting"]
 
 [constants]
-connector-short = "MongoDB Kafka Connector"
+connector = "MongoDB Kafka Connector"
 connector-long = "MongoDB Connector for Apache Kafka"
 apache-kafka = "Apache Kafka"
-kafka-short = "Kafka Connect"
-avro = "Apache Avro"
-avro-short = "Avro"
-kafka-long = "Confluent Kafka Connect"
+kafka = "Kafka Connect"
+avro-long = "Apache Avro"
+avro = "Avro"
+confluent-kafka = "Confluent Kafka Connect"
 connector_version="1.8"
 connector_patch_version="1"
 connector_driver_version="4.5"

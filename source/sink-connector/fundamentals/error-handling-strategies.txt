@@ -152,7 +152,7 @@ to see how to log errors:
    .. tab:: Untolerated Errors
       :tabid: untolerated-errors
 
-      The following default option makes {+kafka-short+} write only untolerated errors to its application log:
+      The following default option makes {+kafka+} write only untolerated errors to its application log:
 
       .. code-block:: properties
 
@@ -161,7 +161,7 @@ to see how to log errors:
    .. tab:: Tolerated and Untolerated Errors
       :tabid: tolerated-errors
 
-      The following option makes {+kafka-short+} write both tolerated and untolerated errors to its
+      The following option makes {+kafka+} write both tolerated and untolerated errors to its
       application log:
 
       .. code-block:: properties
@@ -183,7 +183,7 @@ For more information, see Confluent's guide on
 Handle Errors at the Connector Level
 ------------------------------------
 
-The {+connector-short+} provides options that allow you to configure error
+The {+connector+} provides options that allow you to configure error
 handling at the connector level. The options are as follows:
 
 .. list-table::
@@ -191,7 +191,7 @@ handling at the connector level. The options are as follows:
    :widths: 50 50
 
    * - Kafka Connect Option
-     - {+connector-short+} Option
+     - {+connector+} Option
 
    * - ``errors.tolerance`` 
      - ``mongo.errors.tolerance``
@@ -200,7 +200,7 @@ handling at the connector level. The options are as follows:
      - ``mongo.errors.log.enable``
 
 You want to use these options if you want your connector to respond differently
-to errors related to MongoDB than to errors related to the {+kafka-short+} framework. 
+to errors related to MongoDB than to errors related to the {+kafka+} framework. 
 
 For more information, see the following resources:  
 

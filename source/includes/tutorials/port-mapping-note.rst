@@ -4,6 +4,6 @@
    machine:
 
    - The sandbox MongoDB server maps to port ``{+mongodb-port-mapping+}`` on your host machine
-   - The sandbox {+kafka-short+} JMX server maps to port ``{+jmx-port-mapping+}`` on your host machine
+   - The sandbox {+kafka+} JMX server maps to port ``{+jmx-port-mapping+}`` on your host machine
 
    These ports must be free to start the sandbox.
