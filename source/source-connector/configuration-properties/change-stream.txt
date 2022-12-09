@@ -86,6 +86,16 @@ Settings
          stream document. When set to ``true``, the connector
          automatically sets the ``change.stream.full.document`` property to
          ``updateLookup`` to receive the updated documents.
+       
+       .. note::
+          
+          This change stream option is a helper that returns the
+          ``fullDocument`` field from the full change stream document.
+          You must set pipeline configurations against the change stream
+          event, not the ``fullDocument``. To learn how to
+          configure a pipeline against a change stream event, see the
+          :ref:`Custom Pipeline <source-usage-example-custom-pipeline>` usage example.
+
        |
        | **Default**: ``false``
        | **Accepted Values**: ``true`` or ``false``
