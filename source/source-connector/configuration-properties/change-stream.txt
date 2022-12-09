@@ -82,19 +82,18 @@ Settings
      - | **Type:** boolean
        |
        | **Description:**
-       | Whether to publish the changed document instead of the full change
-         stream document. When set to ``true``, the connector
-         automatically sets the ``change.stream.full.document`` property to
-         ``updateLookup`` to receive the updated documents.
+       | Whether to return only the ``fullDocument`` field from the full
+         change stream document. The ``fullDocument`` field contains the
+         most current version of the updated document. When set to
+         ``true``, the connector automatically sets the
+         ``change.stream.full.document`` property to ``updateLookup`` to
+         receive the updated documents.
        
-       .. note::
+       .. important::
           
-          This change stream option is a helper that returns the
-          ``fullDocument`` field from the full change stream document.
           You must set pipeline configurations against the change stream
           event, not the ``fullDocument``. To learn how to
-          configure a pipeline against a change stream event, see the
-          :ref:`Custom Pipeline <source-usage-example-custom-pipeline>` usage example.
+          configure a pipeline, see the ``pipeline`` setting description.
 
        |
        | **Default**: ``false``
