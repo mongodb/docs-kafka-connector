@@ -41,12 +41,14 @@ Settings
        |
        | **Description:**
        | An array of aggregation pipelines to run in your change stream.
+         You must set ``pipeline`` configurations against the full change stream
+         event document, not the ``fullDocument`` field.
 
        .. example::
 
           .. code-block:: none
 
-             [{"$match": {"operationType": "insert"}}, {"$addFields": {"Kafka": "Rules!"}}]
+             [{"$match": { "$and": [{"fullDocument.eventId": 1404 }, {"operationType": "insert"}] } }]
 
        .. tip:: Additional Examples
 
@@ -84,18 +86,11 @@ Settings
        | **Description:**
        | Whether to return only the ``fullDocument`` field from the full
          change stream document. The ``fullDocument`` field contains the
-         most current version of the updated document. When set to
-         ``true``, the connector automatically sets the
+         most current version of the updated document.
+       | When set to ``true``, the connector automatically sets the
          ``change.stream.full.document`` property to ``updateLookup`` to
          receive the updated documents.
-       
-       .. important::
-          
-          You must set pipeline configurations against the change stream
-          event, not the ``fullDocument``. To learn how to
-          configure a pipeline, see the ``pipeline`` setting description.
 
-       |
        | **Default**: ``false``
        | **Accepted Values**: ``true`` or ``false``
 
