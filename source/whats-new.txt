@@ -37,6 +37,9 @@ What's New in 1.9
   properties. You should use ``startup.mode=copy_existing`` and
   ``startup.mode.copy.existing.*`` properties to configure the copy existing
   feature.
+- Introduced ``change.stream.full.document.before.change`` Change Stream
+  setting that allows you to access and configure the pre-image of an update
+  operation in the change stream event document.
 
 .. _kafka-connector-whats-new-1.8.1:
 
