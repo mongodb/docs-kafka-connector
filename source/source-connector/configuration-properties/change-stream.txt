@@ -64,7 +64,7 @@ Settings
        | **Description:**
        | Determines what values your change stream returns on update
          operations.
-       | The default empty setting returns the differences between the original
+       | The default setting returns the differences between the original
          document and the updated document.
        | The ``updateLookup`` setting returns the differences between the
          original document and updated document as well as a copy of the
@@ -92,12 +92,12 @@ Settings
          operations. The pre-image is not available in source records
          published while copying existing data, and the pre-image configuration
          has no effect on copying.
-       | The default empty setting suppresses the document pre-image.
+       | The default setting suppresses the document pre-image.
        | The ``whenAvailable`` setting returns the document pre-image,
          if available, before the document was replaced, updated, or
          deleted.
        | The ``required`` setting returns the document pre-image and
-         raises an error if the it is not available.
+         raises an error if it is not available.
        |
        | **Default**: ``""``
        | **Accepted Values**: ``""`` or ``"whenAvailable"`` or ``"required"``
