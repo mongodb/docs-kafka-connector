@@ -33,10 +33,10 @@ MongoDB v4.0 or later.
 Kafka Compatibility
 -------------------
 
-The {+connector+} requires Kafka Connect v2.1.0 or later. It's
-tested against Apache Kafka v2.3 and later. You can use the Kafka
-Connect service with several Apache Kafka compatible platforms including
-the following:
+The {+connector+} requires {+kafka-connect+} v2.1.0 or later. It's
+tested against {+kafka+} v2.3 and later. You can use the
+{+kafka-connect+} service with several {+kafka+} compatible platforms
+including the following:
 
 - Confluent Platform v5.3 or later
 - Microsoft Azure Event Hubs
@@ -44,7 +44,7 @@ the following:
 
 The {+connector+} works directly with {+kafka-connect-long+}. The connector does not
 connect directly to a Kafka cluster which means it's compatible with any
-Apache Kafka platform that supports {+kafka-connect-long+}.
+{+kafka+} platform that supports {+kafka-connect-long+}.
 
 If you have any questions about the {+connector+}, ask them on the 
 `MongoDB Community Forums
