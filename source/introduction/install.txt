@@ -16,11 +16,11 @@ Overview
 --------
 
 Learn how to install the {+connector+}. The {+connector+} is available for Confluent Platform and
-{+apache-kafka+} deployments. To see installation instructions for your deployment type,
+{+kafka+} deployments. To see installation instructions for your deployment type,
 navigate to one of the following sections:
 
 - :ref:`Install the Connector on Confluent Platform <kafka-connector-install-confluent>`
-- :ref:`Install the Connector on {+apache-kafka+} <kafka-connector-install-apache>`
+- :ref:`Install the Connector on {+kafka+} <kafka-connector-install-apache>`
 
 .. _kafka-connector-install-confluent:
 

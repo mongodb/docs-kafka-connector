@@ -22,7 +22,7 @@ reproducible representation of a change performed on a datastore. Replicating
 data is the process of applying the changes contained in CDC events from one data
 store onto a different datastore so that the changes occur in both datastores.
 
-Use a **CDC handler** to replicate CDC events stored on an {+apache-kafka+} topic into MongoDB.
+Use a **CDC handler** to replicate CDC events stored on an {+kafka+} topic into MongoDB.
 A CDC handler is a program that translates CDC events from a specific
 **CDC event producer** into MongoDB write operations.
 
@@ -122,7 +122,7 @@ following actions:
       | ``<plugin.path>/mongo-kafka-connect/mongo-kafka-connect-all.jar``
       | ``<plugin.path>/mongo-kafka-connect/custom-CDC-handler.jar``
 
-      To learn more about {+kafka+} plugins, see
+      To learn more about {+kafka-connect+} plugins, see
       `this guide from Confluent <https://docs.confluent.io/home/connect/userguide.html#installing-kconnect-plugins>`__.
 
 #. Specify your custom class in the ``change.data.capture.handler``

@@ -52,7 +52,7 @@ How to Configure Your Connection
 --------------------------------
 
 The {+connector+} uses the **MongoDB Java driver** to parse your connection URI.
-The MongoDB Java driver is an artifact that enables Java applications like {+kafka+}
+The MongoDB Java driver is an artifact that enables Java applications like {+kafka-connect+}
 to interact with MongoDB. 
 
 .. important:: Driver Version

@@ -87,7 +87,7 @@ JSON Schema
 ~~~~~~~~~~~
 
 JSON Schema is a syntax for specifying **schemas** for JSON objects. A schema is
-a definition attached to an {+apache-kafka+} Topic that defines valid values for that topic. 
+a definition attached to an {+kafka+} Topic that defines valid values for that topic. 
 
 You can specify a schema for the :ref:`sample document <kafka-df-sample-doc>`
 with JSON Schema like this:
@@ -233,5 +233,5 @@ You can represent the sample document as a byte array using any of the encodings
 mentioned above.
 
 You use byte arrays when your converters send data to or receive data
-from {+apache-kafka+}. For more information on converters, see the
+from {+kafka+}. For more information on converters, see the
 :ref:`<intro-converters>` guide.

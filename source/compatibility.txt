@@ -42,9 +42,9 @@ the following:
 - Microsoft Azure Event Hubs
 - Red Hat AMQ Streams
 
-The {+connector+} works directly with {+confluent-kafka+}. The connector does not
+The {+connector+} works directly with {+kafka-connect-long+}. The connector does not
 connect directly to a Kafka cluster which means it's compatible with any
-Apache Kafka platform that supports {+confluent-kafka+}.
+Apache Kafka platform that supports {+kafka-connect-long+}.
 
 If you have any questions about the {+connector+}, ask them on the 
 `MongoDB Community Forums

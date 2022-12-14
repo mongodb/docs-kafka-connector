@@ -48,7 +48,7 @@ following combinations of schemas:
    To see a discussion on the benefits of using schemas with Kafka Connect,
    see `this article from Confluent <https://docs.confluent.io/platform/current/schema-registry/index.html#ak-serializers-and-deserializers-background>`__.
 
-If you want to send data through {+apache-kafka+} with a specific data format, such as {+avro-long+}
+If you want to send data through {+kafka+} with a specific data format, such as {+avro-long+}
 or JSON Schema, see the :ref:`<intro-converters>` guide.
 
 To learn more about keys and values in Apache Kafka, see the

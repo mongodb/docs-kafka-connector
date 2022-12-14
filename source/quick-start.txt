@@ -16,11 +16,11 @@ Overview
 --------
 
 This guide shows you how to configure the {+connector+} to send data between MongoDB
-and {+apache-kafka+}.
+and {+kafka+}.
 
 .. include:: /includes/m1-incompatibility.rst
 
-After completing this guide, you should understand how to use the {+kafka+}
+After completing this guide, you should understand how to use the {+kafka-connect+}
 REST API to configure {+connector+}s to read data from MongoDB and write it to a
 Kafka topic, and to read data from a Kafka topic and write it to MongoDB.
 
@@ -62,9 +62,9 @@ Start the Sandbox
 The sandbox starts the following services in Docker containers:
 
 - MongoDB, configured as a replica set
-- {+apache-kafka+}
+- {+kafka+}
 - Kafka Connect with the MongoDB Kafka Connector installed
-- Apache Zookeeper which manages the configuration for {+apache-kafka+}
+- Apache Zookeeper which manages the configuration for {+kafka+}
 
 To start the sandbox run the following command from the tutorial directory:
 
@@ -86,10 +86,10 @@ output in your development environment:
 Add Connectors
 --------------
 
-To complete the sample data pipeline, you must add connectors to {+kafka+}
-to transfer data between {+kafka+} and MongoDB. Add a **source connector** to
-transfer data from MongoDB to {+apache-kafka+}. Add a **sink connector** to transfer
-data from {+apache-kafka+} to MongoDB.
+To complete the sample data pipeline, you must add connectors to {+kafka-connect+}
+to transfer data between {+kafka-connect+} and MongoDB. Add a **source connector** to
+transfer data from MongoDB to {+kafka+}. Add a **sink connector** to transfer
+data from {+kafka+} to MongoDB.
 
 To add connectors in the sandbox, first start an interactive bash shell in
 your Docker container using the following command:
@@ -111,12 +111,12 @@ Add a Source Connector
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Use the shell in your Docker container to add a source connector using the
-{+kafka+} REST API.
+{+kafka-connect+} REST API.
 
 The following API request adds a source connector configured with the
 following properties:
 
-- The class {+kafka+} uses to instantiate the connector
+- The class {+kafka-connect+} uses to instantiate the connector
 - The connection URI, database, and collection of the MongoDB replica set from
   which the connector reads data
 - An aggregation pipeline that adds a field ``travel`` with the value
@@ -141,7 +141,7 @@ following properties:
 
 .. note:: Why do I see the message 'Failed to connect'?
 
-   It takes up to three minutes for the {+kafka+} REST API to start. If
+   It takes up to three minutes for the {+kafka-connect+} REST API to start. If
    you receive the following error, wait three minutes and run the preceding
    command again:
 
@@ -176,15 +176,15 @@ Add a Sink Connector
 ~~~~~~~~~~~~~~~~~~~~
 
 Use the shell in your Docker container to add a sink connector using the
-{+kafka+} REST API.
+{+kafka-connect+} REST API.
 
 The following API request adds a sink connector configured with the
 following properties:
 
-- The class {+kafka+} uses to instantiate the connector
+- The class {+kafka-connect+} uses to instantiate the connector
 - The connection URI, database, and collection of the MongoDB replica set to
   which the connector writes data
-- The {+apache-kafka+} topic from which the connector reads data
+- The {+kafka+} topic from which the connector reads data
 - A change data capture handler for MongoDB change event documents
 
 .. code-block:: bash
@@ -333,8 +333,8 @@ Next Steps
 
 To learn how to install the {+connector+}, see the :ref:`<kafka-installation>` guide.
 
-To learn more about how to process and move data from {+apache-kafka+} to MongoDB, see
+To learn more about how to process and move data from {+kafka+} to MongoDB, see
 the :ref:`<kafka-sink-overview>` guide.
 
-To learn more about how to process and move data from MongoDB to {+apache-kafka+}, see
+To learn more about how to process and move data from MongoDB to {+kafka+}, see
 the :ref:`<kafka-source-overview>` guide.
