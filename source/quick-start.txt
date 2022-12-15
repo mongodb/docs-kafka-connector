@@ -63,7 +63,7 @@ The sandbox starts the following services in Docker containers:
 
 - MongoDB, configured as a replica set
 - {+kafka+}
-- Kafka Connect with the MongoDB Kafka Connector installed
+- {+kafka-connect+} with the {+connector+} installed
 - Apache Zookeeper which manages the configuration for {+kafka+}
 
 To start the sandbox run the following command from the tutorial directory:
