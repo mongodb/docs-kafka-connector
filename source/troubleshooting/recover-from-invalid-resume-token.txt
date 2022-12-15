@@ -156,9 +156,9 @@ stored offsets, perform the following actions:
 
 .. note:: Delete Stored Offsets for All Topics
 
-   If you have a standalone {+kc+} process running only one connector, you can
+   If you have a standalone {+kafka-connect+} process running only one connector, you can
    recover from an invalid resume token by deleting stored offsets for all
-   topics in your {+kc+} deployment. To delete stored offsets, perform the
+   topics in your {+kafka-connect+} deployment. To delete stored offsets, perform the
    following actions:
 
    #. Delete the file referenced by the ``offset.storage.file.filename`` property of 
