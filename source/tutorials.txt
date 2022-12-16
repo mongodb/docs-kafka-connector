@@ -15,7 +15,7 @@ Tutorials
    Replicate Data with a Change Data Capture Handler </tutorials/replicate-with-cdc>
 
 The tutorials in this section show you how to perform specific tasks with
-the {+mkc+}.
+the {+connector+}.
 
 For instructions on setting up your environment for the following tutorials,
 read the :ref:`Tutorial Setup <kafka-tutorials-docker-setup>` first:
