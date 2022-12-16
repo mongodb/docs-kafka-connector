@@ -52,7 +52,7 @@ Sink Connector
 
       connection.uri=mongodb://mongodb0.example.com:27017,mongodb1.example.com:27017,mongodb2.example.com:27017/?replicaSet=myRepl&retryWrites=false
 
-   To learn more about connecting the {+mkc+} to MongoDB, see the
+   To learn more about connecting the {+connector+} to MongoDB, see the
    :ref:`<kafka-intro-connect>` guide.
 
    To learn more about connection URI options, see the
@@ -102,13 +102,13 @@ What's New in 1.6
 
   .. note::
 
-     Starting from Feburary 2022, the **Versioned API** is known the **{+stable-api+}**.
+     Starting from February 2022, the **Versioned API** is known the **{+stable-api+}**.
      All concepts and features remain the same with this naming change.
 
 - Added error handling properties for the
   :ref:`sink connector <sink-configuration-error-handling>`
   and :ref:`source connector <source-configuration-error-handling>`
-  that can override the Kafka Connect framework's error handling behavior
+  that can override the {+kafka-connect+} framework's error handling behavior
 - Added ``mongo-kafka-connect-<version>-confluent.jar``, which contains
   the connector and all dependencies needed to run it on the Confluent Platform
 
@@ -210,7 +210,7 @@ Bug Fixes
 What's New in 1.3
 -----------------
 
-- Added automated integration testing for the latest Kafka Connector and
+- Added automated integration testing for the latest {+connector+} and
   Confluent Platform versions to ensure compatibility
 
 Sink Connector
