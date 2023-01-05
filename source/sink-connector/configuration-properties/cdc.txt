@@ -45,7 +45,9 @@ Settings
        |
        | **Description:**
        | The class name of the CDC handler to use for converting changes
-         into event streams.
+         into event streams. See
+         :ref:`Available CDC Handlers <available-cdc-handlers>`
+         for a list of CDC handlers.
        |
        | **Default**: ``""``
        | **Accepted Values**: An empty string or a fully qualified Java
