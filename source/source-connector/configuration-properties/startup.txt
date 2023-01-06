@@ -70,7 +70,7 @@ Settings
 
        | **Default**:``latest``
        | **Accepted Values**: ``latest``, ``timestamp``, ``copy_existing``
-       
+
    * - | **startup.mode.timestamp.start.at.operation.time**
      - | **Type:** string
        |
@@ -80,7 +80,6 @@ Settings
          Change Stream parameters, see the :rapid:`Server manual entry </reference/operator/aggregation/changeStream/>`.
        | **Default**: ``""``
        | **Accepted Values**:
-       
 
        - An integer number of seconds since the
          Epoch in decimal format (for example, ``30``)
