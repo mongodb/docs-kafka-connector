@@ -62,7 +62,7 @@ If you don't need to guarantee the order of data changes, you can
 specify the ``bulk.write.ordered`` setting to perform unordered bulk
 writes instead. To learn more about this setting, see the
 :ref:`Connector Message Processing Properties
-<sink-configuration-message-processing-table-start>`.
+<sink-configuration-message-processing>`.
 
 To learn more about bulk write operations, see the following
 documentation:
