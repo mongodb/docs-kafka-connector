@@ -190,6 +190,8 @@ described by the following cases:
 
 - A field is present in one document but missing in another.
 - A field is present in one document but ``null`` in another.
+- A field is an array with elements of any type in one document but
+  has additional elements or elements of other data types in another.
 - A field is an array with elements of any type in one document but an
   empty array in another.
 
