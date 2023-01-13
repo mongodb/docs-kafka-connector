@@ -49,9 +49,9 @@ Bulk writes group multiple write operations, such as inserts,
 updates, or deletes, together. 
 
 By default, the sink connector performs ordered bulk writes, which
-guarantee the order of data changes. In an ordered bulk write, if any write operations
-results in an error, the connector skips the remaining writes in that
-batch.
+guarantee the order of data changes. In an ordered bulk write, if any
+write operation results in an error, the connector skips the remaining
+writes in that batch.
 
 If you don't need to guarantee the order of data changes, you can
 set the ``bulk.write.ordered`` setting to ``false`` so that the
