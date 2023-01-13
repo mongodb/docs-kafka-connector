@@ -49,26 +49,32 @@ Bulk writes group multiple write operations, such as inserts,
 updates, or deletes, together. 
 
 By default, the sink connector performs ordered bulk writes, which
-guarantees the order of data changes. In an ordered bulk write, if any write operations
+guarantee the order of data changes. In an ordered bulk write, if any write operations
 results in an error, the connector skips the remaining writes in that
-batch. Because of this behavior, there are performance benefits to
-using unordered bulk writes, if you can make changes to your data in any
-order. The sink connector can perform unordered bulk writes in parallel, which can increase
-performance. In addition, if you set the ``errors.tolerance`` setting to
-``all`` and any write operation in your bulk write fails, the connector continues to
-perform the remaining write operations in the batch that do not return errors.
+batch.
 
 If you don't need to guarantee the order of data changes, you can
-specify the ``bulk.write.ordered`` setting to perform unordered bulk
-writes instead. To learn more about this setting, see the
-:ref:`Connector Message Processing Properties
-<sink-configuration-message-processing>`.
+set the ``bulk.write.ordered`` setting to ``false`` so that the
+connector performs unordered bulk writes. The sink connector performs
+unordered bulk writes in parallel, which can improve performance.
 
-To learn more about bulk write operations, see the following
-documentation:
+In addition, when you enable unordered bulk writes and set the
+``errors.tolerance`` setting to ``all``, even if any write
+operation in your bulk write fails, the connector continues to
+perform the remaining write operations in the batch that do not return
+errors.
 
-- :manual:`Server manual entry on ordered and unordered bulk operations </reference/method/Bulk/#ordered-and-unordered-bulk-operations>`.
-- `Bulk write operations in Java <{+connector_driver_url_base+}fundamentals/crud/write-operations/bulk/#order-of-execution>`__
+.. tip::
+
+   To learn more about the ``bulk.write.ordered`` setting, see the
+   :ref:`Connector Message Processing Properties
+   <sink-configuration-message-processing>`.
+   
+   To learn more about bulk write operations, see the following
+   documentation:
+
+   - :manual:`Server manual entry on ordered and unordered bulk operations </reference/method/Bulk/#ordered-and-unordered-bulk-operations>`.
+   - `Bulk write operations in Java <{+connector_driver_url_base+}fundamentals/crud/write-operations/bulk/#order-of-execution>`__
 
 How to Specify Write Model Strategies
 -------------------------------------
