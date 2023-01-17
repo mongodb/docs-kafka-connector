@@ -126,6 +126,18 @@ Settings
        | **Default**: ``false``
        | **Accepted Values**: ``true`` or ``false``
 
+   * - | **publish.full.document.only.tombstones.on.delete**
+     - | **Type:** boolean
+       |
+       | **Description:**
+       | Whether to return tombstone events when documents are deleted.
+         Tombstone events contain the keys of deleted documents with
+         ``null`` values. This setting applies only when
+         ``publish.full.document.only`` is ``true``.
+
+       | **Default**: ``false``
+       | **Accepted Values**: ``true`` or ``false``
+
    * - | **collation**
      - | **Type:** string
        |
