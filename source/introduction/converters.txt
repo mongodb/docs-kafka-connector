@@ -49,7 +49,7 @@ Converters with Schemas
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 If you use a schema-based converter such as the {+avro-converter+},
-{+protobuf-converter+}, or {+json-schema-converter+} you should define a schema
+{+protobuf-converter+}, or {+json-schema-converter+}, you should define a schema
 in your source connector. 
 
 To learn how to specify a schema, see the 
