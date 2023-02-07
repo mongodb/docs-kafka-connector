@@ -18,7 +18,8 @@ Overview
 .. _source-configuration-change-stream-description-start:
 
 Use the following configuration settings to specify aggregation pipelines
-for change streams and read preferences for change stream cursors.
+for change streams and read preferences for change stream cursors when working
+with the {+source-connector+}.
 
 .. _source-configuration-change-stream-description-end:
 
@@ -122,6 +123,18 @@ Settings
          ``change.stream.full.document`` setting and sets it to
          ``updateLookup`` so that the ``fullDocument`` field contains
          updated documents.
+
+       | **Default**: ``false``
+       | **Accepted Values**: ``true`` or ``false``
+
+   * - | **publish.full.document.only.tombstones.on.delete**
+     - | **Type:** boolean
+       |
+       | **Description:**
+       | Whether to return tombstone events when documents are deleted.
+         Tombstone events contain the keys of deleted documents with
+         ``null`` values. This setting applies only when
+         ``publish.full.document.only`` is ``true``.
 
        | **Default**: ``false``
        | **Accepted Values**: ``true`` or ``false``
