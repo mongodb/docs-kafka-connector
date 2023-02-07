@@ -12,6 +12,7 @@ What's New
 
 Learn what's new by version:
 
+* :ref:`Version 1.9.1 <kafka-connector-whats-new-1.9.1>`
 * :ref:`Version 1.9 <kafka-connector-whats-new-1.9>`
 * :ref:`Version 1.8.1 <kafka-connector-whats-new-1.8.1>`
 * :ref:`Version 1.8 <kafka-connector-whats-new-1.8>`
@@ -25,7 +26,15 @@ Learn what's new by version:
 * :ref:`Version 1.1 <kafka-connector-whats-new-1.1>`
 * :ref:`Version 1.0 <kafka-connector-whats-new-1.0>`
 
-.. _kafka-connector-whats-new-1.9:
+* :ref:`Version 1.9 <kafka-connector-whats-new-1.9>`
+
+.. _kafka-connector-whats-new-1.9.1:
+
+What's New in 1.9.1
+-------------------
+
+- Corrected the behavior of schema inference for documents in nested arrays.
+
 
 What's New in 1.9
 -----------------
