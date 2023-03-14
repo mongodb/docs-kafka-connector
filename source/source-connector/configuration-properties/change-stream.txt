@@ -127,7 +127,7 @@ Settings
        | **Default**: ``false``
        | **Accepted Values**: ``true`` or ``false``
 
-   * - | **publish.full.document.only.tombstones.on.delete**
+   * - | **publish.full.document.only.tombstone.on.delete**
      - | **Type:** boolean
        |
        | **Description:**
