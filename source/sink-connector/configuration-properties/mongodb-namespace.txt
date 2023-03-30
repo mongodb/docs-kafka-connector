@@ -72,16 +72,17 @@ Settings
        | **Accepted Values**: A MongoDB database name
 
    * - **collection**
-     - | *Required*
-       |
-       | **Type:** string
+     - | **Type:** string
        |
        | **Description:**
        | The name of the MongoDB collection to which the sink connector
          writes. If your sink connector follows multiple topics, this
          is the default collection for any writes that are not otherwise
          specified.
-       |
+
+       | **Default**:
+       | The topic name.
+
        | **Accepted Values**: A MongoDB collection name
 
 .. _fieldpathnamespacemapper-settings:
