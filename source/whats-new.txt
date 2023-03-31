@@ -32,9 +32,10 @@ Learn what's new by version:
 What's New in 1.10
 -------------------
 
-- Added connector name to JMX metrics.
-- Added support for SSL via configuration options.
-- Ensured configs from config providers are always parsed before validation.
+- Added the connector name to JMX monitoring metrics.
+- Added support for SSL by creating the configuration options
+  ``connection.ssl.truststore``, ``connection.ssl.truststorePassword``,
+  ``connection.ssl.keystore``, and ``connection.ssl.keystorePassword``.
 
 .. _kafka-connector-whats-new-1.9.1:
 
