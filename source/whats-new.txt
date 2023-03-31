@@ -12,6 +12,7 @@ What's New
 
 Learn what's new by version:
 
+* :ref:`Version 1.10 <kafka-connector-whats-new-1.10>`
 * :ref:`Version 1.9.1 <kafka-connector-whats-new-1.9.1>`
 * :ref:`Version 1.9 <kafka-connector-whats-new-1.9>`
 * :ref:`Version 1.8.1 <kafka-connector-whats-new-1.8.1>`
@@ -25,6 +26,15 @@ Learn what's new by version:
 * :ref:`Version 1.2 <kafka-connector-whats-new-1.2>`
 * :ref:`Version 1.1 <kafka-connector-whats-new-1.1>`
 * :ref:`Version 1.0 <kafka-connector-whats-new-1.0>`
+
+.. _kafka-connector-whats-new-1.10:
+
+What's New in 1.10
+-------------------
+
+- Added connector name to JMX metrics.
+- Added support for SSL via configuration options.
+- Ensured configs from config providers are always parsed before validation.
 
 .. _kafka-connector-whats-new-1.9.1:
 
