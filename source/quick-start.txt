@@ -54,6 +54,16 @@ tutorial. If you use bash or a similar shell, use the following commands:
    git clone https://github.com/mongodb-university/kafka-edu.git
    cd kafka-edu/docs-examples/mongo-kafka-base
 
+After downloading the sandbox and navigating to the above directory, open
+the ``mongo.Dockerfile`` file in your editor of choice. Change the first
+line to:
+
+.. code-block:: bash
+
+   FROM mongo:6.0.5
+
+Save the file after making these edits.
+
 Start the Sandbox
 -----------------
 
