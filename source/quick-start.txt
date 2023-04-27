@@ -54,7 +54,7 @@ tutorial. If you use bash or a similar shell, use the following commands:
 .. code-block:: bash
 
    git clone https://github.com/mongodb-university/kafka-edu.git
-   cd kafka-edu/docs-examples/mongo-kafka-base
+   cd {+sandbox-directory+}
 
 Start the Sandbox
 -----------------
@@ -70,7 +70,7 @@ To start the sandbox run the following command from the tutorial directory:
 
 .. code-block:: shell
 
-   docker-compose -p mongo-kafka up -d
+   docker-compose -p mongo-kafka up -d --force-recreate
 
 When you start the sandbox, Docker downloads any images it needs to run.
 
