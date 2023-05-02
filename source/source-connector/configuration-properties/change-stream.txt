@@ -54,7 +54,7 @@ Settings
 
           - :ref:`<source-usage-example-custom-pipeline>`
 
-       | **Default**: ``[]``
+       | **Default**: ``"[]"``
        | **Accepted Values**: Valid aggregation pipeline stage
 
    * - | **change.stream.full.document**
