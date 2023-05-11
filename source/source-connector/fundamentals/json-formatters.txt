@@ -65,53 +65,61 @@ nested field.
      - Type
 
    * - ``_id``
-     - | .. code-block:: sh
-            
-            ObjectId('5f15aab12435743f9bd126a4')
-       | 
+     - .. code-block:: sh
+          
+          ObjectId('5f15aab12435743f9bd126a4')
+
        | **JSON**:
-       | .. code-block:: sh
-            
-            "$oid": "5f15aab12435743f9bd126a4"
+
+       .. code-block:: sh
+         
+          "$oid": "5f15aab12435743f9bd126a4"
+
      - ``ObjectID`` (``$oid``)
 
    * - ``w``
-     - | .. code-block:: sh
-     
-            [ Decimal128('12345.6789'), 23.53 ]
+     - .. code-block:: sh
+      
+          [ Decimal128('12345.6789'), 23.53 ]
+
      - | Array of:
        | - ``Decimal128`` (``$numberDecimal``)
        | - ``Double`` (``$numberDouble``)
 
    * - ``x``
-     - | .. code-block:: sh
-     
-            BinData(0, 'SSBsb3ZlIGZvcm1hdHRpbmch')
-       | 
+     - .. code-block:: sh
+      
+          BinData(0, 'SSBsb3ZlIGZvcm1hdHRpbmch')
+
        | **JSON**:
-       | .. code-block:: sh
-            
-            "$binary": {
-               "base64": "SSBsb3ZlIGZvcm1hdHRpbmch",
-               "subType": "00"
-            }
+
+       .. code-block:: sh
+         
+          "$binary": {
+             "base64": "SSBsb3ZlIGZvcm1hdHRpbmch",
+             "subType": "00"
+          }
+
      - ``Binary`` (``$binary``)
 
    * - ``y``
-     - | .. code-block:: sh
-            
-            new Date('2023-05-11T08:27:07.000Z')
-       | 
+     - .. code-block:: sh
+         
+          new Date('2023-05-11T08:27:07.000Z')
+
        | **JSON**:
-       | .. code-block:: sh
-            
-            "$date": "1683793627000"
+
+       .. code-block:: sh
+         
+          "$date": "1683793627000"
+
      - ``Date`` (``$date``)
 
    * - ``z``
-     - | .. code-block:: sh
-            
-            { a: false, b: 87, c: "hello world" }
+     - .. code-block:: sh
+         
+          { a: false, b: 87, c: "hello world" }
+          
      - | ``Object`` with fields:
        | - a: ``Boolean``
        | - b: ``Int32`` (``$numberInt``)
@@ -183,7 +191,7 @@ If none of the built-in JSON formatters fit your use-case, you can
 create your own formatter class and add it to the connector classpath.
 
 See the
-:github:`source code for the ``JsonWriterSettingsProvider`` interface <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/source/json/formatter/JsonWriterSettingsProvider.java>`
+:github:`source code for the JsonWriterSettingsProvider interface <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/source/json/formatter/JsonWriterSettingsProvider.java>`
 for the required method signature.
 
 Sample Custom JSON Formatter
@@ -208,17 +216,6 @@ strings:
     * This class represents most non-string types as strings.
     */
 
-   package com.mongodb.kafka.connect.source.json.formatter;
-   
-   import java.time.Instant;
-   import java.time.ZoneOffset;
-   import java.time.ZonedDateTime;
-   import java.time.format.DateTimeFormatter;
-   import java.util.Base64;
-   
-   import org.bson.json.JsonMode;
-   import org.bson.json.JsonWriterSettings;
-   
    public class EverythingToStringJson implements JsonWriterSettingsProvider {
    
      @Override
