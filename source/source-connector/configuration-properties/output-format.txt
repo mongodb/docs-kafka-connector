@@ -87,6 +87,8 @@ Settings
           com.mongodb.kafka.connect.source.json.formatter.SimplifiedJson
 
        | Or your custom JSON formatter full class name.
+       |
+       | To learn more about these output formats, see :ref:`kafka-source-json-formatters`.
 
    * - | **output.schema.key**
      - | **Type:** string
