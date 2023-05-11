@@ -122,15 +122,15 @@ nested field.
          
           { a: false, b: 87, c: "hello world" }
           
-     - | ``Object`` with fields:
-       | - a: ``Boolean``
-       | - b: ``Int32`` (``$numberInt``)
-       | - c: ``String``
+     - | Document with fields:
+       | - ``a``: ``Boolean``
+       | - ``b``: ``Int32`` (``$numberInt``)
+       | - ``c``: ``String``
 
 Default JSON Formatter
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In your source connector configuration properties, insert the following
+In your source connector configuration properties, set the following
 property to specify the default JSON formatter:
 
 .. code-block:: json
@@ -153,7 +153,7 @@ output will resemble the following:
 Extended JSON Formatter
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In your source connector configuration properties, insert the following
+In your source connector configuration properties, set the following
 property to specify the extended JSON formatter:
 
 .. code-block:: json
@@ -176,7 +176,7 @@ output will resemble the following:
 Simplified JSON Formatter
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In your source connector configuration properties, insert the following
+In your source connector configuration properties, set the following
 property to specify the simplified JSON formatter:
 
 .. code-block:: json
@@ -202,16 +202,12 @@ Custom JSON Formatter
 If none of the built-in JSON formatters fit your use-case, you can
 create your own formatter class and add it to the connector classpath.
 
-See the
-:github:`source code for the JsonWriterSettingsProvider interface <mongodb/mongo-kafka/blob/{+connector_version_github_tag+}/src/main/java/com/mongodb/kafka/connect/source/json/formatter/JsonWriterSettingsProvider.java>`
-for the required method signature.
-
 Sample Custom JSON Formatter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In addition to the string conversions performed by the simplified JSON
-formatter, this custom JSON formatter also represents the following types as
-strings:
+formatter, this custom JSON formatter, called ``EverythingToStringJson``, also
+represents the following types as strings:
 
 - ``Int32``
 - ``Int64``
