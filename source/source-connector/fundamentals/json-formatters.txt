@@ -65,37 +65,53 @@ nested field.
      - Type
 
    * - ``_id``
-     - | ObjectId('5f15aab12435743f9bd126a4')
+     - | .. code-block:: sh
+            
+            ObjectId('5f15aab12435743f9bd126a4')
        | 
        | **JSON**:
-       | "$oid": "5f15aab12435743f9bd126a4"
+       | .. code-block:: sh
+            
+            "$oid": "5f15aab12435743f9bd126a4"
      - ``ObjectID`` (``$oid``)
 
    * - ``w``
-     - [ Decimal128('12345.6789'), 23.53 ]
+     - | .. code-block:: sh
+     
+            [ Decimal128('12345.6789'), 23.53 ]
      - | Array of:
        | - ``Decimal128`` (``$numberDecimal``)
        | - ``Double`` (``$numberDouble``)
 
    * - ``x``
-     - | BinData(0, 'SSBsb3ZlIGZvcm1hdHRpbmch')
+     - | .. code-block:: sh
+     
+            BinData(0, 'SSBsb3ZlIGZvcm1hdHRpbmch')
        | 
        | **JSON**:
-       | "$binary": {
-       |    "base64": "SSBsb3ZlIGZvcm1hdHRpbmch",
-       |    "subType": "00"
-       | }
+       | .. code-block:: sh
+            
+            "$binary": {
+               "base64": "SSBsb3ZlIGZvcm1hdHRpbmch",
+               "subType": "00"
+            }
      - ``Binary`` (``$binary``)
 
    * - ``y``
-     - | new Date('2023-05-11T08:27:07.000Z')
+     - | .. code-block:: sh
+            
+            new Date('2023-05-11T08:27:07.000Z')
        | 
        | **JSON**:
-       | "$date": "1683793627000"
+       | .. code-block:: sh
+            
+            "$date": "1683793627000"
      - ``Date`` (``$date``)
 
    * - ``z``
-     - { a: false, b: 87, c: "hello world" }
+     - | .. code-block:: sh
+            
+            { a: false, b: 87, c: "hello world" }
      - | ``Object`` with fields:
        | - a: ``Boolean``
        | - b: ``Int32`` (``$numberInt``)
@@ -107,14 +123,14 @@ Default JSON Formatter
 In your source connector configuration properties, insert the following
 property to specify the default JSON formatter:
 
-.. code-block: json
+.. code-block:: json
 
    "output.json.formatter": "com.mongodb.kafka.connect.source.json.formatter.DefaultJson"
 
-WHen you output the sample document contents from your Kafka topic, the
+When you output the sample document contents from your Kafka topic, the
 output will resemble the following:
 
-.. code-block: json
+.. code-block:: json
    
    { "_id": {"$oid": "5f15aab12435743f9bd126a4"}, "w":
    [{"$numberDecimal": "12345.6789"}, 23.53], "x": {"$binary":
@@ -127,14 +143,14 @@ Extended JSON Formatter
 In your source connector configuration properties, insert the following
 property to specify the extended JSON formatter:
 
-.. code-block: json
+.. code-block:: json
 
    "output.json.formatter": "com.mongodb.kafka.connect.source.json.formatter.ExtendedJson"
 
-WHen you output the sample document contents from your Kafka topic, the
+When you output the sample document contents from your Kafka topic, the
 output will resemble the following:
 
-.. code-block: json
+.. code-block:: json
    
    { "_id": {"$oid": "5f15aab12435743f9bd126a4"}, "w":
    [{"$numberDecimal": "12345.6789"}, {"$numberDouble": "23.53"}], "x": {"$binary":
@@ -147,14 +163,14 @@ Simplified JSON Formatter
 In your source connector configuration properties, insert the following
 property to specify the simplified JSON formatter:
 
-.. code-block: json
+.. code-block:: json
 
    "output.json.formatter": "com.mongodb.kafka.connect.source.json.formatter.SimplifiedJson"
 
-WHen you output the sample document contents from your Kafka topic, the
+When you output the sample document contents from your Kafka topic, the
 output will resemble the following:
 
-.. code-block: json
+.. code-block:: json
    
    { "_id": "5f15aab12435743f9bd126a4", "w": ["12345.6789", 23.53], "x":
    "SSBsb3ZlIGZvcm1hdHRpbmch", "y": "2023-05-11T08:27:07Z", "z": {"a":
