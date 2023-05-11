@@ -66,12 +66,12 @@ nested field.
 
    * - ``_id``
      - .. code-block:: sh
+          :copyable: false
           
           ObjectId('5f15aab12435743f9bd126a4')
 
-       | **JSON**:
-
        .. code-block:: sh
+          :copyable: false
          
           "$oid": "5f15aab12435743f9bd126a4"
 
@@ -79,6 +79,7 @@ nested field.
 
    * - ``w``
      - .. code-block:: sh
+          :copyable: false
       
           [ Decimal128('12345.6789'), 23.53 ]
 
@@ -88,12 +89,12 @@ nested field.
 
    * - ``x``
      - .. code-block:: sh
+          :copyable: false
       
           BinData(0, 'SSBsb3ZlIGZvcm1hdHRpbmch')
 
-       | **JSON**:
-
        .. code-block:: sh
+          :copyable: false
          
           "$binary": {
              "base64": "SSBsb3ZlIGZvcm1hdHRpbmch",
@@ -104,12 +105,12 @@ nested field.
 
    * - ``y``
      - .. code-block:: sh
+          :copyable: false
          
           new Date('2023-05-11T08:27:07.000Z')
 
-       | **JSON**:
-
        .. code-block:: sh
+          :copyable: false
          
           "$date": "1683793627000"
 
@@ -117,6 +118,7 @@ nested field.
 
    * - ``z``
      - .. code-block:: sh
+          :copyable: false
          
           { a: false, b: 87, c: "hello world" }
           
@@ -140,10 +142,13 @@ output will resemble the following:
 
 .. code-block:: json
    
-   { "_id": {"$oid": "5f15aab12435743f9bd126a4"}, "w":
-   [{"$numberDecimal": "12345.6789"}, 23.53], "x": {"$binary":
-   "SSBsb3ZlIGZvcm1hdHRpbmch", "$type": "00"} , "y": {"$date":
-   1683793627000}, "z": {"a": false, "b": 87, "c": "hello world"}}
+   { 
+      "_id": {"$oid": "5f15aab12435743f9bd126a4"},
+      "w": [{"$numberDecimal": "12345.6789"}, 23.53],
+      "x": {"$binary": "SSBsb3ZlIGZvcm1hdHRpbmch", "$type": "00"},
+      "y": {"$date": 1683793627000},
+      "z": {"a": false, "b": 87, "c": "hello world"}
+   }
 
 Extended JSON Formatter
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,10 +165,13 @@ output will resemble the following:
 
 .. code-block:: json
    
-   { "_id": {"$oid": "5f15aab12435743f9bd126a4"}, "w":
-   [{"$numberDecimal": "12345.6789"}, {"$numberDouble": "23.53"}], "x": {"$binary":
-   "SSBsb3ZlIGZvcm1hdHRpbmch", "$type": "00"} , "y": {"$date": 1683793627000}, "z": {"a":
-   false, "b": {"$numberInt": "87"}, "c": "hello world"}}
+   { 
+      "_id": {"$oid": "5f15aab12435743f9bd126a4"},
+      "w": [{"$numberDecimal": "12345.6789"}, {"$numberDouble": "23.53"}],
+      "x": {"$binary": "SSBsb3ZlIGZvcm1hdHRpbmch", "$type": "00"},
+      "y": {"$date": 1683793627000},
+      "z": {"a": false, "b": {"$numberInt": "87"}, "c": "hello world"}
+   }
 
 Simplified JSON Formatter
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,9 +188,13 @@ output will resemble the following:
 
 .. code-block:: json
    
-   { "_id": "5f15aab12435743f9bd126a4", "w": ["12345.6789", 23.53], "x":
-   "SSBsb3ZlIGZvcm1hdHRpbmch", "y": "2023-05-11T08:27:07Z", "z": {"a":
-   false, "b": 87, "c": "hello world"}}
+   { 
+      "_id": "5f15aab12435743f9bd126a4",
+      "w": ["12345.6789", 23.53],
+      "x": "SSBsb3ZlIGZvcm1hdHRpbmch",
+      "y": "2023-05-11T08:27:07Z",
+      "z": {"a": false, "b": 87, "c": "hello world"}
+   }
 
 Custom JSON Formatter
 ---------------------
