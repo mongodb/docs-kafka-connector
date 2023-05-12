@@ -59,7 +59,7 @@ nested field.
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 45 30
+   :widths: 15 55 30
 
    * - Name
      - Value
@@ -123,9 +123,9 @@ following property to specify the default JSON formatter:
 When you output the sample document contents from your Kafka topic, the
 output show the following type representations:
 
-- ``ObjectId`` hexadecimal string with the BSON type
+- ``ObjectId`` value with its BSON type
 - ``Decimal`` value with its BSON type
-- ``Binary`` value with its buffer and binary type
+- ``Binary`` value with its buffer string and binary type
 - ``Date`` value as milliseconds since the UNIX epoch
 
 .. code-block:: json
@@ -151,10 +151,10 @@ following property to specify the extended JSON formatter:
 When you output the sample document contents from your Kafka topic, the
 output show the following type representations:
 
-- ``ObjectId`` hexadecimal string with the BSON type
+- ``ObjectId`` value with its BSON type
 - ``Decimal`` value with its BSON type
 - ``Double`` value with its BSON type
-- ``Binary`` value with its buffer and binary type
+- ``Binary`` value with its buffer string and binary type
 - ``Date`` value as milliseconds since the UNIX epoch
 - ``Int32`` value with its BSON type
 
