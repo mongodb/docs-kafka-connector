@@ -121,7 +121,7 @@ following property to specify the default JSON formatter:
    "output.json.formatter": "com.mongodb.kafka.connect.source.json.formatter.DefaultJson"
 
 When you output the sample document contents from your Kafka topic, the
-output show the following type representations:
+output shows the following type representations:
 
 - ``ObjectId`` value with its BSON type
 - ``Decimal`` value with its BSON type
@@ -149,7 +149,7 @@ following property to specify the extended JSON formatter:
    "output.json.formatter": "com.mongodb.kafka.connect.source.json.formatter.ExtendedJson"
 
 When you output the sample document contents from your Kafka topic, the
-output show the following type representations:
+output shows the following type representations:
 
 - ``ObjectId`` value with its BSON type
 - ``Decimal`` value with its BSON type
@@ -179,7 +179,7 @@ following property to specify the simplified JSON formatter:
    "output.json.formatter": "com.mongodb.kafka.connect.source.json.formatter.SimplifiedJson"
 
 When you output the sample document contents from your Kafka topic, the
-output show the following type representations:
+output shows the following type representations:
 
 - ``ObjectId`` value as its hexadecimal string
 - ``Decimal`` value as a string
