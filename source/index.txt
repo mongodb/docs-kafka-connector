@@ -6,8 +6,6 @@
 MongoDB Kafka Connector
 =======================
 
-.. default-domain:: mongodb
-
 .. toctree::
    :titlesonly:
    :maxdepth: 1
@@ -34,20 +32,81 @@ a Confluent-verified connector that persists data from Kafka topics as a
 data sink into MongoDB as well as publishes changes from MongoDB into Kafka
 topics as a data source.
 
-This guide provides information on available configuration options and
-examples to help you complete your implementation in the following
-sections:
+What's New
+----------
 
-- :doc:`What's New </whats-new>`
-- :doc:`Quick Start </quick-start>`
-- :doc:`Introduction </introduction>`
-- :doc:`Tutorials </tutorials>`
-- :doc:`Sink Connector </sink-connector>`
-- :doc:`Source Connector </source-connector>`
-- :doc:`Security and Authentication </security-and-authentication>`
-- :doc:`Monitoring </monitoring>`
-- :doc:`Migrate from the Community Connector </migrate-from-kafka-connect-mongodb>`
-- :doc:`Troubleshooting </troubleshooting>`
-- :doc:`How to Contribute </contribute>`
-- :doc:`Issues & Help </issues-and-help>`
-- :doc:`Compatibility </compatibility>`
+For a list of new features and changes in each version, see the
+:ref:`kafka-connector-whats-new` section.
+
+Quick Start
+-----------
+
+Learn how to configure the connector to send data between MongoDB
+and {+kafka+} in the :ref:`kafka-quick-start` section.
+
+Introduction
+------------
+
+Learn about key concepts and processes related to the connector in the
+:ref:`kafka-connector-introduction` section.
+
+Tutorials
+---------
+
+Learn about how to set up and perform specific tasks with the connector
+in the :ref:`kafka-connector-tutorials` section.
+
+Sink Connector
+--------------
+
+Learn about how to read data from {+kafka+} and write data to MongoDB
+with the sink connector in the :ref:`kafka-sink-overview` section.
+
+Source Connector
+----------------
+
+Learn about how to read data from MongoDB and write data to {+kafka+}
+with the source connector in the :ref:`kafka-source-overview` section.
+
+Security and Authentication
+---------------------------
+
+Learn about how to secure communications between MongoDB and the
+connector in the :ref:`kafka-connector-security-auth` section.
+
+Monitoring
+----------
+
+Learn about how to monitor your source and sink connectors in the
+:ref:`kafka-monitoring` section.
+
+Migrate from the Community Connector
+------------------------------------
+
+Learn about how to to migrate your Kafka deployments from the
+community-created sink connector to the official connector in the
+:ref:`Migration Guide <migrate-from-kafka-connect-mongodb>`.
+
+Troubleshooting
+---------------
+
+Learn how to address issues you may encounter while running the
+connector in the :ref:`kafka-troubleshooting` section.
+
+How to Contribute
+-----------------
+
+Learn about how to contribute to the official connector's codebase in
+the :ref:`kafka-community-contributions` section.
+
+Issues & Help
+-------------
+
+Learn how to report bugs, request features, and find additional
+resources in the :ref:`kafka-issues-help` section.
+
+Compatibility
+-------------
+
+For information about compatibility between the connector, MongoDB, and
+{+kafka-connect-long+}, see the :ref:`kafka-compatibility` section.
