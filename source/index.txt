@@ -1,5 +1,4 @@
 .. _kafka:
-
 .. _kafka-connector-landing:
 
 =======================
@@ -27,8 +26,8 @@ MongoDB Kafka Connector
 Overview
 --------
 
-The `MongoDB Kafka connector <https://www.mongodb.com/kafka-connector>`__ is
-a Confluent-verified connector that persists data from Kafka topics as a
+The `{+connector-long+} <https://www.mongodb.com/kafka-connector>`__ is
+a Confluent-verified connector that persists data from {+kafka+} topics as a
 data sink into MongoDB as well as publishes changes from MongoDB into Kafka
 topics as a data source.
 
@@ -41,72 +40,78 @@ For a list of new features and changes in each version, see the
 Quick Start
 -----------
 
-Learn how to get started with the connector and begin working with data
+Learn how to get started with the {+connector+} and begin working with data
 in the :ref:`kafka-quick-start` section.
 
 Introduction
 ------------
 
-Learn about key concepts and processes related to the connector in the
-:ref:`kafka-connector-introduction` section.
+Learn about and how the {+connector+} passes data between {+kafka+}
+and MongoDB in the :ref:`kafka-connector-introduction` section. In this
+section, you can also learn about how to install the connector and
+configure it to connect to your MongoDB deployment.
 
 Tutorials
 ---------
 
-Learn how to set up and perform specific tasks with the connector
-in the :ref:`kafka-connector-tutorials` section.
+Follow :ref:`tutorials <kafka-connector-tutorials>` to learn how to set
+up the {+connector+} to read and write data for several use cases.
 
 Sink Connector
 --------------
 
-Learn how to read data from {+kafka+} and write data to MongoDB
-with the sink connector in the :ref:`kafka-sink-overview` section.
+Learn how to configure how the {+sink-connector+} writes data from
+{+kafka+} into MongoDB in the :ref:`kafka-sink-overview` section.
 
 Source Connector
 ----------------
 
-Learn how to read data from MongoDB and write data to {+kafka+}
-with the source connector in the :ref:`kafka-source-overview` section.
+Learn how to configure how the {+source-connector+} writes data from
+MongoDB into {+kafka+} in the :ref:`kafka-source-overview` section.
 
 Security and Authentication
 ---------------------------
 
 Learn how to secure communications between MongoDB and the
-connector in the :ref:`kafka-connector-security-auth` section.
+connector in the :ref:`kafka-connector-security-auth` section. In this
+section, you can also learn how to authenticate with MongoDB by using
+AWS-based authentication.
 
 Monitoring
 ----------
 
-Learn how to monitor your source and sink connectors in the
-:ref:`kafka-monitoring` section.
+Learn how to monitor your MongoDB Kafka source and sink connectors in
+the :ref:`kafka-monitoring` section.
 
 Migrate from the Community Connector
 ------------------------------------
 
-Learn how to to migrate your Kafka deployments from the
-community-created sink connector to the official connector in the
+Learn how to to migrate from the legacy Kafka Connect MongoDB
+sink connector to the official {+connector+} in the
 :ref:`Migration Guide <migrate-from-kafka-connect-mongodb>`.
 
 Troubleshooting
 ---------------
 
-Learn how to address issues you may encounter while running the
-connector in the :ref:`kafka-troubleshooting` section.
+Learn how to resolve issues you may encounter while running the
+{+connector+} in the :ref:`kafka-troubleshooting` section.
 
 How to Contribute
 -----------------
 
-Learn how to contribute to the official connector's codebase in
+Learn how to contribute to the {+connector+} codebase in
 the :ref:`kafka-community-contributions` section.
 
 Issues & Help
 -------------
 
-Learn how to report bugs, request features, and find additional
-resources in the :ref:`kafka-issues-help` section.
+Learn how to report bugs and request features in the
+:ref:`kafka-issues-help` section.
 
 Compatibility
 -------------
 
-For information about compatibility between the connector, MongoDB, and
-{+kafka-connect-long+}, see the :ref:`kafka-compatibility` section.
+For information about compatibility between the {+connector+} and
+MongoDB, see the :ref:`kafka-compatibility` section. In this section,
+you can also learn about compatibility between the {+connector+} and
+{+kafka-connect-long+}.
