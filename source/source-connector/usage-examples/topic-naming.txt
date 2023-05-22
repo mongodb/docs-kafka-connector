@@ -4,10 +4,8 @@
 Topic Naming
 ============
 
-.. default-domain:: mongodb
-
-The example on this page shows how to configure your MongoDB Kafka source
-connector to customize the name of the topic to which it publishes records.
+The example on this page shows how to configure your {+source-connector+}
+to customize the name of the topic to which it publishes records.
 
 By default, the MongoDB Kafka source connector publishes change event data
 to a Kafka topic with the same name as the MongoDB **namespace** from which
