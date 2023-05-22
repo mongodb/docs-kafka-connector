@@ -73,9 +73,9 @@ Security and Authentication
 ---------------------------
 
 Learn how to secure communications between MongoDB and the
-connector in the :ref:`kafka-connector-security-auth` section. In this
-section, you can also learn how to authenticate with MongoDB by using
-AWS-based authentication.
+{+connector+} in the :ref:`kafka-connector-security-auth` section. In this
+section, you can also learn how to configure the {+connector+} to
+authenticate to MongoDB with your AWS Identity and IAM credentials.
 
 Monitoring
 ----------
