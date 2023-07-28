@@ -1,5 +1,8 @@
 name = "kafka-connector"
 title = "MongoDB Kafka Connector"
+
+eol = true
+
 intersphinx = ["https://www.mongodb.com/docs/manual/objects.inv"]
 toc_landing_pages = [
     "/introduction",
@@ -31,3 +34,11 @@ source-connector = "MongoDB Kafka source connector"
 connector_driver_url_base = "https://mongodb.github.io/mongo-java-driver/{+connector_driver_version+}/"
 connector_driver_api_doc_url_base = "https://mongodb.github.io/mongo-java-driver/{+connector_driver_version+}/"
 pipeline-size = "2.4 GB"
+current-url-base = "https://www.mongodb.com/docs/kafka-connector/current"
+
+[[banners]]
+targets = ["*"]
+variant = "info"
+value = """\
+    This version of the documentation is archived and no longer supported. View the `current documentation <{+current-url-base+}/>`__ to learn how to `upgrade your version of the {+connector+} <{+current-url-base+}/introduction/install/>`__.\
+    """
