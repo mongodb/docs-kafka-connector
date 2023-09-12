@@ -33,7 +33,7 @@ topics as a data source.
 
 .. note::
 
-   You can use `Atlas Stream Processing <https://www.mongodb.com/docs/atlas/atlas-sp/overview/>`
+   You can use `Atlas Stream Processing <https://www.mongodb.com/docs/atlas/atlas-sp/overview/>`__
    to read or write data between {+kafka+} and MongoDB Atlas. The
    Atlas Stream Processing product includes the following features:
 
