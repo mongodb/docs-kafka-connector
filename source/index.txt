@@ -31,6 +31,21 @@ a Confluent-verified connector that persists data from {+kafka+} topics as a
 data sink into MongoDB as well as publishes changes from MongoDB into Kafka
 topics as a data source.
 
+.. note::
+
+   You can use `Atlas Stream Processing <https://www.mongodb.com/docs/atlas/atlas-sp/overview/>`
+   to read or write data between {+kafka+} and MongoDB Atlas. The
+   Atlas Stream Processing product includes the following features:
+
+   - Continuously merge or emit data with Atlas collections by using MongoDB aggregation operators.
+   - Operate on time-bounded stream samples.
+   - Recover from interruption.
+   - Validate data by using schemas.
+   - Save errant data to a dead letter queue (DLQ).
+
+   To learn more about Atlas Stream Processing, see the `Atlas Stream Processing <https://www.mongodb.com/products/platform/atlas-stream-processing>`__
+   product page.
+
 What's New
 ----------
 
