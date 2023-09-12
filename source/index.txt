@@ -34,8 +34,8 @@ topics as a data source.
 .. note::
 
    You can use `Atlas Stream Processing <https://www.mongodb.com/docs/atlas/atlas-sp/overview/>`__
-   to read or write data between {+kafka+} and MongoDB Atlas. The
-   Atlas Stream Processing product includes the following features:
+   to read and write data between {+kafka+} and MongoDB Atlas. Atlas Stream 
+   Processing includes the following features:
 
    - Continuously merge or emit data with Atlas collections by using MongoDB aggregation operators.
    - Operate on time-bounded stream samples.
