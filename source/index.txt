@@ -31,6 +31,13 @@ a Confluent-verified connector that persists data from {+kafka+} topics as a
 data sink into MongoDB as well as publishes changes from MongoDB into Kafka
 topics as a data source.
 
+You can use one of the the following MongoDB partner service offerings to host
+your Apache Kafka cluster and {+connector+}:
+
+- `Confluent Cloud <https://www.confluent.io/lp/confluent-cloud/>`__
+- `Amazon Managed Streaming for Apache Kafka (MSK) <https://aws.amazon.com/msk/>`__
+- `RedPanda Cloud <https://redpanda.com/redpanda-cloud>`__
+
 What's New
 ----------
 
