@@ -32,11 +32,11 @@ data sink into MongoDB and publishes changes from MongoDB into Kafka
 topics as a data source.
 
 We recommend that you use one of the following MongoDB partner service 
-offerings to host your Apache Kafka cluster and {+connector+}:
+offerings to host your {+kafka+} cluster and {+connector+}:
 
 - `Confluent Cloud <https://www.confluent.io/lp/confluent-cloud/>`__
 - `Amazon Managed Streaming for Apache Kafka (MSK) <https://aws.amazon.com/msk/>`__
-- `RedPanda Cloud <https://redpanda.com/redpanda-cloud>`__
+- `Redpanda Cloud <https://redpanda.com/redpanda-cloud>`__
 
 What's New
 ----------
