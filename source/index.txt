@@ -34,14 +34,16 @@ topics as a data source.
 .. note::
 
    You can use `Atlas Stream Processing <https://www.mongodb.com/docs/atlas/atlas-sp/overview/>`__
-   to read and write data between {+kafka+} and MongoDB Atlas. Atlas Stream 
+   to read and write data between {+kafka+} and MongoDB Atlas. Atlas Stream
    Processing includes the following features:
 
-   - Continuously merge or emit data with Atlas collections by using MongoDB aggregation operators.
-   - Operate on time-bounded stream samples.
-   - Recover from interruption.
-   - Validate data by using schemas.
-   - Save errant data to a dead letter queue (DLQ).
+   - Continuously process data from Kafka, Atlas collections, or both by using
+     the MongoDB Query API.
+   - Recover from interruption and manage incorrect data by using a dead letter
+     queue (DLQ).
+   - Continuously validate data by using the ``validate`` MongoDB command.
+   - Continuously merge data to Kafka, Atlas collections, or both by using the
+     ``$merge`` MongoDB aggregation operator.
 
    To learn more about Atlas Stream Processing, see the `Atlas Stream Processing <https://www.mongodb.com/products/platform/atlas-stream-processing>`__
    product page.
