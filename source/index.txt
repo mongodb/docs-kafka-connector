@@ -37,18 +37,16 @@ offerings to host your {+kafka+} cluster and {+connector+}:
 - `Confluent Cloud <https://www.confluent.io/lp/confluent-cloud/>`__
 
   - Register to learn more about the `MongoDB Source Connector <https://confluent.cloud/go/new-source-connector/MongoDbAtlasSource?utm_campaign=tm.partner_cd.cwc-mongodb&utm_medium=partnerref>`__,
-    or read the `Get Started with the MongoDB Atlas Source Connector for Confluent Cloud <https://docs.confluent.io/cloud/current/connectors/cc-mongo-db-source.html>`__
+    or read the `documentation <https://docs.confluent.io/cloud/current/connectors/cc-mongo-db-source.html>`__.
     documentation.
   - Register to learn more about the `MongoDB Sink Connector <https://confluent.cloud/go/new-sink-connector/MongoDbAtlasSink?utm_campaign=tm.partner_cd.cwc-mongodb&utm_medium=partnerref>`__,
-    or read the `Get Started with the MongoDB Atlas Source Connector for Confluent Cloud <https://docs.confluent.io/cloud/current/connectors/cc-mongo-db-source.html>`__
-    documentation.
+    or read the `documentatino <https://docs.confluent.io/cloud/current/connectors/cc-mongo-db-source.html>`__.
 
 - `Amazon Managed Streaming for Apache Kafka (MSK) <https://aws.amazon.com/msk/>`__
 - `Redpanda Cloud <https://redpanda.com/redpanda-cloud>`__
 
-  - To learn more about the MongoDB Source Connector, read the `Create a MongoDB Source Connector <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-source-connector/>`__ documentation.
-  - To learn more about the MongoDB Sink Connector, read the
-     `Create a MongoDB Sink Connector <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-sink-connector/>`__ documentation.
+  - To learn more about the MongoDB Source Connector, read the `documentation <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-source-connector/>`__.
+  - To learn more about the MongoDB Sink Connector, read the `documentation <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-sink-connector/>`__.
 
 .. note::
 
