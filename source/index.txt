@@ -46,8 +46,8 @@ offerings to host your {+kafka+} cluster and {+connector+}:
 - `Amazon Managed Streaming for Apache Kafka (MSK) <https://aws.amazon.com/msk/>`__
 - `Redpanda Cloud <https://redpanda.com/redpanda-cloud>`__
 
-   - To learn more about the MongoDB Source Connector, read the `Create a MongoDB Source Connector <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-source-connector/>`__ documentation.
-   - To learn more about the MongoDB Sink Connector, read the
+  - To learn more about the MongoDB Source Connector, read the `Create a MongoDB Source Connector <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-source-connector/>`__ documentation.
+  - To learn more about the MongoDB Sink Connector, read the
      `Create a MongoDB Sink Connector <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-sink-connector/>`__ documentation.
 
 .. note::
