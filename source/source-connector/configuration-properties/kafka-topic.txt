@@ -80,7 +80,7 @@ Settings
           view examples, see the following Usage Examples:
 
           - :ref:`Topic Namespace Map Example <topic-naming-namespace-map-example>`
-          - :ref:`Topic Namespace Map with Regex Example <topic-naming-namespace-map-regex-example>`
+          - :ref:`Topic Namespace Map with Regular Expressions Example <topic-naming-namespace-map-regex-example>`
           - :ref:`Topic Namespace Map with Wildcard Example <topic-naming-namespace-map-wildcard-example>`
 
        | **Default**: ``""``

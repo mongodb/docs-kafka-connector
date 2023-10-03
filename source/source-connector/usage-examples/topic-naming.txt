@@ -27,7 +27,7 @@ Kafka topics to which the connector publishes change event data:
 - :ref:`Topic Prefix Example <topic-naming-prefix-example>`
 - :ref:`Topic Suffix Example <topic-naming-suffix-example>`
 - :ref:`Topic Namespace Map Example <topic-naming-namespace-map-example>`
-- :ref:`Topic Namespace Map with Regex Example <topic-naming-namespace-map-regex-example>`
+- :ref:`Topic Namespace Map with Regular Expressions Example <topic-naming-namespace-map-regex-example>`
 - :ref:`Topic Namespace Map with Wildcard Example <topic-naming-namespace-map-wildcard-example>`
 
 .. _topic-naming-prefix-example:
@@ -123,27 +123,26 @@ mapping, the connector performs the following actions:
 - If the change document came from any database other than ``carDb``, the
   connector sets the destination topic to the default namespace naming
   scheme.
-- If defined, the connector applies the ``topic.prefix`` and
-  ``topic.suffix`` settings to the destination topic name after it
-  performs namespace mapping.
+- If you define the ``topic.prefix`` and ``topic.suffix`` settings, the
+  connector applies their values to the destination topic name after it
+  performs the namespace mapping.
 
 .. _topic-naming-namespace-map-regex-example:
 
-Topic Namespace Map with Regex Example
---------------------------------------
+Topic Namespace Map with Regular Expressions Example
+----------------------------------------------------
 
-You can use regular expressions as namespace patterns when specifying a
-topic namespace map. To specify a regular expression in a namespace, start the
-namespace pattern with the solidus (``/``) character. Create the regular
-expression following the syntax and behavior outlined by the
-``java.util.regex.Pattern`` class.
+You can use regular expressions (regex) to specify namespaces within a
+topic namespace map. To use a regular expression in a topic namespace
+map, start the namespace pattern with the forward slash (``/``)
+character. Create the regular expression following the syntax and
+behavior outlined by the ``java.util.regex.Pattern`` class.
 
 .. important::
    
-   MongoDB database names cannot contain the ``/`` character. If your
-   namespace contains this character, the connector interprets the
-   namespace as a regex pattern or raises a ``ConnectConfigException``
-   if the ``/`` character is not at the beginning of the namespace.
+   Because the ``/`` character denotes that the namespace is a
+   regex pattern, the connector raises a ``ConnectConfigException``
+   if the namespace includes this character in a non-regex context.
 
 The connector computes the topic name by doing variable expansion on the
 topic name template. The connector supports the following variables: 
@@ -154,14 +153,15 @@ topic name template. The connector supports the following variables:
 - ``coll``: The collection name from the matching namespace, or an empty
   string if there is no collection name.
 - ``sep_coll``: The value of the ``coll`` variable prefixed with the value
-  of the ``sep`` variable if the value of ``coll`` is not empty.
+  of the ``sep`` variable, or an empty string if the value of ``coll`` is empty.
 - ``coll_sep``: The value of the ``coll`` variable suffixed with the
-  value of the ``sep`` variable if the value of ``coll`` is not empty.
+  value of the ``sep`` variable, or an empty string if the value of ``coll`` is empty.
 - ``sep_coll_sep``: The value of the ``coll`` variable prefixed and
-  suffixed with the value of the ``sep`` variable if the value of
-  ``coll`` is not empty.
+  suffixed with the value of the ``sep`` variable, or an empty string if
+  the value of ``coll`` is empty.
  
-You must enclose variables between curly brackets (``{}``) for the connector to
+If you use any of the previous variables in your topic name template,
+you must enclose them in curly brackets (``{}``) for the connector to
 expand them. You can't use curly brackets in the topic name template for
 any other purpose.
 
@@ -170,11 +170,11 @@ any other purpose.
    You must follow the JSON syntax to create a namespace pattern that includes
    characters that need escaping. For example, to match
    ``'.'``, the regex syntax requires that you escape it as ``'\.'``
-   You must escape the reverse solidus ``'\'`` character as ``'\\'``.
+   You must escape the backslash ``'\'`` character as ``'\\'``.
    Consequently, to match ``'.'`` in your namespace pattern, you must
    write it as ``'\\.'``.
  
-The connector matches namespaces by using the following order:
+The connector matches namespaces in the following order:
  
 1. Pairs with database and collection names in the namespace pattern. To
    learn more about this namespace pattern, see the :ref:`Topic
@@ -188,19 +188,21 @@ The connector matches namespaces by using the following order:
    <topic-naming-namespace-map-wildcard-example>`.
 
 This example shows how to specify the ``topic.namespace.map``
-setting to define the following topic namespace mapping:
+setting so that the connector performs the following mapping:
 
-- Maps a regular expression to the topic ``industrial{sep_coll}``. The
-  regex pattern matches any database names that include the string
-  ``'vertical'``, even if the database name has other characters.
+- Writes events from databases that match a regular expression to the
+  ``industrial{sep_coll}`` topic. The regex pattern matches any database
+  names that include the string ``'vertical'``, even if the database
+  name has other characters.
 
-- Maps the ``vertical.health`` namespace to the ``healthcare`` topic.
+- Writes events from the ``vertical.health`` collection to the
+  ``healthcare`` topic.
 
 .. code-block:: ini
 
    topic.namespace.map={"/vertical(?:\\..*)?": "industrial{sep_coll}", "vertical.health": "healthcare"}
 
-Since the ``vertical.health`` namespace mapping takes precedence over
+Because the ``vertical.health`` namespace mapping takes precedence over
 the regular expression namespace mapping, the connector performs the
 following actions:
 
@@ -208,8 +210,8 @@ following actions:
   collection ``health``, the connector sets the destination to the
   ``healthcare`` topic.
 
-- If the change event comes from any database that gets
-  matched by the regex, the connector sets the destination to the
+- If the change event comes from any database that matches the regex,
+  the connector sets the destination to the
   ``industrial.<collectionName>`` topic. The following examples
   demonstrate this mapping:
 
@@ -226,13 +228,13 @@ following actions:
     database but no specific collection, the connector writes to the
     ``industrial`` topic.
 
-- If the change document comes from any database that does not get
-  matched by the regex, the connector sets the destination topic to the
-  default namespace naming scheme. 
+- If the change document comes from any database that doesn't match the
+  regex pattern, the connector sets the destination topic to the default
+  namespace naming scheme.
 
-- If defined, the connector applies the ``topic.prefix`` and
-  ``topic.suffix`` settings to the destination topic name after it
-  performs namespace mapping.
+- If you define the ``topic.prefix`` and ``topic.suffix`` settings, the
+  connector applies their values to the destination topic name after it
+  performs the namespace mapping.
 
 .. _topic-naming-namespace-map-wildcard-example:
 
