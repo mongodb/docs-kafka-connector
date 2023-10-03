@@ -142,7 +142,7 @@ expression following the syntax and behavior outlined by the
    
    MongoDB database names cannot contain the ``/`` character. If your
    namespace contains this character, the connector interprets the
-   namespace as a regex pattern or raises an ``ConnectConfigException``
+   namespace as a regex pattern or raises a ``ConnectConfigException``
    if the ``/`` character is not at the beginning of the namespace.
 
 The connector computes the topic name by doing variable expansion on the
@@ -191,7 +191,7 @@ This example shows how to specify the ``topic.namespace.map``
 setting to define the following topic namespace mapping:
 
 - Maps a regular expression to the topic ``industrial{sep_coll}``. The
-  regular expression matches any database names that include the string
+  regex pattern matches any database names that include the string
   ``'vertical'``, even if the database name has other characters.
 
 - Maps the ``vertical.health`` namespace to the ``healthcare`` topic.

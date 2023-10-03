@@ -35,7 +35,7 @@ What's New in 1.11
 --------------------
 
 - Added support for regular expressions in the ``topic.namespace.map``
-  property. To learn more about this behavior and view examples, see the
+  property. To learn more about this feature and an example, see the
   :ref:`Topic Namespace Map with Regex Example
   <topic-naming-namespace-map-regex-example>`.
 
