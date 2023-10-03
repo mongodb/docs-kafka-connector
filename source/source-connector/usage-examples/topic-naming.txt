@@ -88,7 +88,7 @@ If the database name or namespace of the change event matches one of the
 fields in the map, the connector publishes the record to the value that
 corresponds to that mapping.
 
-If the database name or namespace of the change event do not match any
+If the database name or namespace of the change event does not match any
 mapping, the connector publishes the record using the default topic naming
 scheme unless otherwise specified by a different topic naming setting.
 
@@ -165,21 +165,21 @@ You must enclose variables between curly brackets (``{}``) for the connector to
 expand them. You can't use curly brackets in the topic name template for
 any other purpose.
 
-.. important:: Escaping Characters
+.. note:: Escaping Characters
 
    You must follow the JSON syntax to create a namespace pattern that includes
    characters that need escaping. For example, to match
    ``'.'``, the regex syntax requires that you escape it as ``'\.'``
    You must escape the reverse solidus ``'\'`` character as ``'\\'``.
-   Consequently, to match ``'.'`` in your namespace pattern, you need to
+   Consequently, to match ``'.'`` in your namespace pattern, you must
    write it as ``'\\.'``.
  
 The connector matches namespaces by using the following order:
  
-1. Simple pairs with a collection name in the namespace pattern. To
+1. Pairs with database and collection names in the namespace pattern. To
    learn more about this namespace pattern, see the :ref:`Topic
    Namespace Map Example <topic-naming-namespace-map-example>`.
-#. Simple pairs without a collection name in the namespace pattern. To
+#. Pairs with only a database name in the namespace pattern. To
    learn more about this namespace pattern, see the :ref:`Topic
    Namespace Map Example <topic-naming-namespace-map-example>`.
 #. Regex pairs in order.
