@@ -34,7 +34,10 @@ Learn what's new by version:
 What's New in 1.11
 --------------------
 
-- Added support for regular expressions in the ``topic.namespace.map`` property.
+- Added support for regular expressions in the ``topic.namespace.map``
+  property. To learn more about this behavior and view examples, see the
+  :ref:`Topic Namespace Map with Regex Example
+  <topic-naming-namespace-map-regex-example>`.
 
 - Added support for setting a custom delete write model strategy using the
   ``delete.writemodel.strategy`` propery.

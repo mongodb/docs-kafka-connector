@@ -71,51 +71,17 @@ Settings
        | Specifies a JSON mapping between change stream document 
          :manual:`namespaces </reference/glossary/#std-term-namespace>`
          and topic names.
+       
+       .. tip:: Namespace Mapping Behavior
 
-       .. example::
+          You can specify complex mappings by specifying the
+          ``topic.namespace.map`` property. This property supports regex
+          and wildcard matching. To learn more about these behaviors and
+          view examples, see the following Usage Examples:
 
-          The following mapping instructs the connector to perform the following
-          actions:
-
-          - Publish change stream documents originating from the
-            ``myDb.myColl`` MongoDB collection to the ``topicOne`` Kafka topic.
-          - Publish change stream documents originating from the
-            ``myDb`` MongoDB database and a collection other than ``myColl``
-            to the Kafka topic ``topicTwo.<collectionName>``.
-          - Publish change stream documents originating from the ``myDb``
-            MongoDB database that do not bear a collection name to
-            the ``topicTwo`` Kafka topic.
-
-          .. code-block:: properties
-             :copyable: false
-
-             topic.namespace.map={"myDb.myColl": "topicOne", "myDb": "topicTwo"}
-
-          The following examples show which topic the connector sends
-          different change stream documents to using the preceding mapping:
-
-          - A change stream document originating from the ``myDb`` database
-            and the ``myColl`` collection publishes to the
-            ``topicOne`` topic.
-          - A change stream document originating from the ``myDb`` database
-            and the ``newColl`` collection publishes to the
-            ``topicTwo.newColl`` topic.
-          - A change stream document originating from dropping the
-            ``myDb`` database, which does not bear a collection name,
-            publishes to the ``topicTwo`` topic.
-
-       | You can use the ``"*"`` wildcard character to match change stream
-         document namespaces.
-
-       .. example::
-
-          The following mapping instructs the connector to publish all change
-          stream documents to the ``topicThree`` topic:
-
-          .. code-block:: properties
-             :copyable: false
-
-             topic.namespace.map={"*": "topicThree"}
+          - :ref:`Topic Namespace Map Example <topic-naming-namespace-map-example>`
+          - :ref:`Topic Namespace Map with Regex Example <topic-naming-namespace-map-regex-example>`
+          - :ref:`Topic Namespace Map with Wildcard Example <topic-naming-namespace-map-wildcard-example>`
 
        | **Default**: ``""``
        | **Accepted Values**: A valid JSON object
