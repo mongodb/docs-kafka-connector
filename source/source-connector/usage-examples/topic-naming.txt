@@ -24,16 +24,16 @@ database and collection name concatenated with a dot (``.``) character.
 The following examples show different ways that you can customize the
 Kafka topics to which the connector publishes change event data:
 
-- :ref:`Topic Prefix Example <topic-naming-prefix-example>`
-- :ref:`Topic Suffix Example <topic-naming-suffix-example>`
-- :ref:`Topic Namespace Map Example <topic-naming-namespace-map-example>`
-- :ref:`Topic Namespace Map with Regular Expressions Example <topic-naming-namespace-map-regex-example>`
-- :ref:`Topic Namespace Map with Wildcard Example <topic-naming-namespace-map-wildcard-example>`
+- :ref:`Topic Prefix <topic-naming-prefix-example>`
+- :ref:`Topic Suffix <topic-naming-suffix-example>`
+- :ref:`Topic Namespace Map <topic-naming-namespace-map-example>`
+- :ref:`Topic Namespace Map with Regular Expressions <topic-naming-namespace-map-regex-example>`
+- :ref:`Topic Namespace Map with Wildcard <topic-naming-namespace-map-wildcard-example>`
 
 .. _topic-naming-prefix-example:
 
-Topic Prefix Example
---------------------
+Topic Prefix
+------------
 
 You can configure your source connector to prepend a string to the
 namespace of the change event data, and publish records to that Kafka
@@ -55,8 +55,8 @@ in the ``test`` database to the Kafka topic named ``myPrefix.test.data``.
 
 .. _topic-naming-suffix-example:
 
-Topic Suffix Example
---------------------
+Topic Suffix
+------------
 
 You can configure your source connector to append a string to the
 namespace of the change event data, and publish records to that Kafka
@@ -78,8 +78,8 @@ in the ``test`` database to the Kafka topic named ``test.data.mySuffix``.
 
 .. _topic-naming-namespace-map-example:
 
-Topic Namespace Map Example
----------------------------
+Topic Namespace Map
+-------------------
 
 You can configure your source connector to map namespace values to Kafka
 topic names for incoming change event data.
@@ -129,14 +129,14 @@ mapping, the connector performs the following actions:
 
 .. _topic-naming-namespace-map-regex-example:
 
-Topic Namespace Map with Regular Expressions Example
-----------------------------------------------------
+Topic Namespace Map with Regular Expressions
+--------------------------------------------
 
-You can use regular expressions (regex) to specify namespaces within a
-topic namespace map. To use a regular expression in a topic namespace
-map, start the namespace pattern with the forward slash (``/``)
-character. Create the regular expression following the syntax and
-behavior outlined by the ``java.util.regex.Pattern`` class.
+You can use a regular expression (regex) within a
+topic namespace map. To use a regular expression, start the namespace
+pattern with the forward slash (``/``) character. Create the regular
+expression following the syntax and behavior specified by the
+``java.util.regex.Pattern`` class.
 
 .. important::
    
@@ -167,11 +167,9 @@ any other purpose.
 
 .. note:: Escaping Characters
 
-   You must follow the JSON syntax to create a namespace pattern that includes
-   characters that need escaping. For example, to match
-   ``'.'``, the regex syntax requires that you escape it as ``'\.'``
-   You must escape the backslash ``'\'`` character as ``'\\'``.
-   Consequently, to match ``'.'`` in your namespace pattern, you must
+   If your namespace pattern includes characters that need escaping,
+   you must prefix these characters with two backslashes (``\\``) in the
+   pattern. For example, to match a period (``'.'``) character, you must
    write it as ``'\\.'``.
  
 The connector matches namespaces in the following order:
@@ -238,8 +236,8 @@ following actions:
 
 .. _topic-naming-namespace-map-wildcard-example:
 
-Topic Namespace Map with Wildcard Example
------------------------------------------
+Topic Namespace Map with Wildcard
+---------------------------------
 
 In addition to specifying database name and namespace in your topic
 namespace map as shown in :ref:`<topic-naming-namespace-map-example>`,

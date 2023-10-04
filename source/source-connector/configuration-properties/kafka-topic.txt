@@ -43,7 +43,8 @@ Settings
 
        .. seealso::
 
-          :ref:`Topic Naming Prefix Usage Example <source-usage-example-topic-naming>`
+          :ref:`Topic Naming Prefix <source-usage-example-topic-naming>`
+          usage example
 
        | **Default**: ``""``
        | **Accepted Values**: A string composed of ASCII alphanumeric
@@ -58,7 +59,8 @@ Settings
 
        .. seealso::
 
-          :ref:`Topic Naming Suffix Usage Example <source-usage-example-topic-naming>`
+          :ref:`Topic Naming Suffix <source-usage-example-topic-naming>`
+          usage example
 
        | **Default**: ``""``
        | **Accepted Values**: A string composed of ASCII alphanumeric
@@ -74,14 +76,17 @@ Settings
        
        .. tip:: Namespace Mapping Behavior
 
-          You can specify complex mappings by specifying the
+          You can specify complex mappings by using the
           ``topic.namespace.map`` property. This property supports regex
           and wildcard matching. To learn more about these behaviors and
           view examples, see the following Usage Examples:
 
-          - :ref:`Topic Namespace Map Example <topic-naming-namespace-map-example>`
-          - :ref:`Topic Namespace Map with Regular Expressions Example <topic-naming-namespace-map-regex-example>`
-          - :ref:`Topic Namespace Map with Wildcard Example <topic-naming-namespace-map-wildcard-example>`
+          - :ref:`Topic Namespace Map
+            <topic-naming-namespace-map-example>` usage example
+          - :ref:`Topic Namespace Map with Regular Expressions
+            <topic-naming-namespace-map-regex-example>` usage example
+          - :ref:`Topic Namespace Map with Wildcard
+            <topic-naming-namespace-map-wildcard-example>` usage example
 
        | **Default**: ``""``
        | **Accepted Values**: A valid JSON object
