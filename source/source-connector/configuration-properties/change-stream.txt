@@ -23,6 +23,8 @@ with the {+source-connector+}.
 
 .. include:: /includes/source-config-link.rst
 
+.. _source-configuration-change-stream-list:
+
 Settings
 --------
 
@@ -136,6 +138,19 @@ Settings
          ``publish.full.document.only`` is ``true``.
 
        | **Default**: ``false``
+       | **Accepted Values**: ``true`` or ``false``
+
+   * - | **change.stream.document.key.as.key**
+     - | **Type:** boolean
+       |
+       | **Description:**
+       | Whether to use the document key for the source record key if
+         the document key is present. When this setting is ``true``,
+         tombstone events have the keys of the deleted documents.
+         When this setting is ``false``, tombstone events use
+         the resume token as the source key.
+
+       | **Default**: ``true``
        | **Accepted Values**: ``true`` or ``false``
 
    * - | **collation**

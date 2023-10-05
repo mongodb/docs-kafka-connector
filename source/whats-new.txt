@@ -41,6 +41,11 @@ What's New in 1.11
 
 - Added the ``UpdateOneDefaultStrategy`` write model strategy.
 
+- Added the ``change.stream.document.key.as.key`` source connector
+  configuration property so tombstone events use the keys of deleted
+  documents as source record keys. To learn more about this property,
+  see the list of :ref:`Change Stream Properties <source-configuration-change-stream-list>`.
+
 - DDL events from Debezium are recorded as no-ops and no longer cause an error.
 
 .. _kafka-connector-whats-new-1.10.1:
