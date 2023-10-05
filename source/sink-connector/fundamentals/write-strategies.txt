@@ -1,4 +1,4 @@
-.. _sink-connector-write-model-strategies:
+.. _sink-connector-write-model-strategies-guide:
 
 ======================
 Write Model Strategies
