@@ -28,13 +28,6 @@ Kafka topics to which the connector publishes change event data:
 - :ref:`Topic Suffix <topic-naming-suffix-example>`
 - :ref:`Topic Namespace Map <topic-naming-namespace-map>`
 
-The Topic Namespace Map section contains the following examples for the
-mapping specifications that the ``topic.namespace.map`` supports:
-
-- :ref:`Database and Collection Names <topic-naming-namespace-map-example>`
-- :ref:`Regular Expressions <topic-naming-namespace-map-regex-example>`
-- :ref:`Wildcard <topic-naming-namespace-map-wildcard-example>`
-
 .. _topic-naming-prefix-example:
 
 Topic Prefix
