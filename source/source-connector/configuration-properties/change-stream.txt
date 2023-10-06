@@ -115,10 +115,11 @@ Settings
        |
        | **Description:**
        | Whether to return only the ``fullDocument`` field from the
-         change stream event document produced by any update event. The ``fullDocument`` field
-         contains the most current version of the updated document. To
-         learn more about the ``fullDocument`` field, see the :rapid:`Server
-         manual page on update events </reference/change-events/update/>`.
+         change stream event document produced by any update event. The
+         ``fullDocument`` field contains the most current version of the
+         updated document. To learn more about the ``fullDocument``
+         field, see the :manual:`update Event
+         </reference/change-events/update/>` in the Server manual.
 
        | When set to ``true``, the connector overrides the
          ``change.stream.full.document`` setting and sets it to
@@ -145,10 +146,12 @@ Settings
        |
        | **Description:**
        | Whether to use the document key for the source record key if
-         the document key is present. When this setting is ``true``,
-         tombstone events have the keys of the deleted documents.
-         When this setting is ``false``, tombstone events use
-         the resume token as the source key.
+         the document key is present.
+
+       | When set to ``true``, the connector adds keys of the deleted
+         documents to the tombstone events. When set to ``false``,
+         the connector uses the resume token as the source key for
+         the tombstone events.
 
        | **Default**: ``true``
        | **Accepted Values**: ``true`` or ``false``
