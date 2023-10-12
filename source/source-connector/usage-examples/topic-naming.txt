@@ -82,7 +82,7 @@ Topic Namespace Map
 You can configure your source connector to map namespace values to Kafka
 topic names for incoming change event data. Topic namespace maps contain
 **pairs** that are made up of a namespace pattern and a destination
-topic.
+topic name template.
 
 The following sections describe how the connector interprets namespaces
 and maps them to Kafka topics. In addition to directly mapping databases
@@ -92,7 +92,7 @@ and wildcard pairs in topic namespace maps.
 The order of the pairs in your namespace map can affect how the
 connector writes events to your topics. The connector matches namespaces
 in the following order:
- 
+
 1. Pairs with database and collection names in the namespace pattern. To
    learn more about this namespace pattern, see the :ref:`Database and
    Collection Names <topic-naming-namespace-map-example>` example.
@@ -114,8 +114,9 @@ topic namespace map to write change events from these sources to Kafka
 topics.
 
 If the database name or namespace of the change event matches one of the
-fields in the map, the connector publishes the record to the value that
-corresponds to that mapping.
+fields in the map, the connector computes the destination topic name
+based on the topic name template that corresponds to that mapping and
+publishes the event to this topic.
 
 If the database name or namespace of the change event does not match any
 mapping, the connector publishes the record using the default topic naming
@@ -139,8 +140,8 @@ over mappings that only specify the source database name.
 
 The following example shows how to specify the ``topic.namespace.map``
 setting to define a topic namespace mappings from the ``carDb`` database
-to the ``automobiles`` topic and the ``carDb.ev`` namespace to the
-``electricVehicles`` topic:
+to the ``automobiles`` topic name template and the ``carDb.ev``
+namespace to the ``electricVehicles`` topic name template:
 
 .. code-block:: ini
 
@@ -153,8 +154,7 @@ mapping, the connector performs the following actions:
   the connector sets the destination to the  ``electricVehicles`` topic.
 - If the change event came from the database ``carDb`` and a collection
   other than ``ev``, the connector sets the destination to the
-  ``automobiles.<collection name>``
-  topic.
+  ``automobiles.<collection name>`` topic.
 - If the change document came from any database other than ``carDb``, the
   connector sets the destination topic to the default namespace naming
   scheme.
@@ -199,19 +199,19 @@ any other purpose.
    When you create a namespace pattern, ensure that you properly handle
    characters that need escaping. For example, to match
    ``.``, the regex syntax requires that you escape it as ``\.``
-   However, you must escape the backslash ``\`` character as ``\\``.
-   Then, to match ``.`` in your namespace pattern, you must
-   write it as ``\\.``.
+   However, you must escape the backslash ``\`` character as ``\\``
+   according to the JSON syntax. Then, to match ``.`` in your namespace
+   pattern, you must write it as ``\\.``.
 
 This example shows how to specify the ``topic.namespace.map``
 setting so that the connector performs the following mapping:
 
 - Writes events from databases that match a regular expression to the
-  ``industrial{sep_coll}`` topic. The regex pattern matches any
+  ``industrial{sep_coll}`` topic name template. The regex pattern matches any
   namespace with the ``vertical`` database name.
 
 - Writes events from the ``vertical.health`` namespace to the
-  ``healthcare`` topic.
+  ``healthcare`` topic name template.
 
 .. code-block:: ini
 
@@ -231,8 +231,8 @@ following actions:
   ``healthcare`` topic.
 
 - If the change event comes from any other namespaces with the ``vertical``
-  database name, the connector sets the destination to the
-  ``industrial{sep_coll}`` topic. The following examples
+  database name, the connector computes the destination topic based on
+  the ``industrial{sep_coll}`` topic name template. The following examples
   demonstrate this mapping:
 
   - If the change event comes from the ``vertical.wasteManagement``
