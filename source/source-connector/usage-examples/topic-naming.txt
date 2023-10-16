@@ -206,12 +206,14 @@ any other purpose.
 This example shows how to specify the ``topic.namespace.map``
 setting so that the connector performs the following mapping:
 
-- Writes events from databases that match a regular expression to the
-  ``industrial{sep_coll}`` topic name template. The regex pattern matches any
-  namespace with the ``vertical`` database name.
+- Writes events from databases that match a regular expression to a
+  topic computed from the ``industrial{sep_coll}`` topic name template.
+  The regex pattern matches any namespace with the ``vertical`` database
+  name.
 
-- Writes events from the ``vertical.health`` namespace to the
-  ``healthcare`` topic name template.
+- Writes events from the ``vertical.health`` namespace the
+  ``healthcare`` topic name. In this case, the topic name template and the
+  computed topic name are the same.
 
 .. code-block:: ini
 
