@@ -211,7 +211,7 @@ setting so that the connector performs the following mapping:
   The regex pattern matches any namespace with the ``vertical`` database
   name.
 
-- Writes events from the ``vertical.health`` namespace the
+- Writes events from the ``vertical.health`` namespace to the
   ``healthcare`` topic name. In this case, the topic name template and the
   computed topic name are the same.
 
