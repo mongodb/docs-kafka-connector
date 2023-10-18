@@ -23,8 +23,6 @@ configuration:
 
    writemodel.strategy=<a writemodel strategy>
 
-.. _sink-configuration-write-model-strategy-description-end:
-
 You can also specify a delete write model strategy to specify how the
 sink connector writes data into MongoDB when the connector receives a
 tombstone event. You can specify a delete write strategy with the following
@@ -33,6 +31,8 @@ configuration:
 .. code-block:: properties
 
    delete.writemodel.strategy=<a writemodel strategy>
+
+.. _sink-configuration-write-model-strategy-description-end:
 
 .. include:: /includes/sink-config-link.rst
 
