@@ -110,12 +110,15 @@ Strategies
          key structure by the ``_id`` field only when the document
          contains a null value structure.
        | This is implicitly specified when you set ``mongodb.delete.on.null.values=true``.
-       | This is the default value for the ``delete.writemodel.strategy`` configuration setting.
        | You can set this explicitly with the following configuration:
        
        .. code-block:: properties
 
           writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneDefaultStrategy
+
+       .. note::
+          
+          This is the default value for the ``delete.writemodel.strategy`` configuration property.
 
    * - | **DeleteOneBusinessKeyStrategy**
        | 
