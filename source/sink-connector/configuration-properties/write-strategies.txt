@@ -15,22 +15,43 @@ Overview
 
 .. _sink-configuration-write-model-strategy-description-start:
 
-Use the strategies in the following table to specify how the {+sink-connector+}
-writes data into MongoDB. You can specify a write strategy with the following
+You can set configuration properties to specify how the
+{+sink-connector+} writes data into MongoDB. The following sections
+describe the configuration properties that you can set to customize this
+behavior.
+
+Write Model
+~~~~~~~~~~~
+
+Set the ``writemodel.strategy`` configuration property to specify how
+the sink connector writes data when it receives a new sink record.
+
+You can set the value of ``writemodel.strategy`` to any of the
+fully qualified class names of the write model strategies described in
+the :ref:`Strategies <sink-connector-write-model-strategies>` section of
+this page. You can specify a strategy by setting the following
 configuration:
 
 .. code-block:: properties
 
-   writemodel.strategy=<a writemodel strategy>
+   writemodel.strategy=<a write model strategy>
 
-You can also select a delete write model strategy to specify how the
-sink connector writes data into MongoDB when it receives a
-tombstone event. You can specify a delete write strategy with the following
+Delete Write Model
+~~~~~~~~~~~~~~~~~~
+
+Set the ``delete.writemodel.strategy`` configuration property to specify
+how the sink connector writes data when it receives a new tombstone
+event. The connector receives tombstone events when records are deleted.
+
+You can set the value of ``delete.writemodel.strategy`` to any of the
+fully qualified class names of the write model strategies described in
+the :ref:`Strategies <sink-connector-write-model-strategies>` section of
+this page. You can specify a strategy by setting the following
 configuration:
 
 .. code-block:: properties
 
-   delete.writemodel.strategy=<a writemodel strategy>
+   delete.writemodel.strategy=<a write model strategy>
 
 .. _sink-configuration-write-model-strategy-description-end:
 
@@ -40,13 +61,6 @@ configuration:
 
 Strategies
 ----------
-
-.. tip::
-   
-   The example configurations in the following table show how to set only
-   the ``writemodel.strategy`` property. To select a write model
-   strategy as your delete write model, use the same class
-   names as values of the ``delete.writemodel.strategy`` property.
 
 .. _sink-configuration-write-model-strategy-table-start:
 
@@ -64,7 +78,7 @@ Strategies
          default, and the ``InsertOneDefaultStrategy`` if you set the
          ``timeseries.timefield`` option.
        | 
-       | This is the default value for the ``writemodel.strategy`` configuration setting.
+       | This is the default value value for the ``writemodel.strategy`` configuration property.
 
    * - | **InsertOneDefaultStrategy**
        | 
@@ -109,16 +123,18 @@ Strategies
        | Deletes at most one document that matches your sink connector's
          key structure by the ``_id`` field only when the document
          contains a null value structure.
-       | This is implicitly specified when you set ``mongodb.delete.on.null.values=true``.
+       |
+       | This is the default value for the
+         ``delete.writemodel.strategy`` configuration property.
+       |
+       | This strategy is implicitly selected as the value of the
+         ``writemodel.strategy`` property when you set
+         ``mongodb.delete.on.null.values=true``.
        | You can set this explicitly with the following configuration:
        
        .. code-block:: properties
 
           writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneDefaultStrategy
-
-       .. note::
-          
-          This is the default value for the ``delete.writemodel.strategy`` configuration property.
 
    * - | **DeleteOneBusinessKeyStrategy**
        | 
