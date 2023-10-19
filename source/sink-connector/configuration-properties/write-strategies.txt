@@ -78,17 +78,19 @@ Strategies
          default, and the ``InsertOneDefaultStrategy`` if you set the
          ``timeseries.timefield`` option.
        | 
-       | This is the default value value for the ``writemodel.strategy`` configuration property.
+       | This is the default value value for the ``writemodel.strategy``
+         configuration property.
 
    * - | **InsertOneDefaultStrategy**
        | 
      - | **Description:**
        | Insert each sink record into MongoDB as a document. 
-       | Apply the following configuration to your sink connector to specify this setting: 
+       | To specify this strategy, set the configuration property to the
+         following class name:
        
        .. code-block:: properties
            
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.InsertOneDefaultStrategy
+          com.mongodb.kafka.connect.sink.writemodel.strategy.InsertOneDefaultStrategy
 
    * - | **ReplaceOneDefaultStrategy**
        |
@@ -96,11 +98,12 @@ Strategies
        | Replaces at most one document in MongoDB that matches a sink
          record by the ``_id`` field. If no documents match, the
          connector inserts the sink record as a new document.
-       | Apply the following configuration to your sink connector to specify this setting: 
+       | To specify this strategy, set the configuration property to the
+         following class name:
        
        .. code-block:: properties
            
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneDefaultStrategy
+          com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneDefaultStrategy
 
    * - | **ReplaceOneBusinessKeyStrategy**
        | 
@@ -108,11 +111,12 @@ Strategies
        | Replaces at most one document that matches a sink record by a
          specified business key. If no documents match, the
          connector inserts the sink record as a new document.
-       | Apply the following configuration to your sink connector to specify this setting: 
+       | To specify this strategy, set the configuration property to the
+         following class name: 
        
        .. code-block:: properties
            
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy
+          com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy
        
        | To see an example showing how to use this strategy, see our
          :ref:`guide on write model strategies <kafka-sink-write-model-replace-example>`.
@@ -130,21 +134,23 @@ Strategies
        | This strategy is implicitly selected as the value of the
          ``writemodel.strategy`` property when you set
          ``mongodb.delete.on.null.values=true``.
-       | You can set this explicitly with the following configuration:
+       | To specify this strategy, set the configuration property to the
+         following class name:
        
        .. code-block:: properties
 
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneDefaultStrategy
+          com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneDefaultStrategy
 
    * - | **DeleteOneBusinessKeyStrategy**
        | 
      - | **Description:**
        | Deletes at most one MongoDB document that matches a sink record by a business key.
-       | Apply the following configuration to your sink connector to specify this setting: 
+       | To specify this strategy, set the configuration property to the
+         following class name:
        
        .. code-block:: properties
            
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneBusinessKeyStrategy
+          com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneBusinessKeyStrategy
 
        | To see an example showing how to use this strategy, see our
          :ref:`guide on write model strategies <kafka-sink-write-model-delete-example>`.
@@ -155,21 +161,23 @@ Strategies
        | Updates at most one document in MongoDB that matches a sink
          record by the ``_id`` field. If no documents match, the
          connector inserts the sink record as a new document.
-       | Apply the following configuration to your sink connector to specify this setting: 
-       
+       | To specify this strategy, set the configuration property to the
+         following class name:
+
        .. code-block:: properties
            
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneDefaultStrategy
+          com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneDefaultStrategy
 
    * - | **UpdateOneTimestampsStrategy**
        | 
      - | **Description:**
        | Add ``_insertedTS`` (inserted timestamp) and ``_modifiedTS`` (modified timestamp) fields into documents.
-       | Apply the following configuration to your sink connector to specify this setting: 
-       
+       | To specify this strategy, set the configuration property to the
+         following class name:
+
        .. code-block:: properties
-           
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneTimestampsStrategy
+          
+          com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneTimestampsStrategy
 
        | To see an example showing how to use this strategy, see our
          :ref:`guide on write model strategies <kafka-sink-write-model-time-example>`. 
@@ -180,10 +188,11 @@ Strategies
        | Add ``_insertedTS`` (inserted timestamp) and ``_modifiedTS``
          (modified timestamp) fields into documents that match a business
          key.
-       | Apply the following configuration to your sink connector to specify this setting: 
-       
+       | To specify this strategy, set the configuration property to the
+         following class name:
+
        .. code-block:: properties
            
-          writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneBusinessKeyTimestampStrategy
+          com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneBusinessKeyTimestampStrategy
 
 .. _sink-configuration-write-model-strategy-table-end:
