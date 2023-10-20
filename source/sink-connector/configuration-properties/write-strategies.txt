@@ -24,7 +24,7 @@ Write Model
 ~~~~~~~~~~~
 
 Set the ``writemodel.strategy`` configuration property to specify how
-the sink connector writes data when it receives a new sink record.
+the sink connector writes data when it receives a sink record.
 
 You can set the value of ``writemodel.strategy`` to any of the
 fully qualified class names of the write model strategies described in
@@ -40,7 +40,7 @@ Delete Write Model
 ~~~~~~~~~~~~~~~~~~
 
 Set the ``delete.writemodel.strategy`` configuration property to specify
-how the sink connector writes data when it receives a new tombstone
+how the sink connector writes data when it receives a tombstone
 event. The connector receives tombstone events when records are deleted.
 
 You can set the value of ``delete.writemodel.strategy`` to any of the
@@ -88,7 +88,7 @@ Strategies
        | To specify this strategy, set the configuration property to the
          following class name:
        
-       .. code-block:: properties
+       .. code-block:: none
            
           com.mongodb.kafka.connect.sink.writemodel.strategy.InsertOneDefaultStrategy
 
@@ -101,7 +101,7 @@ Strategies
        | To specify this strategy, set the configuration property to the
          following class name:
        
-       .. code-block:: properties
+       .. code-block:: none
            
           com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneDefaultStrategy
 
@@ -114,7 +114,7 @@ Strategies
        | To specify this strategy, set the configuration property to the
          following class name: 
        
-       .. code-block:: properties
+       .. code-block:: none
            
           com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy
        
@@ -131,13 +131,13 @@ Strategies
        | This is the default value for the
          ``delete.writemodel.strategy`` configuration property.
        |
-       | This strategy is implicitly selected as the value of the
+       | This strategy is set as the default value of the
          ``writemodel.strategy`` property when you set
          ``mongodb.delete.on.null.values=true``.
        | To specify this strategy, set the configuration property to the
          following class name:
        
-       .. code-block:: properties
+       .. code-block:: none
 
           com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneDefaultStrategy
 
@@ -148,7 +148,7 @@ Strategies
        | To specify this strategy, set the configuration property to the
          following class name:
        
-       .. code-block:: properties
+       .. code-block:: none
            
           com.mongodb.kafka.connect.sink.writemodel.strategy.DeleteOneBusinessKeyStrategy
 
@@ -164,7 +164,7 @@ Strategies
        | To specify this strategy, set the configuration property to the
          following class name:
 
-       .. code-block:: properties
+       .. code-block:: none
            
           com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneDefaultStrategy
 
@@ -175,7 +175,7 @@ Strategies
        | To specify this strategy, set the configuration property to the
          following class name:
 
-       .. code-block:: properties
+       .. code-block:: none
           
           com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneTimestampsStrategy
 
@@ -191,7 +191,7 @@ Strategies
        | To specify this strategy, set the configuration property to the
          following class name:
 
-       .. code-block:: properties
+       .. code-block:: none
            
           com.mongodb.kafka.connect.sink.writemodel.strategy.UpdateOneBusinessKeyTimestampStrategy
 
