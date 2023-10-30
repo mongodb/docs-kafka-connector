@@ -41,7 +41,8 @@ Delete Write Model
 
 Set the ``delete.writemodel.strategy`` configuration property to specify
 how the sink connector writes data when it receives a tombstone
-event. The connector receives tombstone events when records are deleted.
+event. A tombstone event is a record that contains a key but no
+value, which signifies a deleted record.
 
 You can set the value of ``delete.writemodel.strategy`` to any of the
 fully qualified class names of the write model strategies described in
