@@ -4,6 +4,13 @@
 Kafka Topic Properties
 ======================
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta:: 
+   :keywords: generated topic, customize topic
+
 .. contents:: On this page
    :local:
    :backlinks: none
@@ -38,8 +45,8 @@ Settings
      - | **Type:** string
        |
        | **Description:**
-       | The prefix to prepend to database and collection names to
-         generate the name of the Kafka topic on which to publish the data.
+       | The string to attach to the beginning of the change event
+         namespace when generating the destination Kafka topic name.
 
        .. seealso::
 
@@ -54,8 +61,8 @@ Settings
      - | **Type:** string
        |
        | **Description:**
-       | The suffix to append to database and collection names to
-         generate the name of the Kafka topic on which to publish the data.
+       | The string to attach to the end of the change event
+         namespace when generating the destination Kafka topic name.
 
        .. seealso::
 
