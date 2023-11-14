@@ -45,8 +45,11 @@ Settings
      - | **Type:** string
        |
        | **Description:**
-       | The string to attach to the beginning of the change event
-         namespace when generating the destination Kafka topic name.
+       | Specifies the first part of the destination Kafka
+         topic name to which the connector publishes change stream events.
+         The destination topic name is composed of the ``topic.prefix``
+         value followed by the database and collection names, separated by the value
+         specified in the ``topic.separator`` property.
 
        .. seealso::
 
@@ -61,8 +64,11 @@ Settings
      - | **Type:** string
        |
        | **Description:**
-       | The string to attach to the end of the change event
-         namespace when generating the destination Kafka topic name.
+       | Specifies the last part of the destination Kafka
+         topic name to which the connector publishes change stream events.
+         The destination topic name is composed of the database and
+         collection names followed by the ``topic.suffix`` value,
+         separated by the value specified in the ``topic.separator`` property.
 
        .. seealso::
 
