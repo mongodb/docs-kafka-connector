@@ -46,8 +46,8 @@ Aggregation
 ~~~~~~~~~~~
 
 Use an aggregation pipeline to configure your source connector's change
-stream. The following list describes some ways that you can configure
-your connector's change stream:
+stream. You can configure a connector change stream to use an
+aggregation pipeline to perform tasks including the following operations:
 
 - Filter change events by operation type
 - Project specific fields

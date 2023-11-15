@@ -85,5 +85,6 @@ cluster as a data source, and a MongoDB cluster as a data sink.
 .. figure:: /includes/figures/connect-data-flow.png
    :alt: Dataflow diagram of Kafka Connect deployment. 
 
-All connectors and datastores in the example pipeline are optional, and
-you can replace them with the connectors and datastores you need for your deployment.
+All connectors and datastores in the example pipeline are optional.
+You can replace them with the connectors and datastores you need 
+for your deployment.

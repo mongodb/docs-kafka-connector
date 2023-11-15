@@ -40,7 +40,7 @@ connection URI connector property as shown in the following example:
    connection.uri=mongodb://<AWS access key id>:<AWS secret access key>@<hostname>:<port>/?authSource=<authentication database>&authMechanism=MONGODB-AWS&authMechanismProperties=AWS_SESSION_TOKEN:<AWS session token>
 
 The preceding example uses the following placeholders which you must
-replace with your own credentials:
+replace:
 
 .. list-table::
    :header-rows: 1
