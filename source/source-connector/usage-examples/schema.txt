@@ -17,7 +17,7 @@ Example
 -------
 
 Suppose your application keeps track of customer data in a MongoDB
-collection, and you must publish this data to a Kafka topic. You want
+collection, and you want to publish this data to a Kafka topic. You want
 the subscribers of the customer data to receive consistently formatted data.
 You choose to apply a schema to your data.
 
