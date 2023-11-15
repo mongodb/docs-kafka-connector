@@ -5,7 +5,7 @@ Kafka Connector Tutorial Setup
 ==============================
 
 The tutorials in this section run on a development environment using Docker to
-package the dependencies and configurations you must have to run the
+package the dependencies and configurations needed to run the
 {+connector-long+}. Make sure you complete the development environment setup
 steps before proceeding to the tutorials.
 

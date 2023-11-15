@@ -45,8 +45,9 @@ To learn more about the oplog, see the MongoDB manual entry on the
 Aggregation
 ~~~~~~~~~~~
 
-Use an aggregation pipeline to configure your source connector's change stream.
-Some of the ways you can configure your connector's change stream are as follows:
+Use an aggregation pipeline to configure your source connector's change
+stream. The following list describes some ways that you can configure
+your connector's change stream:
 
 - Filter change events by operation type
 - Project specific fields
