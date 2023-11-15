@@ -102,8 +102,8 @@ Set Up Your Development Environment with Docker
 
    .. step:: Verify the Successful Setup
 
-      Confirm the development environment started normally by running the
-      following commands:
+      Confirm that the development environment started successfully by
+      running the following commands:
 
       .. code-block:: bash
 
