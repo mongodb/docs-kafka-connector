@@ -25,7 +25,7 @@ MongoDB v4.0 or later.
 .. note::
 
    We recommend that you only use the {+connector+} with an official version
-   of the MongoDB server. We cannot guarantee it functions correctly
+   of the {+cluster+}. We cannot guarantee it functions correctly
    with any other version.
 
 Kafka Compatibility

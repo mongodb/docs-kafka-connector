@@ -509,11 +509,11 @@ Sink Connector JMX Metrics
 
    * - **batch-writes-successful**
      - The total number of batches a MongoDB sink task successfully wrote
-       to the MongoDB server.
+       to the {+cluster+}.
 
    * - **batch-writes-successful-duration-ms**
      - The total number of milliseconds a MongoDB sink task spent successfully
-       writing to the MongoDB server.
+       writing to the {+cluster+}.
 
    * - **batch-writes-successful-duration-over-1-ms**
      - The total number of successful batch writes performed by the MongoDB
