@@ -12,7 +12,7 @@ filter or transform data.
 MongoDB notifies the connector of data changes that match your aggregation
 pipeline on a **change stream**. A change stream is a sequence of events that
 describe data changes a client made to a MongoDB deployment in real-time.
-For more information, see the MongoDB Server manual entry on
+For more information, see the MongoDB server manual entry on
 :manual:`Change Streams </changeStreams/>`.
 
 

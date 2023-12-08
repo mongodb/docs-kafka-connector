@@ -24,10 +24,16 @@ AWS IAM credentials, see the guide on :atlas:`How to Set Up Unified AWS Access <
 
 .. important::
 
+<<<<<<< HEAD
    You must use {+connector+} version 1.5 of later to connect to a MongoDB
    server set up to authenticate using your AWS IAM credentials. AWS IAM
    credential authentication is available in MongoDB server version 4.4
    and later.
+=======
+   You need to use {+connector+} version 1.5 of later to connect to a {+cluster+} set up
+   to authenticate using your AWS IAM credentials. AWS IAM credential authentication is
+   available in {+cluster+} version 4.4 and later.
+>>>>>>> c6d353c (change MongoDB sercer to cluster constant)
 
 Connector Connection Settings
 -----------------------------
@@ -56,10 +62,10 @@ replace:
      - Value of your ``AWS_SECRET_KEY``.
 
    * - **hostname**
-     - Network address of your MongoDB server.
+     - Network address of your {+cluster+}.
 
    * - **port**
-     - Port number of your MongoDB server.
+     - Port number of your {+cluster+}.
 
    * - **authentication database**
      - MongoDB database that contains your user's authentication data. If
