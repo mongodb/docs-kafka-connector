@@ -4,6 +4,13 @@
 MongoDB AWS-based Authentication
 ================================
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta:: 
+   :keywords: AWS, IAM, credentials
+
 .. contents:: On this page
    :local:
    :backlinks: none

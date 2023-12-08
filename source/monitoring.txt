@@ -4,6 +4,13 @@
 Monitoring
 ==========
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta:: 
+   :keywords: logging, audit, metrics
+
 .. contents:: On this page
    :local:
    :backlinks: none
