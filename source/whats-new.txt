@@ -42,8 +42,8 @@ Learn what's new by version:
 What's New in 1.11.1
 --------------------
 
-- Fixed wildcard matching for partial field name matching. To learn more about
-  this fix, see the `KAFKA-391 <https://jira.mongodb.org/browse/KAFKA-391>`__
+- Fixed wildcard matching on partial field names in documents. To learn more
+  about this fix, see the `KAFKA-391 <https://jira.mongodb.org/browse/KAFKA-391>`__
   JIRA issue.
 
 - Fixed an issue in which a null pointer exception is thrown when the
@@ -89,7 +89,7 @@ What's New in 1.10.1
 .. important:: Upgrade to Version 1.10.1
 
   Version 1.9 introduced a bug related to ``MongoSourceTask.start`` that can cause a resource leak on
-  both the connector side and the server side .
+  both the connector side and the server side.
 
   Upgrade to version 1.10.1 if you are using version 1.9 or 1.10 of the connector.
 
