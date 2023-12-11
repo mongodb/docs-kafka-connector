@@ -63,10 +63,10 @@ replace:
      - Value of your ``AWS_SECRET_KEY``.
 
    * - **hostname**
-     - Network address of your {+cluster+}.
+     - Network address of your MongoDB server.
 
    * - **port**
-     - Port number of your {+cluster+}.
+     - Port number of your MongoDB server.
 
    * - **authentication database**
      - MongoDB database that contains your user's authentication data. If
