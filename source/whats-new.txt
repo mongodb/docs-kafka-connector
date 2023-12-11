@@ -1,12 +1,5 @@
 .. _kafka-connector-whats-new:
 
-.. facet::
-   :name: genre
-   :values: reference
-
-.. meta::
-   :keywords: bug fix, features
-
 ==========
 What's New
 ==========
@@ -16,6 +9,13 @@ What's New
    :backlinks: none
    :depth: 1
    :class: singlecol
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: bug fix, features
 
 Learn what's new by version:
 
