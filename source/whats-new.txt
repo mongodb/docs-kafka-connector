@@ -36,11 +36,13 @@ What's New in 1.11.1
 --------------------
 
 - Fixed wildcard matching for partial field name matching. To learn more about
-  this fix, see the :jira:`KAFKA-391 <KAFKA-391>` JIRA issue.
+  this fix, see the `KAFKA-391 <https://jira.mongodb.org/browse/KAFKA-391>`__
+  JIRA issue.
 
 - Fixed an issue in which a null pointer exception is thrown when the
   connector attempts to log null values on configuration settings. To learn
-  more about this fix, see the :jira:`KAFKA-390 <KAFKA-390>` JIRA issue.
+  more about this fix, see the `KAFKA-390 <https://jira.mongodb.org/browse/KAFKA-390>`__
+  JIRA issue.
 
 .. _kafka-connector-whats-new-1.11:
 
