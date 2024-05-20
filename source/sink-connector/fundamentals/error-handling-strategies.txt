@@ -81,6 +81,20 @@ option:
 
    errors.tolerance=all
 
+Tolerate Data Errors
+~~~~~~~~~~~~~~~~~~~~
+
+You can configure your sink connector to tolerate only data errors, and stop
+processing for all others. With this setting, the connector sends data errors to the dead
+letter queue if one is configured.
+
+Configure your sink connector to tolerate only data errors by specifying the
+following option:
+
+.. code-block:: properties
+
+   errors.tolerance=data
+
 .. _kafka-sink-bulk-ordered-data-loss:
 
 .. warning:: Ordered Bulk Writes Can Result in Skipped Messages
