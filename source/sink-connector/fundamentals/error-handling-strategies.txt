@@ -81,6 +81,15 @@ option:
 
    errors.tolerance=all
 
+.. _kafka-sink-bulk-ordered-data-loss:
+
+.. warning:: Ordered Bulk Writes Can Result in Skipped Messages
+
+   If you set your connector to tolerate errors and use ordered bulk writes, you
+   may lose data. If you set your connector to tolerate errors and use unordered bulk writes,
+   you lose less data. To learn more about bulk write operations, see
+   the :ref:`Write Model Strategies page <sink-connector-bulk-write-ops>`.
+
 Tolerate Data Errors
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -94,15 +103,6 @@ following option:
 .. code-block:: properties
 
    errors.tolerance=data
-
-.. _kafka-sink-bulk-ordered-data-loss:
-
-.. warning:: Ordered Bulk Writes Can Result in Skipped Messages
-
-   If you set your connector to tolerate errors and use ordered bulk writes, you
-   may lose data. If you set your connector to tolerate errors and use unordered bulk writes,
-   you lose less data. To learn more about bulk write operations, see
-   the :ref:`Write Model Strategies page <sink-connector-bulk-write-ops>`.
 
 .. _kafka-sink-errors-dlq:
 
