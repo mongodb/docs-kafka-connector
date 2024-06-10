@@ -117,8 +117,11 @@ In this example, the ``sample.AwsAssumeRoleCredentialProvider``
 implementation class must be available on the classpath. Your
 authentication provider reads the ARN you specify.
 
-The following code defines the ``AwsAssumeRoleCredentialProvider``
-class:
+The ``AwsAssumeRoleCredentialProvider`` class defines ``init()`` and
+``validate()`` methods that are called when the connector initializes.
+It returns an object of type ``com.mongodb.MongoCredential`` that is
+used by the ``MongoClient``. The following code provides a sample
+implementation of a custom authentication provider:
 
 .. code-block:: java
 
