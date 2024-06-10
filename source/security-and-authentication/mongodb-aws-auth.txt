@@ -92,7 +92,7 @@ properties:
   class name of the implementation class
 
 Depending on the design of your implementation class, you might also
-need to set the ``mongodbaws.auth.mechanism.roleArn`` property, which
+set the ``mongodbaws.auth.mechanism.roleArn`` property, which
 provides the Amazon Resource Name (ARN).
 
 Example
@@ -114,14 +114,15 @@ provider:
    mongodbaws.auth.mechanism.roleArn=arn:aws:iam::<account ID>:role/<role name>
 
 In this example, the ``sample.AwsAssumeRoleCredentialProvider``
-implementation class must be available on the classpath. Your
-authentication provider reads the ARN you specify.
+implementation class must be available on the classpath. The
+authentication provider class reads the ARN you specify in the
+``roleArn`` property.
 
 The ``AwsAssumeRoleCredentialProvider`` class defines ``init()`` and
 ``validate()`` methods that are called when the connector initializes.
 It returns an object of type ``com.mongodb.MongoCredential`` that is
-used by the ``MongoClient``. The following code provides a sample
-implementation of a custom authentication provider:
+used by the ``MongoClient``. The following code defines the custom
+authentication provider:
 
 .. code-block:: java
 
