@@ -50,9 +50,9 @@ What's New in 1.13
 
 .. TODO add link To learn more, see the :ref:`` guide.
 
-- Fixes an issue that occurred when validating configuration for Source
+- Fixed an issue that occurred when validating configuration for Source
   and Sink Connectors if the configuration contained secrets and used
-  the ``Provider`` framework.  To learn more about this fix, see the
+  the ``Provider`` framework. To learn more about this fix, see the
   `KAFKA-414 <https://jira.mongodb.org/browse/KAFKA-414>`__ JIRA issue.
 
 .. _kafka-connector-whats-new-1.12:
