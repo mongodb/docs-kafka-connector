@@ -1,0 +1,72 @@
+.. _kafka-custom-auth:
+
+==============================
+Custom Authentication Provider
+==============================
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: credentials, implementation class, custom class
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+Overview
+--------
+
+You can add a custom authentication provider by implementing the
+``com.mongodb.kafka.connect.util.custom.credentials.CustomCredentialProvider``
+interface. You can use a custom authentication provider with any of the
+supported authentication mechanisms.
+
+To enable this feature, set the following authentication
+properties:
+
+- ``mongo.custom.auth.mechanism.enable``: set to ``true``
+- ``mongo.custom.auth.mechanism.providerClass``: set to the qualified
+  class name of the implementation class
+- *(Optional)* ``mongodbaws.auth.mechanism.roleArn``: set to an Amazon Resource Name (ARN)
+
+Example
+-------
+
+This section provides a sample authentication provider implementation
+class and the corresponding configuration properties and values to
+implement the provider.
+
+The following sample configuration file specifies the
+``MONGODB-AWS`` authentication method, adds a custom authentication
+provider, and provides an ARN:
+
+.. code-block:: ini
+
+   connection.uri=<connection string>/?authMechanism=MONGODB-AWS
+   mongo.custom.auth.mechanism.enable=true
+   mongo.custom.auth.mechanism.providerClass=sample.AwsAssumeRoleCredentialProvider
+   mongodbaws.auth.mechanism.roleArn=arn:aws:iam::<account ID>:role/<role name>
+
+The ``AwsAssumeRoleCredentialProvider`` class defines ``init()`` and
+``validate()`` methods that are called when the connector initializes.
+The ``getCustomCredential()`` method returns an object of type
+``com.mongodb.MongoCredential`` that is used by the ``MongoClient``
+constructed for the connector. The following code defines the custom
+authentication provider:
+
+.. literalinclude:: /includes/security/AwsAssumeRoleCredentialProvider.java
+   :language: java
+
+In this example, the ``sample.AwsAssumeRoleCredentialProvider``
+implementation class must be available on the classpath. The
+authentication provider class reads the ARN you specify in the
+``roleArn`` property.
+
+To view an example of a ``pom.xml`` file that can build the complete JAR containing
+the implementation class, see the `Kafka Connector GitHub repository
+README file
+<https://github.com/mongodb/mongo-kafka/blob/master/README.md#pom-file-to-build-the-sample-customroleprovider-into-a-jar>`__.
