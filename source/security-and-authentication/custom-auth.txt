@@ -58,8 +58,8 @@ authentication method. The following configuration properties define a
 sink connector that connects the {+connector-short+} to MongoDB Atlas
 by using AWS IAM authentication:
 
-.. code-block:: ini
-   :emphasize-lines: 13-15
+.. code-block:: json
+   :emphasize-lines: 12-14
 
    {
       "name": "mongo-tutorial-sink",
