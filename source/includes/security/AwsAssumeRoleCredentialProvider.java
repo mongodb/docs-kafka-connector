@@ -1,6 +1,22 @@
-public class AwsAssumeRoleCredentialProvider implements CustomCredentialProvider {
+package com.mongodb;
 
-  public AwsAssumeRoleCredentialProvider() {}
+import java.util.Map;
+import java.util.function.Supplier;
+
+import com.mongodb.kafka.connect.util.custom.credentials.CustomCredentialProvider;
+
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
+import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceAsyncClientBuilder;
+import com.amazonaws.services.securitytoken.model.AssumeRoleRequest;
+import com.amazonaws.services.securitytoken.model.AssumeRoleResult;
+import com.amazonaws.services.securitytoken.model.Credentials;
+import com.amazonaws.util.StringUtils;
+
+public class SampleAssumeRoleCredential implements CustomCredentialProvider {
+
+  public SampleAssumeRoleCredential() {}
   @Override
   public MongoCredential getCustomCredential(Map<?, ?> map) {
     AWSCredentialsProvider provider = new DefaultAWSCredentialsProviderChain();
@@ -20,7 +36,7 @@ public class AwsAssumeRoleCredentialProvider implements CustomCredentialProvider
     return MongoCredential.createAwsCredential(null, null)
         .withMechanismProperty(MongoCredential.AWS_CREDENTIAL_PROVIDER_KEY, awsFreshCredentialSupplier);
   }
-
+  
   // Validates presence of an ARN
   @Override
   public void validate(Map<?, ?> map) {

@@ -22,51 +22,63 @@ Overview
 
 You can add a custom authentication provider by implementing the
 ``com.mongodb.kafka.connect.util.custom.credentials.CustomCredentialProvider``
-interface. You can use this feature to write an authentication provider
-in Java to use in your connector configuration.
+interface. You must place your custom class JAR file in the ``lib`` folder
+in your {+kafka-connect+} deployment.
 
-To enable this feature, set the following authentication
-properties:
+Set following authentication properties to configure the authentication
+provider:
 
 - ``mongo.custom.auth.mechanism.enable``: set to ``true``
 - ``mongo.custom.auth.mechanism.providerClass``: set to the qualified
   class name of the implementation class
 - *(Optional)* ``mongodbaws.auth.mechanism.roleArn``: set to an Amazon Resource Name (ARN)
 
-Example
--------
+AWS IAM Authentication Example
+------------------------------
 
-This section provides a sample authentication provider implementation
-class and the corresponding configuration properties and values to
-implement the provider.
-
-The following sample configuration file specifies the
-``MONGODB-AWS`` authentication method, adds a custom authentication
-provider, and provides an ARN:
-
-.. code-block:: ini
-
-   connection.uri=<connection string>/?authMechanism=MONGODB-AWS
-   mongo.custom.auth.mechanism.enable=true
-   mongo.custom.auth.mechanism.providerClass=sample.AwsAssumeRoleCredentialProvider
-   mongodbaws.auth.mechanism.roleArn=arn:aws:iam::<account ID>:role/<role name>
-
-The ``AwsAssumeRoleCredentialProvider`` class defines ``init()`` and
-``validate()`` methods that are called when the connector initializes.
-The ``getCustomCredential()`` method returns an object of type
-``com.mongodb.MongoCredential`` that is used by the ``MongoClient``
-constructed for the connector. The following code defines the custom
-authentication provider:
+This example provides a custom authentication provider that supports AWS
+IAM. The following code shows the custom authentication
+provider JAR file:
 
 .. literalinclude:: /includes/security/AwsAssumeRoleCredentialProvider.java
    :language: java
 
-In this example, the ``sample.AwsAssumeRoleCredentialProvider``
-implementation class must be available on the classpath. The
-authentication provider class reads the ARN you specify in the
-``roleArn`` property.
+Compile the JAR file and place it in the ``lib`` folder in your
+deployment. 
 
-To view an example of a ``pom.xml`` file that can build the complete JAR containing
-the implementation class, see the `Kafka Connector GitHub repository
-README file
-<https://github.com/mongodb/mongo-kafka/blob/master/README.md#pom-file-to-build-the-sample-customroleprovider-into-a-jar>`__.
+.. note::
+   
+   To view an example of a ``pom.xml`` file that can build the complete JAR containing
+   the implementation class, see the `Kafka Connector GitHub repository
+   README file
+   <https://github.com/mongodb/mongo-kafka/blob/master/README.md#pom-file-to-build-the-sample-customroleprovider-into-a-jar>`__.
+
+Next, configure your source or sink connector to include the custom
+authentication method. The following configuration properties define a
+sink connector that connects the {+connector-short+} to MongoDB Atlas
+by using AWS IAM authentication:
+
+.. code-block:: ini
+   :emphasize-lines: 13-15
+
+   {
+      "name": "mongo-tutorial-sink",
+      "config": {
+        "connector.class": "com.mongodb.kafka.connect.MongoSinkConnector",
+        "topics": "<topic>",
+        "connection.uri": "<connection string>?authSource=%24external&authMechanism=MONGODB-AWS&retryWrites=true&w=majority",
+        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": false,
+        "database": "<db>",
+        "collection": "<collection>",
+        "mongo.custom.auth.mechanism.enable":"true",
+        "mongo.custom.auth.mechanism.providerClass":"com.mongodb.SampleAssumeRoleCredential",
+        "mongodbaws.auth.mechanism.roleArn":"arn:aws:iam::99999999:role/KafkaAtlasRole"
+      }
+   }
+
+In this example, the ``roleArn`` value is the IAM Role of the user group that has
+access to MongoDB Atlas. In the AWS IAM console, we gave ``AssumeRole``
+permissions on the IAM account that is running {+kafka-connect+} to this
+Atlas Group IAM Role.
