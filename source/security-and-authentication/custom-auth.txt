@@ -74,11 +74,10 @@ by using AWS IAM authentication:
         "collection": "<collection>",
         "mongo.custom.auth.mechanism.enable": "true",
         "mongo.custom.auth.mechanism.providerClass": "com.mongodb.SampleAssumeRoleCredential",
-        "mongodbaws.auth.mechanism.roleArn": "arn:aws:iam::99999999:role/KafkaAtlasRole"
+        "mongodbaws.auth.mechanism.roleArn": "<AWS IAM ARN>"
       }
    }
 
 In this example, the ``roleArn`` value is the IAM Role of the user group that has
 access to MongoDB Atlas. In the AWS IAM console, the IAM account that is
-running {+kafka-connect+} has ``AssumeRole`` permissions to this Atlas
-Group IAM Role.
+running {+kafka-connect+} has ``AssumeRole`` permissions to the Atlas User Group.
