@@ -22,8 +22,8 @@ Overview
 
 You can add a custom authentication provider by implementing the
 ``com.mongodb.kafka.connect.util.custom.credentials.CustomCredentialProvider``
-interface. You can use a custom authentication provider with any of the
-supported authentication mechanisms.
+interface. You can use this feature to write an authentication provider
+in Java to use in your connector configuration.
 
 To enable this feature, set the following authentication
 properties:
