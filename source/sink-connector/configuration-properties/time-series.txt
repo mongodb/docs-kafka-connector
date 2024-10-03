@@ -60,6 +60,7 @@ Settings
          The connector passes the date format pattern to the Java
          `DateTimeFormatter.ofPattern(pattern, locale) <https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ofPattern-java.lang.String-java.util.Locale->`__
          method to perform date and time conversions on the time field.
+
        | If the date value from the source data only contains date information,
          the connector sets the time information to the start of the specified
          day. If the date value does not contain the timezone offset, the
@@ -112,10 +113,8 @@ Settings
        | Which top-level field to read from the source data to describe
          a group of related time series documents.
 
-       .. important::
-
-          This field must not be the ``_id`` field nor the field you specified
-          in the ``timeseries.timefield`` setting.
+       :gold:`IMPORTANT:` This field must not be the ``_id`` field nor the field you specified
+       in the ``timeseries.timefield`` setting.
 
        | **Default**: ``""``
        | **Accepted Values**: An empty string or the name of a field
