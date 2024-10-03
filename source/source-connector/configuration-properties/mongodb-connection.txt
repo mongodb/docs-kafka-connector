@@ -73,11 +73,8 @@ Settings
        | Name of the collection in the database to watch for changes. If not
          set, the connector watches all collections for changes.
 
-       .. important::
-
-          If your ``database`` configuration is set to ``""``, the connector
-          ignores the ``collection`` setting.
-
+       :gold:`IMPORTANT:` If your ``database`` configuration is set to ``""``, the connector
+       ignores the ``collection`` setting.
        |
        | **Default**: ``""``
        | **Accepted Values**: A single collection name
