@@ -112,7 +112,7 @@ Settings
          connector may create fewer than the maximum tasks specified if it
          cannot handle the level of parallelism you specify.
 
-        :gold:`IMPORTANT:`If you specify a value greater than ``1``, 
+        :gold:`IMPORTANT:` If you specify a value greater than ``1``, 
         the connector enables parallel processing of the tasks. 
         If your topic has multiple partition logs, which enables 
         the connector to read from the topic in parallel, 
