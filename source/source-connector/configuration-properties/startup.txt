@@ -102,7 +102,7 @@ Settings
 
           startup.mode.copy.existing.namespace.regex=stats\.page.*
 
-       The ``\`` character in the example above escapes the "." character
+       The ``\`` character in the example above escapes the ``.`` character
        that follows it in the regular expression. For more information on
        how to build regular expressions, see the Java API documentation on
        `Patterns <https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html>`__.
