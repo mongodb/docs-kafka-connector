@@ -112,13 +112,11 @@ Settings
          connector may create fewer than the maximum tasks specified if it
          cannot handle the level of parallelism you specify.
 
-       .. important:: Multiple Tasks May Process Messages Out of Order
-
-          If you specify a value greater than ``1``, the connector enables
-          parallel processing of the tasks. If your topic has multiple
-          partition logs, which enables the connector to read from the
-          topic in parallel, the tasks may process the messages out of
-          order.
+        :gold:`IMPORTANT:`If you specify a value greater than ``1``, 
+        the connector enables parallel processing of the tasks. 
+        If your topic has multiple partition logs, which enables 
+        the connector to read from the topic in parallel, 
+        the tasks may process the messages out of order.
 
        | **Default**: ``1``
        | **Accepted Values**: An integer
