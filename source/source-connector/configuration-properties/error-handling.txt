@@ -45,10 +45,9 @@ Settings
        | Set this to ``"all"`` if you want the connector to continue
          processing messages and ignore any errors it encounters.
 
-       .. important::
-
-          This property overrides the `errors.tolerance <https://docs.confluent.io/platform/current/installation/configuration/connect/source-connect-configs.html#errors-tolerance>`__
-          Connect Framework property.
+       :gold:`IMPORTANT:` This property overrides the 
+       `errors.tolerance <https://docs.confluent.io/platform/current/installation/configuration/connect/source-connect-configs.html#errors-tolerance>`__
+       Connect Framework property.
 
        |
        | **Default:** ``"none"``
@@ -65,10 +64,9 @@ Settings
          tolerate using the ``errors.tolerance`` or ``mongo.errors.tolerance``
          setting.
 
-       .. important::
-
-          This property overrides the `errors.log.enable <https://docs.confluent.io/platform/current/installation/configuration/connect/source-connect-configs.html#errors-log-enable>`__
-          Connect Framework property.
+       :gold:`IMPORTANT:` This property overrides the 
+       `errors.log.enable <https://docs.confluent.io/platform/current/installation/configuration/connect/source-connect-configs.html#errors-log-enable>`__
+       Connect Framework property.
 
        |
        | **Default:** ``false``
@@ -84,10 +82,8 @@ Settings
        | If you leave this setting blank, the connector does not write
          invalid messages to any topic.
 
-       .. important::
-
-          You must set ``errors.tolerance`` or ``mongo.errors.tolerance``
-          setting to ``"all"`` to enable this property.
+       :gold:`IMPORTANT:` You must set ``errors.tolerance`` or ``mongo.errors.tolerance``
+       setting to ``"all"`` to enable this property.
 
        | **Default:** ``""``
        | **Accepted Values**: A valid Kafka topic name
