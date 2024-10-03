@@ -162,8 +162,8 @@ property like this:
    - Documents to which connector an offset partition belongs
 
    For example, if you named your source connector ``"source-values"`` and you are
-   setting the ``offset.partition.name`` property for the first time, you 
-   should configure your connector as follows:
+   setting the ``offset.partition.name`` property for the first time, 
+   configure your connector as follows:
 
    .. code-block:: properties
 
