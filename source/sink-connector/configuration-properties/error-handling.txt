@@ -100,7 +100,8 @@ Settings
        | Name of topic to use as the dead letter queue. If blank, the
          connector does not send any invalid messages to the dead letter
          queue.
-       | For more information about the dead letter queue, see the
+
+       | To learn more about the dead letter queue, see the
          :ref:`Dead Letter Queue Configuration Example <sink-dead-letter-queue-configuration-example>`.
        |
        | **Default:** ``""``
@@ -112,11 +113,13 @@ Settings
        | **Description:**
        | Whether the connector should include context headers when it
          writes messages to the dead letter queue.
+
        | To learn more about the dead letter queue, see the
          :ref:`Dead Letter Queue Configuration Example <sink-dead-letter-queue-configuration-example>`.
+
        | To learn about the exceptions the connector defines and
-         reports through context headers, see the
-         :ref:`<sink-configuration-error-handling-dlq-errors>` section.
+         reports through context headers, see
+         :ref:`<sink-configuration-error-handling-dlq-errors>`.
        |
        | **Default:** ``false``
        | **Accepted Values**: ``true`` or ``false``
@@ -128,7 +131,8 @@ Settings
        | The number of nodes on which to replicate the dead letter queue
          topic. If you are running a single-node Kafka cluster, you must
          set this to ``1``.
-       | For more information about the dead letter queue, see the
+
+       | To learn more about the dead letter queue, see the
          :ref:`Dead Letter Queue Configuration Example <sink-dead-letter-queue-configuration-example>`.
        |
        | **Default:** ``3``

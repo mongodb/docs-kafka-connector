@@ -41,11 +41,9 @@ Settings
        | A list of post-processor classes the connector should apply to
          process the data before saving it to MongoDB.
 
-       .. seealso::
-
-          For more information on post-processors and examples of
-          their usage, see the section on
-          :doc:`Post-processors </sink-connector/fundamentals/post-processors>`.
+       For more information on post-processors and examples of
+       their usage, see the section on
+       :doc:`Post-processors </sink-connector/fundamentals/post-processors>`.
 
        |
        | **Default**:
