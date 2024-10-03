@@ -56,10 +56,8 @@ Settings
        | To learn more about error handling strategies, see the
          :ref:`<kafka-sink-handle-errors>` page.
 
-       .. note::
-
-          This property overrides the `errors.tolerance <https://docs.confluent.io/platform/current/installation/configuration/connect/sink-connect-configs.html#errors-tolerance>`__
-          property of the Connect Framework.
+       This property overrides the `errors.tolerance <https://docs.confluent.io/platform/current/installation/configuration/connect/sink-connect-configs.html#errors-tolerance>`__
+       property of the Connect Framework.
 
        | **Default:** Inherits the value from the ``errors.tolerance``
          setting.
@@ -78,10 +76,8 @@ Settings
          "not tolerated" errors.
        | When set to ``false``, the connector logs "not tolerated" errors.
 
-       .. note::
-
-          This property overrides the `errors.log.enable <https://docs.confluent.io/platform/current/installation/configuration/connect/sink-connect-configs.html#errors-log-enable>`__
-          property of the Connect Framework.
+       This property overrides the `errors.log.enable <https://docs.confluent.io/platform/current/installation/configuration/connect/sink-connect-configs.html#errors-log-enable>`__
+       property of the Connect Framework.
 
        | **Default:** ``false``
        | **Accepted Values**: ``true`` or ``false``
