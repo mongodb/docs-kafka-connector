@@ -80,6 +80,7 @@ Settings
        | **Description:**
        | Whether to convert the data in the field into the BSON ``Date``
          format.
+         
        | When set to ``true``, the connector uses the milliseconds
          after epoch and discards fractional parts if the value is
          a number. If the value is a string, the connector uses the
