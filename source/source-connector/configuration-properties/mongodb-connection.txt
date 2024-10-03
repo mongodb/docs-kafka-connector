@@ -75,6 +75,7 @@ Settings
 
        :gold:`IMPORTANT:` If your ``database`` configuration is set to ``""``, the connector
        ignores the ``collection`` setting.
+       
        |
        | **Default**: ``""``
        | **Accepted Values**: A single collection name
