@@ -50,11 +50,9 @@ Settings
          The destination topic name is composed of the ``topic.prefix``
          value followed by the database and collection names, separated by the value
          specified in the ``topic.separator`` property.
-
-       .. seealso::
-
-          :ref:`Topic Naming Prefix Usage Example <source-usage-example-topic-naming>`
-
+       |
+       | To learn more, see the example in :ref:`Topic Naming Prefix <topic-naming-prefix-example>`. 
+       |
        | **Default**: ``""``
        | **Accepted Values**: A string composed of ASCII alphanumeric
          characters including ".", "-", and "_"
@@ -68,11 +66,9 @@ Settings
          The destination topic name is composed of the database and
          collection names followed by the ``topic.suffix`` value,
          separated by the value specified in the ``topic.separator`` property.
-
-       .. seealso::
-
-          :ref:`Topic Naming Suffix Usage Example <source-usage-example-topic-naming>`
-
+       |
+       | To learn more, see the example in :ref:`Topic Naming Suffix <topic-naming-suffix-example>`. 
+       |
        | **Default**: ``""``
        | **Accepted Values**: A string composed of ASCII alphanumeric
          characters including ".", "-", and "_"
@@ -84,52 +80,15 @@ Settings
        | Specifies a JSON mapping between change stream document 
          :manual:`namespaces </reference/glossary/#std-term-namespace>`
          and topic names.
-
-       .. example::
-
-          The following mapping instructs the connector to perform the following
-          actions:
-
-          - Publish change stream documents originating from the
-            ``myDb.myColl`` MongoDB collection to the ``topicOne`` Kafka topic.
-          - Publish change stream documents originating from the
-            ``myDb`` MongoDB database and a collection other than ``myColl``
-            to the Kafka topic ``topicTwo.<collectionName>``.
-          - Publish change stream documents originating from the ``myDb``
-            MongoDB database that do not bear a collection name to
-            the ``topicTwo`` Kafka topic.
-
-          .. code-block:: properties
-             :copyable: false
-
-             topic.namespace.map={"myDb.myColl": "topicOne", "myDb": "topicTwo"}
-
-          The following examples show which topic the connector sends
-          different change stream documents to using the preceding mapping:
-
-          - A change stream document originating from the ``myDb`` database
-            and the ``myColl`` collection publishes to the
-            ``topicOne`` topic.
-          - A change stream document originating from the ``myDb`` database
-            and the ``newColl`` collection publishes to the
-            ``topicTwo.newColl`` topic.
-          - A change stream document originating from dropping the
-            ``myDb`` database, which does not bear a collection name,
-            publishes to the ``topicTwo`` topic.
-
-       | You can use the ``"*"`` wildcard character to match change stream
-         document namespaces.
-
-       .. example::
-
-          The following mapping instructs the connector to publish all change
-          stream documents to the ``topicThree`` topic:
-
-          .. code-block:: properties
-             :copyable: false
-
-             topic.namespace.map={"*": "topicThree"}
-
+       |
+       | You can use to ``topic.namespace.map`` property to
+         specify complex mappings. This property supports regex
+         and wildcard matching. 
+       | 
+       | To learn more about these behaviors and
+         view examples, see :ref:`Topic Namespace Map
+         <topic-naming-namespace-map>`. 
+       |
        | **Default**: ``""``
        | **Accepted Values**: A valid JSON object
 
@@ -147,30 +106,24 @@ Settings
        #. ``collection``
        #. ``topic.suffix``
 
-       .. example::
+       | For example, the following configuration instructs the connector to publish
+         change stream documents from the ``coll`` collection of the
+         ``db`` database to the ``prefix-db-coll`` topic:
 
-          The following configuration instructs the connector to publish
-          change stream documents from the ``coll`` collection of the
-          ``db`` database to the ``prefix-db-coll``
-          topic:
+       .. code-block:: properties
+          :copyable: false
 
-          .. code-block:: properties
-             :copyable: false
+          topic.prefix=prefix
+          database=db
+          collection=coll
+          topic.separator=-
 
-                topic.prefix=prefix
-                database=db
-                collection=coll
-                topic.separator=-
-
-       .. important:: Topic Separator and Topic Namespace Map
-
-          When you use the ``topic.separator`` property, keep in mind that it
-          does not affect how you define the ``topic.namespace.map`` property.
-          The ``topic.namespace.map`` property uses MongoDB
-          :manual:`namespaces </reference/glossary/#std-term-namespace>`
-          which you must always specify with a ``"."`` character to separate
-          the database and collection name.
-
+       | :gold:`IMPORTANT:` When you use the ``topic.separator`` property, note that it
+         doesn't affect how you define the ``topic.namespace.map`` property.
+         The ``topic.namespace.map`` property uses MongoDB
+         :manual:`namespaces </reference/glossary/#std-term-namespace>`
+         which you must always specify with a ``.`` character to separate
+         the database and collection name.
        |
        | **Default**: ``"."``
        | **Accepted Values**: A string
