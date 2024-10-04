@@ -119,7 +119,7 @@ Settings
           topic.separator=-
 
        | :gold:`IMPORTANT:` When you use the ``topic.separator`` property, keep in mind that it
-         does not affect how you define the ``topic.namespace.map`` property.
+         doesn't affect how you define the ``topic.namespace.map`` property.
          The ``topic.namespace.map`` property uses MongoDB
          :manual:`namespaces </reference/glossary/#std-term-namespace>`
          which you must always specify with a ``.`` character to separate
