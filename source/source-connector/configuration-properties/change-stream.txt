@@ -92,11 +92,9 @@ Settings
          operations. The pre-image is not available for source records
          published while copying existing data, and the pre-image configuration
          has no effect on copying.
-         
-       To learn how to configure a collection to enable
-       pre-images, see the :manual:`Change Streams with Document Pre- and Post-Images 
-       </changeStreams/#change-streams-with-document-pre--and-post-images>` in the MongoDB manual. 
-       
+       | To learn how to configure a collection to enable
+         pre-images, see the :manual:`Change Streams with Document Pre- and Post-Images 
+         </changeStreams/#change-streams-with-document-pre--and-post-images>` in the MongoDB manual. 
        | The default setting suppresses the document pre-image.
        | The ``whenAvailable`` setting returns the document pre-image if
          it's available, before it was replaced, updated, or
