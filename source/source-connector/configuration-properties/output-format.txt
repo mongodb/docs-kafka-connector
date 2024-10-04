@@ -51,14 +51,14 @@ Settings
        | Specifies which data format the source connector outputs the value
          document.
        |
-       | **Default**: ``json``
-       | **Accepted Values**: ``bson``, ``json``, ``schema``
-
        | The connector supports Protobuf as an
          output data format. You can enable this format by specifying the
          ``schema`` value and installing and :ref:`configuring
          <protobuf-converter-sample-properties>` the `Kafka Connect Protobuf
          Converter <https://www.confluent.io/hub/confluentinc/kafka-connect-protobuf-converter>`__.
+       |
+       | **Default**: ``json``
+       | **Accepted Values**: ``bson``, ``json``, ``schema``
 
    * - | **output.json.formatter**
      - | **Type:** string
