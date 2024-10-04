@@ -75,8 +75,9 @@ Settings
          When set to ``true``, the default value, the
          connector writes a batch of records as an ordered bulk write
          operation.
-       | To learn more about bulk write operations, see the :ref:`Write
-         Model Strategies page <sink-connector-bulk-write-ops>`.
+       |
+       | To learn more about bulk write operations, see 
+         :ref:`Bulk Write Operations <sink-connector-bulk-write-ops>`.
        |
        | **Default**: ``true``
        | **Accepted Values**: ``true`` or ``false``
@@ -113,10 +114,10 @@ Settings
          cannot handle the level of parallelism you specify.
        |
        | :gold:`IMPORTANT:` If you specify a value greater than ``1``, 
-       | the connector enables parallel processing of the tasks. 
-       | If your topic has multiple partition logs, which enables 
-       | the connector to read from the topic in parallel, 
-       | the tasks may process the messages out of order.
+         the connector enables parallel processing of the tasks. 
+         If your topic has multiple partition logs, which enables 
+         the connector to read from the topic in parallel, 
+         the tasks may process the messages out of order.
        |
        | **Default**: ``1``
        | **Accepted Values**: An integer
