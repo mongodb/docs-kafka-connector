@@ -91,10 +91,10 @@ Settings
        | **Description:**
        | Specifies an Avro schema definition for the key document of the
          `SourceRecord <{+kafka_api_docs_base+}javadoc/org/apache/kafka/connect/source/SourceRecord.html>`__.
-
-       To learn more about Avro schema, see :ref:`Avro <data-formats-avro>` in the 
-       :ref:`Data Formats guide <kafka-df-avro-schema>`.
-
+       |
+       | To learn more about Avro schema, see :ref:`Avro <data-formats-avro>` in the 
+         :ref:`Data Formats guide <kafka-data-formats>`.
+       |
        | **Default**:
 
        .. code-block:: json
@@ -113,10 +113,10 @@ Settings
        | **Description:**
        | Specifies an Avro schema definition for the value document of the
          `SourceRecord <{+kafka_api_docs_base+}javadoc/org/apache/kafka/connect/source/SourceRecord.html>`__.
-
+       |
        | To learn more about Avro schema, see :ref:`Avro <data-formats-avro>` in the 
-         :ref:`Data Formats guide <kafka-df-avro-schema>`.
-
+         :ref:`Data Formats guide <kafka-data-formats>`.
+       |
        | **Default**:
 
        .. code-block:: json
@@ -163,10 +163,10 @@ Settings
          document of the `SourceRecord <{+kafka_api_docs_base+}javadoc/org/apache/kafka/connect/source/SourceRecord.html>`__.
          Since the connector processes each document in isolation, the
          connector may generate many schemas.
-
+       |
        | :gold:`IMPORTANT:` The connector only reads this setting when you set your
          ``output.format.value`` setting to ``schema``.
-
+       |
        | **Default**: ``false``
        | **Accepted Values**: ``true`` or ``false``
 
