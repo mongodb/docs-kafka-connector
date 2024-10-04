@@ -44,14 +44,14 @@ Settings
        | An array of aggregation pipelines to run in your change stream.
          You must configure this setting for the change stream
          event document, not the ``fullDocument`` field.
-
-       For example: 
+       | 
+       | For example: 
 
        .. code-block:: none
 
           [{"$match": { "$and": [{"operationType": "insert"}, {"fullDocument.eventId": 1404 }] } }]
 
-       For more examples, see: 
+       | For more examples, see: 
 
        - :ref:`<source-usage-example-custom-pipeline>`
        - :ref:`<source-usage-example-multiple-sources>`
@@ -65,21 +65,24 @@ Settings
        | **Description:**
        | Determines what values your change stream returns on update
          operations.
+       |
        | The default setting returns the differences between the original
          document and the updated document.
+       |
        | The ``updateLookup`` setting returns the differences between the
          original document and updated document as well as a copy of the
          entire updated document at a *point in time* after the update.
+       |
        | The ``whenAvailable`` setting returns the updated document,
          if available.
+       |
        | The ``required`` setting returns the updated document and
          raises an error if it is not available.
-
-       For more information on how this change stream option works, see
-       :manual:`Lookup Full Document for Update Operations 
-       </changeStreams/#lookup-full-document-for-update-operations>`
-       in the MongoDB manual.
-
+       |
+       | For more information on how this change stream option works, see
+         :manual:`Lookup Full Document for Update Operations 
+         </changeStreams/#lookup-full-document-for-update-operations>`
+         in the MongoDB manual.
        |
        | **Default**: ``""``
        | **Accepted Values**: ``""``, ``"updateLookup"``, ``"whenAvailable"``, or ``"required"``
