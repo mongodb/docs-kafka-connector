@@ -65,20 +65,20 @@ Settings
        | **Description:**
        | Determines what values your change stream returns on update
          operations.
-       |
+       
        | The default setting returns the differences between the original
          document and the updated document.
-       |
+       
        | The ``updateLookup`` setting returns the differences between the
          original document and updated document as well as a copy of the
          entire updated document at a *point in time* after the update.
-       |
+       
        | The ``whenAvailable`` setting returns the updated document,
          if available.
-       |
+       
        | The ``required`` setting returns the updated document and
          raises an error if it is not available.
-       |
+
        | For more information on how this change stream option works, see
          :manual:`Lookup Full Document for Update Operations 
          </changeStreams/#lookup-full-document-for-update-operations>`
@@ -95,13 +95,17 @@ Settings
          operations. The pre-image is not available for source records
          published while copying existing data, and the pre-image configuration
          has no effect on copying.
+       |
        | To learn how to configure a collection to enable
-         pre-images, see the :manual:`Change Streams with Document Pre- and Post-Images 
+         pre-images, see :manual:`Change Streams with Document Pre- and Post-Images 
          </changeStreams/#change-streams-with-document-pre--and-post-images>` in the MongoDB manual. 
+       |
        | The default setting suppresses the document pre-image.
+       |
        | The ``whenAvailable`` setting returns the document pre-image if
          it's available, before it was replaced, updated, or
          deleted.
+       |
        | The ``required`` setting returns the document pre-image and
          raises an error if it is not available.
        |
@@ -118,12 +122,12 @@ Settings
          updated document. To learn more about the ``fullDocument``
          field, see the :manual:`update Event
          </reference/change-events/update/>` in the Server manual.
-
+       |
        | When set to ``true``, the connector overrides the
          ``change.stream.full.document`` setting and sets it to
          ``updateLookup`` so that the ``fullDocument`` field contains
          updated documents.
-
+       |
        | **Default**: ``false``
        | **Accepted Values**: ``true`` or ``false``
 
