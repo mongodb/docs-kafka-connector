@@ -81,12 +81,13 @@ Settings
          :manual:`namespaces </reference/glossary/#std-term-namespace>`
          and topic names.
        |
-       | You can specify complex mappings by using the
-         ``topic.namespace.map`` property. This property supports regex
-         and wildcard matching. To learn more about these behaviors and
-         view examples, see the :ref:`Topic Namespace Map
-         <topic-naming-namespace-map>` section of the Topic Naming
-         page.
+       | You can use to ``topic.namespace.map`` property to
+         specify complex mappings. This property supports regex
+         and wildcard matching. 
+       | 
+       | To learn more about these behaviors and
+         view examples, see :ref:`Topic Namespace Map
+         <topic-naming-namespace-map>`. 
        |
        | **Default**: ``""``
        | **Accepted Values**: A valid JSON object
@@ -115,7 +116,7 @@ Settings
           topic.prefix=prefix
           database=db
           collection=coll
-         topic.separator=-
+          topic.separator=-
 
        | :gold:`IMPORTANT:` When you use the ``topic.separator`` property, keep in mind that it
          does not affect how you define the ``topic.namespace.map`` property.
@@ -123,7 +124,6 @@ Settings
          :manual:`namespaces </reference/glossary/#std-term-namespace>`
          which you must always specify with a ``.`` character to separate
          the database and collection name.
-
        |
        | **Default**: ``"."``
        | **Accepted Values**: A string
