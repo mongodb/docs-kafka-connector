@@ -87,7 +87,7 @@ Settings
        | 
        | To learn more about these behaviors and
          view examples, see :ref:`Topic Namespace Map
-         <topic-naming-namespace-map>`. 
+         <topic-naming-namespace-map-example>`. 
        |
        | **Default**: ``""``
        | **Accepted Values**: A valid JSON object
