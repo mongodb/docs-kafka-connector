@@ -26,6 +26,17 @@ MongoDB Kafka Connector
 Overview
 --------
 
+.. important::
+
+   MongoDB recommends using :atlas:`atlas-sp-overview` to ingest
+   and operate on streaming data. Atlas Stream Processing provides
+   broader functionality than the {+connector-long+}, including the
+   ability to apply :manual:`aggregation operations <aggregation>`
+   directly to streaming data using the MongoDB query language.
+
+   Users of the {+connector-long+} should consider migrating their
+   streaming data workflows to Atlas Stream Processing.
+
 The `{+connector-long+} <https://www.mongodb.com/kafka-connector>`__ is
 a Confluent-verified connector that persists data from {+kafka+} topics as a
 data sink into MongoDB and publishes changes from MongoDB into Kafka
@@ -46,20 +57,6 @@ offerings to host your {+kafka+} cluster and {+connector+}:
 
   - To learn more about the MongoDB Source Connector, read the `documentation <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-source-connector/>`__.
   - To learn more about the MongoDB Sink Connector, read the `documentation <https://docs.redpanda.com/current/deploy/deployment-option/cloud/managed-connectors/create-mongodb-sink-connector/>`__.
-
-.. note::
-
-   You can also use Atlas Stream Processing, which is a MongoDB-native way to
-   process streaming data by using the MongoDB Query API. It transforms the way
-   that developers build modern applications.
-
-   Use Atlas Stream Processing to continuously process streaming data,
-   validate schemas, and materialize views into either Atlas database
-   collections or Apache Kafka topics.
-
-   To learn more about Atlas Stream Processing, see the
-   `Atlas Stream Processing <https://www.mongodb.com/products/platform/atlas-stream-processing>`__
-   product page or read the `docs <https://www.mongodb.com/docs/atlas/atlas-sp/overview/>`__.
 
 What's New
 ----------
