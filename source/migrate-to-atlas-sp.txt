@@ -1,0 +1,7 @@
+.. _migrate-to-atlas-sp:
+
+======================================
+Migrate to {+atlas-sp+}
+======================================
+
+:atlas:`Atlas Stream Processing </atlas-stream-processing/overview>`

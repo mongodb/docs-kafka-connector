@@ -18,6 +18,7 @@ MongoDB Kafka Connector
    Security and Authentication </security-and-authentication>
    Monitoring </monitoring>
    Migrate from the Community Connector <migrate-from-kafka-connect-mongodb>
+   Migrate to Atlas Stream Processing <migrate-to-atlas-sp>
    Troubleshooting </troubleshooting>
    How to Contribute </contribute>
    Issues & Help </issues-and-help>
