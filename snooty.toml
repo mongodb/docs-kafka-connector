@@ -16,6 +16,7 @@ toc_landing_pages = [
 ]
 
 [constants]
+atlas-sp = "Atlas Stream Processing"
 connector = "MongoDB Kafka Connector"
 connector-short = "Kafka Connector"
 connector-long = "MongoDB Connector for Apache Kafka"
