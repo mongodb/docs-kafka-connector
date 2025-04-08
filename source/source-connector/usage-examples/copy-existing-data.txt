@@ -24,7 +24,7 @@ Examples
 --------
 
 The following examples show how to configure your source connector to
-copy existing data from a single collection or from multiple databases.
+copy existing data from a single collection or from multiple collections.
 
 Copy and Filter Collection Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,6 +116,8 @@ To learn more about aggregation pipelines, see the following resources:
 - :ref:`<source-usage-example-custom-pipeline>` Usage Example
 - :manual:`Aggregation </aggregation>` in the MongoDB manual.
 
+.. _source-usage-example-copy-existing-data-config:
+
 Specify the Configuration
 `````````````````````````
 
@@ -142,12 +144,11 @@ in the ``shopping.customers`` {+kafka+} topic:
    {+kafka+} topic into MongoDB write operations. To learn more, see the
    :ref:`Change Data Capture Handlers <sink-fundamentals-cdc-handler>` guide.
 
-Copy Data From Multiple Databases
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Copy Data From Multiple Sources
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Suppose you want to copy data from another database named ``inventory``. This
-database contains a collection named ``cosmetics``, which stores the
-following document:
+Suppose you want to copy data from another collection in the ``shopping``
+database named ``products``. This collection contains the following document:
 
 .. code-block:: json
    :copyable: false
@@ -155,17 +156,25 @@ following document:
    {
      "_id": 1,
      "item_name": "lipstick",
-     "brand": "Maybelline",
+     "department": "cosmetics",
      "quantity": 45
    }
 
-You can copy from both the ``shopping`` and ``inventory`` databases
+You can copy from both the ``customers`` and ``products`` collections
 by using the ``startup.mode.copy.existing.namespace.regex`` configuration
 setting, as shown in the following code:
 
 .. literalinclude:: /includes/usage-examples/copy/multisource.properties
     :language: properties
     :emphasize-lines: 6
+
+In addition to the change event document in the ``shopping.customers`` {+kafka+} topic,
+described in the :ref:`preceding section <source-usage-example-copy-existing-data-config>`,
+you can see the following document in the ``shopping.products`` {+kafka+} topic:
+
+.. literalinclude:: /includes/usage-examples/copy/multisource.json
+    :language: json
+    :copyable: false
 
 To learn more about the ``startup.mode.copy.existing.namespace.regex`` setting,
 see the :ref:`Settings table <source-configuration-startup-table-start>` in
