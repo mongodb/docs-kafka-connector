@@ -4,11 +4,27 @@
 Copy Existing Data
 ==================
 
-This usage example demonstrates how to copy data from a MongoDB collection to an
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta:: 
+   :keywords: code example, copy, filter, configuration setting
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+This usage example demonstrates how to copy data from MongoDB to an
 {+kafka+} topic using the {+source-connector+}.
 
-Example
--------
+Examples
+--------
+
+Copy and Filter Collection Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Suppose you want to copy a MongoDB collection to {+kafka+} and filter some data.
 
@@ -51,7 +67,7 @@ The ``customers`` collection contains the following documents:
 .. _source-usage-example-copy-existing-data-copy-data:
 
 Copy Data
-~~~~~~~~~
+`````````
 
 Copy the contents of the ``customers`` collection of the ``shopping`` database by 
 specifying the following configuration options in your source connector:
@@ -78,7 +94,7 @@ To learn more about the ``startup.mode`` option, see
 .. _source-usage-example-copy-existing-data-mask-data:
 
 Filter Data
-~~~~~~~~~~~
+```````````
 
 You can filter data by specifying an aggregation pipeline in the 
 ``startup.mode.copy.existing.pipeline`` option of your source connector configuration. The
@@ -97,9 +113,8 @@ To learn more about aggregation pipelines, see the following resources:
 - :ref:`<source-usage-example-custom-pipeline>` Usage Example
 - :manual:`Aggregation </aggregation>` in the MongoDB manual.
 
-
 Specify the Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````
 
 Your final source connector configuration to copy the ``customers`` collection should
 look like this:
@@ -123,3 +138,32 @@ in the ``shopping.customers`` {+kafka+} topic:
    Use a change data capture handler to convert change event documents in an
    {+kafka+} topic into MongoDB write operations. To learn more, see the
    :ref:`Change Data Capture Handlers <sink-fundamentals-cdc-handler>` guide.
+
+Copy Data From Multiple Databases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Suppose you want to copy data from another database named ``inventory``. This
+database contains a collection named ``cosmetics``, which stores the
+following document:
+
+.. code-block:: json
+   :copyable: false
+
+   {
+     "_id": 1,
+     "item_name": "lipstick",
+     "brand": "Maybelline",
+     "quantity": 45
+   }
+
+You can copy from both the ``shopping`` and ``inventory`` databases
+by using the ``startup.mode.copy.existing.namespace.regex`` configuration
+setting, as shown in the following code:
+
+.. literalinclude:: /includes/usage-examples/copy/multisource.properties
+    :language: properties
+    :emphasize-lines: 6
+
+To learn more about the ``startup.mode.copy.existing.namespace.regex`` setting,
+see the :ref:`Settings table <source-configuration-startup-table-start>` in
+the Startup Properties guide.
