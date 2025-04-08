@@ -17,11 +17,14 @@ Copy Existing Data
    :depth: 2
    :class: singlecol
 
-This usage example demonstrates how to copy data from MongoDB to an
+These usage examples demonstrate how to copy data from MongoDB to an
 {+kafka+} topic using the {+source-connector+}.
 
 Examples
 --------
+
+The following examples show how to configure your source connector to
+copy existing data from a single collection or from multiple databases.
 
 Copy and Filter Collection Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
