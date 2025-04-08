@@ -176,6 +176,8 @@ you can see the following document in the ``shopping.products`` {+kafka+} topic:
     :language: json
     :copyable: false
 
-To learn more about the ``startup.mode.copy.existing.namespace.regex`` setting,
-see the :ref:`Settings table <source-configuration-startup-table-start>` in
-the Startup Properties guide.
+.. tip::
+
+   To learn more about the ``startup.mode.copy.existing.namespace.regex`` setting,
+   see the :ref:`Settings table <source-configuration-startup-table-start>` in
+   the Startup Properties guide.
