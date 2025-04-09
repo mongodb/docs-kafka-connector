@@ -148,7 +148,7 @@ Copy Data From Multiple Sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Suppose you want to copy data from another collection in the ``shopping``
-database named ``products``. This collection contains the following document:
+database named ``products``, which contains the following document:
 
 .. code-block:: json
    :copyable: false
