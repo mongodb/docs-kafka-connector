@@ -136,7 +136,6 @@ in the ``shopping.customers`` {+kafka+} topic:
 .. literalinclude:: /includes/usage-examples/copy/payload.json
     :language: json
     :copyable: false
-    :emphasize-lines: 6,7
 
 .. note:: Write the Data in your Topic into a Collection
 
@@ -166,11 +165,11 @@ setting, as shown in the following code:
 
 .. literalinclude:: /includes/usage-examples/copy/multisource.properties
     :language: properties
-    :emphasize-lines: 6
+    :emphasize-lines: 5
 
 In addition to the change event document in the ``shopping.customers`` {+kafka+} topic,
 described in the :ref:`preceding section <source-usage-example-copy-existing-data-config>`,
-you can see the following document in the ``shopping.products`` {+kafka+} topic:
+you can see the following document in the ``shopping.products`` topic:
 
 .. literalinclude:: /includes/usage-examples/copy/multisource.json
     :language: json
