@@ -1,3 +1,6 @@
+.. meta::
+   :robots: noindex, nosnippet 
+
 .. _kafka-tutorial-replicate-with-cdc:
 
 =================================================
@@ -23,7 +26,7 @@ In this tutorial, you configure and run MongoDB Kafka source and sink
 connectors to make two MongoDB collections contain the same documents using
 CDC. The source connector writes change stream data from the original
 collection to a Kafka topic and the sink connector writes the Kafka topic
-data to the target MongoDB collection.
+data to the target MongoDB collection. 
 
 If you want to learn more about how CDC handlers work, see the
 :ref:`<sink-fundamentals-cdc-handler>` guide.
