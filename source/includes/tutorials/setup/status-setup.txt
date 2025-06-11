@@ -1,6 +1,3 @@
-.. meta::
-   :robots: noindex, nosnippet 
-
 .. code-block:: text
    :copyable: false
 

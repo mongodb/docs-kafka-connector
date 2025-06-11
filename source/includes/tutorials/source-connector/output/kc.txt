@@ -1,6 +1,3 @@
-.. meta::
-   :robots: noindex, nosnippet 
-
 Partition: 0    Offset: 0
 
 Key (198 bytes):
